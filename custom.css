@@ -1,11 +1,8 @@
-#intro{
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+#link-otros-sitios{
 	text-align:center;
 	margin-top: 20px;
-}
-
-#proyectos{
-	margin-top: 20px;
-	margin-left: 30px;
 }
 
 
@@ -14,20 +11,43 @@ h3{
 }
 
 body{
-	background-color: #FFFFFF;
+	background-color: #e7e7e7;
+  text-align: center;
 }
 
-/*footer{
+
+.projects .column {
+  background-color: #d67e7e;
+  border-radius: 10px;
+}
+
+.column:hover{
+  background-color: #b9ff68;
+}
+
+.column > a{
+  color: #1b2932;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.columns{
+  gap: 30px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* footer{
 	padding: 20px;
 	background-color: #1b2932;
 	position: fixed;
   bottom: 0;
   width: 100%;
   height: 60px;
-}
-*/
+} */
 
-hr {
+
+/* hr {
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -36,4 +56,25 @@ hr {
   border-style: inset;
   border-width: 1px;
   width: 70%;
+} */
+
+
+#titulo {
+  /* texto centrado y que ocupe todo el ancho */
+  text-align: center;
+  width:100%;
+  /* height: 100%; */
 }
+
+#titulo > span {
+  /* personalizar el interior del titulo  */
+  height: 50px;
+  padding: 15px;
+  border-radius: 30px 10px;
+  width:100px; 
+  /* background: #7b6cce; */
+  background: #b9ff68;
+  font-weight: bold;
+}
+
+
