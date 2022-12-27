@@ -1,6 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-#link-otros-sitios{
+#projects{
 	text-align:center;
 	margin-top: 20px;
 }
@@ -16,36 +16,93 @@ body{
 }
 
 
-.projects .column {
+
+
+.projects .item{
   background-color: #d67e7e;
   border-radius: 10px;
 }
 
-.column:hover{
+.item:hover{
   background-color: #b9ff68;
 }
 
-.column > a{
+.item > a{
   color: #1b2932;
   font-size: 20px;
   font-weight: bold;
 }
 
-.columns{
+.items{
   gap: 30px;
   margin-top: 20px;
   width: 100%;
 }
 
-/* footer{
+.rows{
+  
+  margin-top: 20px;
+  height: 100%;
+  margin-bottom: 50px;
+  padding: 20px;
+  text-align: left;
+}
+
+
+footer{
 	padding: 20px;
 	background-color: #1b2932;
-	position: fixed;
+	position: relative;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 90px;
+}
+
+
+/* 
+<div id="projects">
+
+<h3 class="titulo"><span> My projects</span></h3>
+<div class="columns is-mobile is-centered is-multiline">
+  <div class="column is-narrow">
+    <a href="https://github.com/AlePaff/" target="_blank" style="padding-left:10px;"><img
+        src="https://github.githubassets.com/favicons/favicon.svg" class="invert_effect" alt="github" height="32"
+        width="32" title="Github" data-toggle="tooltip" data-placement="top" target="_blank"></a>
+  </div>
+
+  <div class="column is-narrow">
+    <a href="https://www.linkedin.com/in/alejandro-paff-983a65158/"><svg xmlns="http://www.w3.org/2000/svg"
+        width="32" height="32" title="Linkedin" viewBox="0 0 24 24" target="_blank">
+        <path
+          d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        <title>LinkedIn</title>
+      </svg></a>
+  </div>
+
+  <div class="column is-narrow">
+    <a href="https://docs.google.com/file/d/1dv-JAm9GOebINzoFUO5mB28ix0IvoSfGO9-DqpBUaDc/view" target="_blank"
+      style="padding-left:10px;"><img src="https://cdn-icons-png.flaticon.com/512/2815/2815429.png" height="32"
+        width="32" title="CV"></a>
+  </div>
+</div> */
+
+#projects > .columns .column{
+  margin-top: 20px;
+}
+
+/* cuando hago hover me cambia el color interno de los iconos a azul*/
+/* #projects > .columns .column:hover > a > img{
+  background-color: #b9ff68;
+  color: red;
+
 } */
 
+.llenar-color:hover{
+  /* background-color: #6fbcd3; */
+  filter: invert(80%) sepia(11%) saturate(1705%) hue-rotate(157deg) brightness(87%) contrast(89%);
+  /* computar filtros por la increible herramienta de Barrett Sonntag https://codepen.io/sosuke/pen/Pjoqqp */
+  
+}
 
 /* hr {
   display: block;
@@ -59,14 +116,14 @@ body{
 } */
 
 
-#titulo {
+.titulo {
   /* texto centrado y que ocupe todo el ancho */
   text-align: center;
   width:100%;
   /* height: 100%; */
 }
 
-#titulo > span {
+.titulo > span {
   /* personalizar el interior del titulo  */
   height: 50px;
   padding: 15px;
@@ -78,3 +135,27 @@ body{
 }
 
 
+
+#bloque1{
+  /* background-color: #d67e7e; */
+  border-radius: 10px 40px;
+  padding: 0.5%;
+  /* height: 50px; */
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 1px solid;
+  /* color: white; */ 
+  display: inline-flex; 
+}
+
+/* ">" es para indicar  */
+#bloque1 img{
+  /* border-radius: 10px 40px; */
+  /* centrar a la izquierda */
+  /* margin-left: 0%; */
+  
+  /* display: inline-block;  */
+  position: relative;
+  text-align: left;
+  
+}
