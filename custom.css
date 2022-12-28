@@ -1,5 +1,12 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
+html {
+  /* background-image: linear-gradient(#00FFFF, #00b2b2); */
+  background-image: linear-gradient(#00FFFF, #00b2b2);
+  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+  min-height: 100%;
+}
+
 h3{
 	 font-size: 46px;
 }
@@ -167,8 +174,9 @@ footer{
   flex-direction: row;
   gap: 5px; 
 
+
   /* align-items: stretch; */
-  /* justify-content: space-between; */
+  /* justify-content: flex-start; */
   /* box-sizing: border-box; */
 
   /* margin-top: -10px; */
@@ -181,6 +189,7 @@ footer{
 #bloque1 p{
   padding: 10px;
 }
+
 #bloque1 #links{
   
   display: flex; 
@@ -189,4 +198,18 @@ footer{
   justify-content: flex-end;
   /* margin-left: 85%; */
   gap: 10px; 
+}
+
+#bloque1 #img-titulo{
+  display: flex;
+  flex-direction: row;
+  
+  justify-content:space-between;
+  /* margin-left: 85%; */
+}
+
+#bloque1 #img-titulo h4{
+  margin-right: 45%;
+  font-size: 20px;
+  font-weight: bold;
 }
