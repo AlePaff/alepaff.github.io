@@ -137,25 +137,44 @@ footer{
 
 
 #bloque1{
-  /* background-color: #d67e7e; */
+  background-color: #c9c9c9;
   border-radius: 10px 40px;
-  padding: 0.5%;
-  /* height: 50px; */
-  margin-left: 10%;
-  margin-right: 10%;
-  border: 1px solid;
+  /* padding: 0.5%; */
+  /* height: 130px; */
+  width: 80%;
+  /* margin-left: 10%; */
+  /* margin-right: 10%; */
+  border: 1px solid #dddddd;
   /* color: white; */ 
+  flex-direction: column;
   display: inline-flex; 
+
+  /* align-items: center; */
+  
+
 }
 
-/* ">" es para indicar  */
-#bloque1 img{
+#bloque1 #imagenes{
+  /* background-color: #1b2932; */
+  display: flex;
+  flex-direction: row;
+  
+  /* align-items: stretch; */
+  /* justify-content: space-between; */
+  /* box-sizing: border-box; */
+
+  margin-top: -10px;
+  
   /* border-radius: 10px 40px; */
-  /* centrar a la izquierda */
   /* margin-left: 0%; */
+  /* position: relative; */
+  /* text-align: left; */
+}
+
+#bloque1 #links{
   
-  /* display: inline-block;  */
-  position: relative;
-  text-align: left;
-  
+  display: flex; 
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 85%;
 }
