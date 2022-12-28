@@ -16,10 +16,19 @@ body{
 }
 
 
+.button{
+  background-color: #ffffff;
+  border-radius: 30px;
+  color: #1b2932;
+  font-size: 15px;
+  font-weight: bold;
+
+}
 
 
 .projects .item{
-  background-color: #d67e7e;
+  /* background-color: #d67e7e; */
+  background-color: #76c6da;
   border-radius: 10px;
 }
 
@@ -175,6 +184,9 @@ footer{
   
   display: flex; 
   flex-direction: row;
-  justify-content: space-between;
-  margin-left: 85%;
+  /* align-items: flex-end; */
+  justify-content: flex-end;
+  /* margin-left: 85%; */
+  padding: 3px;
+  
 }
