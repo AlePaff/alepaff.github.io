@@ -89,21 +89,35 @@
     </div>
 
     <script>
-      //cuando se ponga el mouse encima dar 3 segundos para que se muestre el texto, si el mouse está encima del div se mantiene, en caso contrario desaparece
 
-      // $('#sabelo-fiuba').on('mouseleave', function () {
-      //   // $("#bloque1").show();
-      //   $("#bloque1").html("<span>Proyecto de la FIUBA. Consiste en una página web que permite a los alumnos de la FIUBA consultar la información de los profesores de la facultad. </span>");
-      //   //give 3 seconds
-      //   setTimeout(function () {
-      //     if ($('#bloque1').is(':hover')) {
-      //       //añadir descripcion span
+      function crear_boton_link(link, desc) {
+        return `<a class="button" href='${link}' target='_blank'><span>${desc}</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:currentColor"><g data-name="Layer 2"><g data-name="external-link"><rect width="24" height="24" opacity="0"></rect><path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z"></path><path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"></path></g></g></svg></a>
+        `
+      }
 
-      //       $("#bloque1").hide();
-      //     }
-      //   }, 2000);
+      function lenguajes(array_lang) {
+        var html = "https://cdn-icons-png.flaticon.com/512/1216/1216733.png";
+        var css = "https://cdn-icons-png.flaticon.com/512/732/732190.png";
+        var js = "https://cdn-icons-png.flaticon.com/512/919/919828.png";
+        // var js = "https://cdn-icons-png.flaticon.com/512/5968/5968292.png";
+        var boostrap = "https://cdn-icons-png.flaticon.com/512/919/919825.png";
+        var total = "<div id='imagenes'>";
 
-      // });
+        for (let i = 0; i < array_lang.length; i++) {
+          if (array_lang[i] == "html") {
+            total += `<img src='${html}' height='32' width='32' title='HTML'>`;
+          } else if (array_lang[i] == "css") {
+            total += `<img src='${css}' height='32' width='32' title='CSS'>`;
+          } else if (array_lang[i] == "js") {
+            total += `<img src='${js}' height='32' width='32' title='JS'>`;
+          } else if (array_lang[i] == "boostrap") {
+            total += `<img src='${boostrap}' height='32' width='32' title='Boostrap'>`;
+          }
+        }
+        total += "</div>";
+        return total;
+      }
+
 
       $(document).ready(function () {
         // $("#bloque1").hide();
@@ -114,30 +128,19 @@
           $("#bloque1").show();
           //lenguajes, descripcion, links
           bloque1.innerHTML = "";
-          bloque1.innerHTML += "<div id='imagenes'><img src='https://cdn-icons-png.flaticon.com/512/1216/1216733.png' height='32' width='32' title='HTML'><img src='https://cdn-icons-png.flaticon.com/512/732/732190.png' height='32' width='32' title='CSS'><img src='https://cdn-icons-png.flaticon.com/512/919/919828.png' height='32' width='32' title='JS'></div>";
+          bloque1.innerHTML += lenguajes(["html", "css", "js", "boostrap"]);
           bloque1.innerHTML += "<p>Proyecto de la materia de Taller de Programación I de la FIUBA. Se trata de una página web que permite a los usuario trata de una página web que permite a los usuarioI de la FIUBA. Se trata de una página web que permite a los usuario trata de una página web que permite a los usuarios</p>";
-          
-          // bloque1.innerHTML += "<a href='https://github.com/AlePaff/sabelo-fiuba' class='button is-primary is-rounded'>Ir al repo</a>";
-
-          bloque1.innerHTML += `<div id='links'>   <a class="button" href='https://alepaff.github.io/sabelo-fiuba/' target='_blank'><span>Demo</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:currentColor"><g data-name="Layer 2"><g data-name="external-link"><rect width="24" height="24" opacity="0"></rect><path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z"></path><path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"></path></g></g></svg>
-            </a>
-            
-            <a class="button" href='https://github.com/AlePaff/sabelo-fiuba' target='_blank'><span>Repo</span>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:currentColor"><g data-name="Layer 2"><g data-name="external-link"><rect width="24" height="24" opacity="0"></rect><path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z"></path><path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"></path></g></g></svg>
-              </a>   </div>`;
-          
-          
+          bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
 
         });
 
         $("#lok-events").hover(function () {
           $("#bloque1").show();
-          //añadir descripcion span
-          bloque1.innerHTML = "<p>un coso para un juego<p>";
-
-          //esquina superior izquierda iconos de html, css y js
-          // $("#bloque1").append("<img src='https://cdn-icons-png.flaticon.com/512/1216/1216733.png' height='32' width='32' title='HTML' class='llenar-color'><img src='https://cdn-icons-png.flaticon.com/512/732/732190.png' height='32' width='32' title='CSS' class='llenar-color'><img src='https://cdn-icons-png.flaticon.com/512/919/919828.png' height='32' width='32' title='JS' class='llenar-color'>");
+          
+          bloque1.innerHTML = "";
+          bloque1.innerHTML += lenguajes(["html", "css", "js"]);
+          bloque1.innerHTML += "<p>Pequeño proyecto para probar como crear tablas dinamicas en Javascript, actualizandose según eventos periódicos de un juego</p>";
+          bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
         });
       });
 
@@ -150,6 +153,7 @@
 
 
 
+
     </script>
     <!-- <a href="https://alepaff.github.io/numbers/">Numbers</a><br> -->
 
@@ -159,21 +163,21 @@
     <h3 class="titulo"><span>Académico</span></h3>
 
     <br>
-    <div class="rows is-mobile items">
+    <div class="columns is-mobile items is-multiline">
       <div class="row is-narrow item">
         <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">T.E.G en Java</a>
       </div>
-      <div class="row is-narrow item">
+      <div class="column is-narrow item">
         <a href="https://github.com/AlePaff/TPS-sisop" target="_blank">Implementacion de una Shell en C (solucion
           MIT)</a>
       </div>
-      <div class="row is-narrow item">
+      <div class="column is-narrow item">
         <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Implementacion de malloc</a>
       </div>
-      <div class="row is-narrow item">
+      <div class="column is-narrow item">
         <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Implementacion de un sched</a>
       </div>
-      <div class="row is-narrow item">
+      <div class="column is-narrow item">
         <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Implementacion de un file system</a>
       </div>
     </div>

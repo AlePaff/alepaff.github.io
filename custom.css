@@ -1,11 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-#projects{
-	text-align:center;
-	margin-top: 20px;
-}
-
-
 h3{
 	 font-size: 46px;
 }
@@ -14,7 +8,6 @@ body{
 	background-color: #e7e7e7;
   text-align: center;
 }
-
 
 .button{
   background-color: #ffffff;
@@ -25,6 +18,10 @@ body{
 
 }
 
+#projects{
+	text-align: center;
+	margin-top: 20px;
+}
 
 .projects .item{
   /* background-color: #d67e7e; */
@@ -150,16 +147,17 @@ footer{
   border-radius: 10px 40px;
   /* padding: 0.5%; */
   /* height: 130px; */
-  width: 80%;
-  /* margin-left: 10%; */
-  /* margin-right: 10%; */
+  /* width: 100%; */
+  margin-left: 10%;
+  margin-right: 10%;
   border: 1px solid #dddddd;
   /* color: white; */ 
   flex-direction: column;
   display: inline-flex; 
-
-  /* align-items: center; */
   
+  /* align-items: center; */
+  /* padding interno */
+  padding: 5px;
 
 }
 
@@ -167,19 +165,22 @@ footer{
   /* background-color: #1b2932; */
   display: flex;
   flex-direction: row;
-  
+  gap: 5px; 
+
   /* align-items: stretch; */
   /* justify-content: space-between; */
   /* box-sizing: border-box; */
 
-  margin-top: -10px;
+  /* margin-top: -10px; */
   
   /* border-radius: 10px 40px; */
   /* margin-left: 0%; */
   /* position: relative; */
   /* text-align: left; */
 }
-
+#bloque1 p{
+  padding: 10px;
+}
 #bloque1 #links{
   
   display: flex; 
@@ -187,6 +188,5 @@ footer{
   /* align-items: flex-end; */
   justify-content: flex-end;
   /* margin-left: 85%; */
-  padding: 3px;
-  
+  gap: 10px; 
 }
