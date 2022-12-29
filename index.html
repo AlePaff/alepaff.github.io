@@ -16,15 +16,252 @@
 
 
 
+  <script>
+    // crea el boton de link junto al enlace, nombre y el icono
+    function crear_boton_link(link, desc) {
+      return `<a class="button" href='${link}' target='_blank'><span>${desc}</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:currentColor"><g data-name="Layer 2"><g data-name="external-link"><rect width="24" height="24" opacity="0"></rect><path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z"></path><path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"></path></g></g></svg></a>
+      `
+    }
+
+    //devuelve un html de una array de lenguajes (ej. ["html", "css", "js"] devuelve un html con los iconos de los lenguajes)
+    function lenguajes(array_lang) {
+      var html = "https://cdn-icons-png.flaticon.com/512/1216/1216733.png";
+      var css = "https://cdn-icons-png.flaticon.com/512/732/732190.png";
+      var js = "https://cdn-icons-png.flaticon.com/512/919/919828.png";
+      // var js = "https://cdn-icons-png.flaticon.com/512/5968/5968292.png";
+      var boostrap = "https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png";
+      // var boostrap_alt = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png";
+      var isotope = "https://isotope.metafizzy.co/favicon.ico";
+      var python = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/438px-Python-logo-notext.svg.png";
+      var jquery = "https://fernando-herrera.com/logros/assets/medallas/jquery.png";
+      var c = "https://cdn.worldvectorlogo.com/logos/c-1.svg";
+      // var gitflow_alt = "https://cdn.iconscout.com/icon/free/png-256/social-285-116319.png";
+      var gitflow = "https://cdn.iconscout.com/icon/free/png-256/social-285-116319.png";
+      var java = "https://cdn.iconscout.com/icon/free/png-256/java-43-569305.png";
+
+      var total = "<div id='imagenes'>";
+
+      for (let i = 0; i < array_lang.length; i++) {
+        if (array_lang[i] == "html") {
+          total += `<img src='${html}' height='32' width='32' title='HTML'>`;
+        } else if (array_lang[i] == "css") {
+          total += `<img src='${css}' height='32' width='32' title='CSS'>`;
+        } else if (array_lang[i] == "js") {
+          total += `<img src='${js}' height='32' width='32' title='JS'>`;
+        } else if (array_lang[i] == "boostrap") {
+          total += `<img src='${boostrap}' height='32' width='32' title='Boostrap (JS)'>`;
+        } else if (array_lang[i] == "isotope") {
+          total += `<img src='${isotope}' height='32' width='32' title='Isotope (JS)'>`;
+        } else if (array_lang[i] == "python") {
+          total += `<img src='${python}' height='32' width='32' title='Python'>`;
+        } else if (array_lang[i] == "jquery") {
+          total += `<img src='${jquery}' height='32' width='32' title='Jquery (JS)'>`;
+        } else if (array_lang[i] == "c") {
+          total += `<img src='${c}' height='32' width='32' title='C'>`;
+        } else if (array_lang[i] == "gitflow") {
+          total += `<img src='${gitflow}' height='32' width='32' title='Uso destacable de Git'>`;
+        } else if (array_lang[i] == "java") {
+          total += `<img src='${java}' height='32' width='32' title='Java'>`;
+        }
+      }
+      total += "</div>";
+      return total;
+    }
+
+    //jquery para el hover sobre los items
+    $(document).ready(function () {
+      var bloque1 = document.getElementById("bloque1");
+      var bloque2 = document.getElementById("bloque2");
+
+      //por default se muestra el primer item
+
+      // $("#bloque2").show();
+      // bloque1.innerHTML = "";
+      // bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "boostrap"]) + "<h4>Sabelo Fiuba</h4> </div>";
+      // bloque1.innerHTML += "<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA), intenta unificar todo aquello que está suelto y vale la pena saber que existe.</p>";
+      // bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
+      // bloque2.innerHTML = "";
+      // bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["java", "gitflow"]) + "<h4>T.E.G</h4> </div>";
+      // bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la FIUBA, con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
+      // bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/nspiguelman/algo3_tp2", "Repo") + `</div>`;
+
+      $("#bloque1").hide();
+      $("#bloque2").hide();
+
+      // proyectos propios
+      $("#sabelo-fiuba").hover(function () {
+        $("#bloque1").show();
+        //lenguajes, descripcion, links
+        bloque1.innerHTML = "";
+        bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "boostrap"]) + "<h4>Sabelo Fiuba</h4> </div>";
+        bloque1.innerHTML += "<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA), intenta unificar todo aquello que está suelto y vale la pena saber que existe.</p>";
+        bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
+      });
+
+      $("#lok-events").hover(function () {
+        $("#bloque1").show();
+        bloque1.innerHTML = "";
+        bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js"]) + "<h4>LOK Events</h4> </div>";
+        bloque1.innerHTML += "<p>Proyecto para probar como crear tablas dinamicas en Javascript, actualizandose según eventos periódicos de un juego llamado League of Kingdoms</p>";
+        bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/lok-events", "Demo") + crear_boton_link("https://github.com/AlePaff/lok-events", "Repo") + `</div>`;
+      });
+
+      $("#fiuba-knowledge").hover(function () {
+        $("#bloque1").show();
+        bloque1.innerHTML = "";
+        bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "js", "python"]) + "<h4>Fiuba Knowledge</h4> </div>";
+        bloque1.innerHTML += "<p>Pequeño proyecto para la recopilación de temas que se ven en cada materia de la Facultad de Ingeniería de la Universidad de Buenos Aires, aqui aprendí como hacer scraping de datos desde pdfs para luego procesarlos utilizando un módulo de Python y presentarlos en la web</p>";
+        bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/FIUBA-knowledge/", "Demo") + crear_boton_link("https://github.com/AlePaff/FIUBA-knowledge", "Repo") + `</div>`;
+      });
+
+      $("#lok-treasure-items").hover(function () {
+        $("#bloque1").show();
+        bloque1.innerHTML = "";
+        bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "jquery", "isotope", "boostrap"]) + "<h4>LOK Treasure Items</h4> </div>";
+        bloque1.innerHTML += "<p>Web para ordenar y filtrar items de League of Kingdoms (LOK) de acuerdo a sus habilidades, power-ups, grados, etc. Se utilizó una librería de js para crear el grid y la logica. Los datos se obtuvieron del juego oficial.</p>";
+        bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/LOK-Treasure-items/", "Demo") + crear_boton_link("https://github.com/AlePaff/LOK-Treasure-items", "Repo") + `</div>`;
+      });
+
+
+
+      // academico
+      $("#algo3-teg").hover(function () {
+        $("#bloque2").show();
+        bloque2.innerHTML = "";
+        bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["java", "gitflow"]) + "<h4>T.E.G</h4> </div>";
+        bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la FIUBA, con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
+        bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/nspiguelman/algo3_tp2", "Repo") + `</div>`;
+      });
+
+      $("#shell").hover(function () {
+        $("#bloque2").show();
+        bloque2.innerHTML = "";
+        bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c"]) + "<h4>Shell</h4> </div>";
+        bloque2.innerHTML += "<p>Implementación en C de un interprete de comandos <a href='https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica)'>Shell</a> con las funcionalidades minimas para Unix similar a bash, zsh y fish para la materia Sistemas Operativos de la FIUBA.</p>";
+        bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-shell", "Repo") + `</div>`;
+      });
+
+      $("#malloc").hover(function () {
+        $("#bloque2").show();
+        bloque2.innerHTML = "";
+        bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>Malloc</h4> </div>";
+        bloque2.innerHTML += "<p>Implementación del manejo del heap de las funciones malloc(), calloc(), realloc(), free() de la librería estandar de C para la administración de memoria para la materia Sistemas Operativos de la FIUBA.</p>";
+        bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-malloc", "Repo") + `</div>`;
+      });
+
+      $("#sched").hover(function () {
+        $("#bloque2").show();
+        bloque2.innerHTML = "";
+        bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>Scheduller</h4> </div>";
+        bloque2.innerHTML += "<p>Solución al <a href='https://pdos.csail.mit.edu/6.828/2017/index.html'>exokernel JOS del MIT</a> de licencia libre para la implementación del cambio de contexto para procesos y scheduler/planificador sobre un sistema operativo preexistente, utilizando una modificación del algoritmo MLFQ para la materia Sistemas Operativos de la FIUBA.</p>";
+        bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-sched", "Repo") + `</div>`;
+      });
+
+
+      $("#filesystem").hover(function () {
+        $("#bloque2").show();
+        bloque2.innerHTML = "";
+        bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>File System</h4> </div>";
+        bloque2.innerHTML += "<p>Implementación de un sistema de archivo para Linux, utilizando el mecanismo <a href='https://en.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> provisto por el kernel para la materia Sistemas Operativos de la FIUBA.</p>";
+        bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-filesystem", "Repo") + `</div>`;
+      });
+
+    });
+
+  </script>
+
 </head>
 
 
-<body>
+<body id="inicio">
 
-  <div id="projects">
+  <h3 class="titulo"><span> About me</span></h3>
 
-    <h3 class="titulo"><span> My projects</span></h3>
 
+
+<p>
+  Hola, soy Alejandro, y soy un apasionado por básicamente cualquier tema: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, hacer ejercicio, tocar el piano, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicar la auto observación
+  <br>
+
+<!-- En mi caso mi camino hacia la programación fué cuando de niño-adolescente tardaba mucho en abrir ciertas carpetas donde guardaba mis cosas así que me pregunté si había alguna especie de atajo, ahí es cuando descubrí AutoHotKey, donde al escribir “juegos” me abría mi carpeta de juegos. Cuando el primer script funcionó ya no habia vuelta atras podia hacer mis propios atajos, combinaciones de teclas, automatizar tareas, basicamente tenía el poder de crear! <br>-->
+
+Mas allá de lo mencionado debo concentrarme y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio. Ahora mismo estoy buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé que el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end. 
+</p>
+
+
+  <hr>
+  <h3 class="titulo"><span> My projects</span></h3>
+  <br>
+
+  <div class="projects">
+    <div class="columns is-mobile is-centered is-multiline items">
+      <div class="column is-narrow item" id="sabelo-fiuba">
+        <a href="https://alepaff.github.io/sabelo-fiuba/" target="_blank"><span>Sabelo Fiuba</span></a>
+        <!-- First column -->
+      </div>
+      <div class="column is-narrow item" id="lok-events">
+        <!-- Second column -->
+        <a href="https://alepaff.github.io/lok-events" target="_blank"><span>Lok events</span></a>
+      </div>
+      <div class="column is-narrow item" id="fiuba-knowledge">
+        <!-- Third column -->
+        <a href="https://alepaff.github.io/FIUBA-knowledge/" target="_blank"><span>Fiuba Knowledge</span></a>
+      </div>
+      <div class="column is-narrow item" id="lok-treasure-items">
+        <!-- Fourth column -->
+        <a href="https://alepaff.github.io/LOK-Treasure-items/" target="_blank"><span>Lok treasure items</span></a>
+      </div>
+    </div>
+
+
+    <div id="bloque1" class="bloque">
+      <!-- ==== bloque proyectos personales ==== -->
+    </div>
+
+
+
+
+
+
+    <hr>
+    <h3 class="titulo"><span>Académico</span></h3>
+    <br>
+
+    <div class="columns is-mobile is-centered is-multiline items">
+      <div class="column is-narrow item" id="algo3-teg">
+        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">T.E.G</a>
+      </div>
+      <div class="column is-narrow item" id="shell">
+        <a href="https://github.com/AlePaff/TPS-sisop" target="_blank">Solucion MIT Shell en C</a>
+      </div>
+      <div class="column is-narrow item" id="malloc">
+        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Malloc</a>
+      </div>
+      <div class="column is-narrow item" id="sched">
+        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Scheduller</a>
+      </div>
+      <div class="column is-narrow item" id="filesystem">
+        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">File System</a>
+      </div>
+    </div>
+
+
+    <div id="bloque2" class="bloque">
+      <!-- ==== bloque proyectos de la facu ==== -->
+    </div>
+
+  </div>
+
+
+
+</body>
+
+
+<footer>
+  
+  <h5>Contacto</h5>
+    Actualmente buscando trabajo, si quieres contactarme o ver mi trabajo puedes usar algunos de los links de aqui abajo, o si simplemente quieres saludar eres bienvenido a hacerlo! ^_^
+  <div id="links">
     <div class="columns is-mobile is-centered is-multiline">
 
       <div class="column is-narrow">
@@ -51,149 +288,10 @@
     </div>
 
     <!-- <a href="https://docs.google.com/file/d/1dv-JAm9GOebINzoFUO5mB28ix0IvoSfGO9-DqpBUaDc/view">C.V.</a><br> -->
-
-
-
-
-    <hr>
   </div>
 
+<br>Alejandro Paff ©2022
 
-  <div class="projects">
-
-    <div class="columns is-mobile is-centered is-multiline items">
-      <div class="column is-narrow item" id="sabelo-fiuba">
-        <a href="https://alepaff.github.io/sabelo-fiuba/" target="_blank"><span>Sabelo Fiuba</span></a>
-        <!-- First column -->
-      </div>
-      <div class="column is-narrow item" id="lok-events">
-        <!-- Second column -->
-        <a href="https://alepaff.github.io/lok-events" target="_blank"><span>Lok events</span></a>
-      </div>
-      <div class="column is-narrow item">
-        <!-- Third column -->
-        <a href="https://alepaff.github.io/FIUBA-knowledge/" target="_blank"><span>Fiuba Knowledge</span></a>
-      </div>
-      <div class="column is-narrow item">
-        <!-- Fourth column -->
-        <a href="https://alepaff.github.io/LOK-Treasure-items/" target="_blank"><span>Lok treasure items</span></a>
-      </div>
-    </div>
-
-    <br>
-    <div id="bloque1">
-
-      <!-- description -->
-
-
-    </div>
-
-    <script>
-
-      function crear_boton_link(link, desc) {
-        return `<a class="button" href='${link}' target='_blank'><span>${desc}</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:currentColor"><g data-name="Layer 2"><g data-name="external-link"><rect width="24" height="24" opacity="0"></rect><path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z"></path><path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"></path></g></g></svg></a>
-        `
-      }
-
-      function lenguajes(array_lang) {
-        var html = "https://cdn-icons-png.flaticon.com/512/1216/1216733.png";
-        var css = "https://cdn-icons-png.flaticon.com/512/732/732190.png";
-        var js = "https://cdn-icons-png.flaticon.com/512/919/919828.png";
-        // var js = "https://cdn-icons-png.flaticon.com/512/5968/5968292.png";
-        var boostrap = "https://cdn-icons-png.flaticon.com/512/919/919825.png";
-        var total = "<div id='imagenes'>";
-
-        for (let i = 0; i < array_lang.length; i++) {
-          if (array_lang[i] == "html") {
-            total += `<img src='${html}' height='32' width='32' title='HTML'>`;
-          } else if (array_lang[i] == "css") {
-            total += `<img src='${css}' height='32' width='32' title='CSS'>`;
-          } else if (array_lang[i] == "js") {
-            total += `<img src='${js}' height='32' width='32' title='JS'>`;
-          } else if (array_lang[i] == "boostrap") {
-            total += `<img src='${boostrap}' height='32' width='32' title='Boostrap'>`;
-          }
-        }
-        total += "</div>";
-        return total;
-      }
-
-
-      $(document).ready(function () {
-        // $("#bloque1").hide();
-        var bloque1 = document.getElementById("bloque1");
-        $("#bloque1").hide();
-
-        $("#sabelo-fiuba").hover(function () {
-          $("#bloque1").show();
-          //lenguajes, descripcion, links
-          bloque1.innerHTML = "";
-          bloque1.innerHTML += "<div id=img-titulo>" + lenguajes(["html", "css", "js", "boostrap"]) + "<h4>Sabelo Fiuba</h4> </div>";
-          bloque1.innerHTML += "<p>Proyecto de la materia de Taller de Programación I de la FIUBA. Se trata de una página web que permite a los usuario trata de una página web que permite a los usuarioI de la FIUBA. Se trata de una página web que permite a los usuario trata de una página web que permite a los usuarios</p>";
-          bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
-
-        });
-
-        $("#lok-events").hover(function () {
-          $("#bloque1").show();
-          
-          bloque1.innerHTML = "";
-          bloque1.innerHTML += lenguajes(["html", "css", "js"]);
-          bloque1.innerHTML += "<p>Pequeño proyecto para probar como crear tablas dinamicas en Javascript, actualizandose según eventos periódicos de un juego</p>";
-          bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
-        });
-      });
-
-      // var bloque1 = document.getElementById("bloque1");
-      // var sabeloFiuba = document.getElementById("sabelo-fiuba");
-
-      // sabeloFiuba.addEventListener("mouseover", function () {
-      //   bloque1.innerHTML = "<p>Proyecto de la materia de Taller de Programación I de la FIUBA. Se trata de una página web que permite a los usuarios<p>";
-      // });
-
-
-
-
-    </script>
-    <!-- <a href="https://alepaff.github.io/numbers/">Numbers</a><br> -->
-
-
-    <!-- <br><br> -->
-    <hr>
-    <h3 class="titulo"><span>Académico</span></h3>
-
-    <br>
-    <div class="columns is-mobile items is-multiline">
-      <div class="row is-narrow item">
-        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">T.E.G en Java</a>
-      </div>
-      <div class="column is-narrow item">
-        <a href="https://github.com/AlePaff/TPS-sisop" target="_blank">Implementacion de una Shell en C (solucion
-          MIT)</a>
-      </div>
-      <div class="column is-narrow item">
-        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Implementacion de malloc</a>
-      </div>
-      <div class="column is-narrow item">
-        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Implementacion de un sched</a>
-      </div>
-      <div class="column is-narrow item">
-        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Implementacion de un file system</a>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-
-</body>
-
-
-<footer>
-  <!-- link al inicio de la pagina -->
-  <a href="#projects" class="button is-primary is-rounded">Back to top</a>
 </footer>
 
 </html>
