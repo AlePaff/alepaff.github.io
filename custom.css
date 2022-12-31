@@ -1,17 +1,13 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-html {
-  /* background-image: linear-gradient(#00FFFF, #00b2b2); */
-  /* background-image: linear-gradient(#00FFFF, #00b2b2);
-  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
-  min-height: 100%; */
-}
+
 
 body{
   text-align: center;
   background-image: linear-gradient(#ffffff, #e7e7e7);
   box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
   min-height: 100%;
+
 }
 
 h3{
@@ -29,11 +25,31 @@ h3{
 
 footer{  
 	padding: 20px;
-	background-color: #1b2932;
+  color: #cfcfcf;
 	position: relative;
   bottom: 0;  
-  margin-top: 20px;
+  background-color: #1b2932;
+  z-index: 1;
 }
+.triangle {
+  position: absolute;
+  /* para que esté centrado */
+  left: 0%;
+  bottom: 0;
+  /* triangulo ligeramente transparente (ultimos dos nros hexa) */
+  background-color: #ffffff0C;
+  width: 100%;
+  height: 3em;
+  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+  /* clip-path: polygon(0 0, 50% 100%, 100% 0, 100% 100%, 0 100%);    |\/| */
+  /* custom poligon https://bennettfeely.com/clippy/ */
+}
+
+
+
+
+
+
 
 
 #links > .columns .column{
@@ -85,10 +101,18 @@ hr {
 
 
 
-.titulo {
-  /* texto centrado y que ocupe todo el ancho */
+
+#titulo-contacto{
   text-align: center;
   width:100%;
+  /* subrayado con un skew de 10 grados */
+}
+
+/* texto centrado y que ocupe todo el ancho */
+.titulo {
+  text-align: center;
+  width:100%;
+  padding: 20px 0px 20px 0px;
   /* height: 100%; */
 }
 
@@ -106,6 +130,8 @@ hr {
 
 .llenar-color{
   transition: all 0.025s linear;
+  /* background-color: #6fbcd3; */
+  filter: invert(50%) sepia(8%) saturate(22%) hue-rotate(344deg) brightness(94%) contrast(88%);
 }
 .llenar-color:hover{
   /* background-color: #6fbcd3; */
@@ -187,3 +213,7 @@ hr {
   font-size: 20px;
   font-weight: bold;
 }
+
+
+
+
