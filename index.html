@@ -25,19 +25,20 @@
 
     //devuelve un html de una array de lenguajes (ej. ["html", "css", "js"] devuelve un html con los iconos de los lenguajes)
     function lenguajes(array_lang) {
-      var html = "https://cdn-icons-png.flaticon.com/512/1216/1216733.png";
-      var css = "https://cdn-icons-png.flaticon.com/512/732/732190.png";
-      var js = "https://cdn-icons-png.flaticon.com/512/919/919828.png";
-      // var js = "https://cdn-icons-png.flaticon.com/512/5968/5968292.png";
-      var boostrap = "https://getbootstrap.com/docs/5.3/assets/img/favicons/favicon-32x32.png";
-      // var boostrap_alt = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/512px-Bootstrap_logo.svg.png";
-      var isotope = "https://isotope.metafizzy.co/favicon.ico";
-      var python = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/438px-Python-logo-notext.svg.png";
-      var jquery = "https://fernando-herrera.com/logros/assets/medallas/jquery.png";
-      var c = "https://cdn.worldvectorlogo.com/logos/c-1.svg";
-      // var gitflow_alt = "https://cdn.iconscout.com/icon/free/png-256/social-285-116319.png";
-      var gitflow = "https://cdn.iconscout.com/icon/free/png-256/social-285-116319.png";
-      var java = "https://cdn.iconscout.com/icon/free/png-256/java-43-569305.png";
+      // var html = "https://cdn-icons-png.flaticon.com/512/1216/1216733.png";
+      var html = "icons/html5.png";
+      var css = "icons/css.png";
+      var js = "icons/js.png";
+      // var js = "./icons/js_alt.png";
+      var boostrap = "icons/boostrap.png";
+      // var boostrap_alt = ".icons/boostrap_alt.png";
+      var isotope = "icons/isotope.ico";
+      var python = "icons/python.png";
+      var jquery = "icons/jquery.png";
+      var c = "icons/c.svg";
+      // var gitflow_alt = "icons/gitflow_alt.png";
+      var gitflow = "icons/gitflow.png";
+      var java = "icons/java.png";
 
       var total = "<div id='imagenes'>";
 
@@ -74,31 +75,36 @@
       var bloque2 = document.getElementById("bloque2");
 
       //por default se muestra el primer item
+      $("#bloque1").show();
+      $("#bloque2").show();
+      bloque1.innerHTML = "";
+      bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "boostrap"]) + "<h4>Sabelo Fiuba</h4> </div>";
+      bloque1.innerHTML += "<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA), intenta unificar todo aquello que está suelto y vale la pena saber que existe.</p>";
+      bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
+      bloque2.innerHTML = "";
+      bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["java", "gitflow"]) + "<h4>T.E.G</h4> </div>";
+      bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la FIUBA, con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
+      bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/nspiguelman/algo3_tp2", "Repo") + `</div>`;
 
-      // $("#bloque2").show();
-      // bloque1.innerHTML = "";
-      // bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "boostrap"]) + "<h4>Sabelo Fiuba</h4> </div>";
-      // bloque1.innerHTML += "<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA), intenta unificar todo aquello que está suelto y vale la pena saber que existe.</p>";
-      // bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
-      // bloque2.innerHTML = "";
-      // bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["java", "gitflow"]) + "<h4>T.E.G</h4> </div>";
-      // bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la FIUBA, con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
-      // bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/nspiguelman/algo3_tp2", "Repo") + `</div>`;
-
-      $("#bloque1").hide();
-      $("#bloque2").hide();
+      // $("#bloque1").hide();
+      // $("#bloque2").hide();
 
       // proyectos propios
       $("#sabelo-fiuba").hover(function () {
+
         $("#bloque1").show();
         //lenguajes, descripcion, links
         bloque1.innerHTML = "";
         bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "boostrap"]) + "<h4>Sabelo Fiuba</h4> </div>";
         bloque1.innerHTML += "<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA), intenta unificar todo aquello que está suelto y vale la pena saber que existe.</p>";
         bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
+
+
       });
 
+
       $("#lok-events").hover(function () {
+
         $("#bloque1").show();
         bloque1.innerHTML = "";
         bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js"]) + "<h4>LOK Events</h4> </div>";
@@ -179,22 +185,41 @@
 
 
 
-  <p>
-    Hola, soy Alejandro, y soy un apasionado por básicamente cualquier tema: desde saber las etimologías de las palabras
-    hasta construir cosas de hierro y madera, conocer el porqué de las cosas, ver que hay una técnica para escribir más
-    rápido así que ir de lleno a aprenderla, hacer ejercicio, tocar el piano, como puedo comunicarme con el otro,
+  <p id="about-me">
+    Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las
+    palabras
+    hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que
+    hay una técnica para escribir más
+    rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro,
     aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme,
-    ver porque me siento mal y cambiarlo, siempre practicar la auto observación
+    ver porque me siento mal y cambiarlo, siempre practicando la introspección.
+    <br>
     <br>
 
     <!-- En mi caso mi camino hacia la programación fué cuando de niño-adolescente tardaba mucho en abrir ciertas carpetas donde guardaba mis cosas así que me pregunté si había alguna especie de atajo, ahí es cuando descubrí AutoHotKey, donde al escribir “juegos” me abría mi carpeta de juegos. Cuando el primer script funcionó ya no habia vuelta atras podia hacer mis propios atajos, combinaciones de teclas, automatizar tareas, basicamente tenía el poder de crear! <br>-->
 
-    Mas allá de lo mencionado debo concentrarme y quiero desarrollarme en mi área (la informatica) y ser un profesional
+    Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un profesional
     en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es
-    construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio. Ahora mismo estoy
+    construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio.
+    <br>
+    Ahora mismo estoy
     buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé que
     el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.
   </p>
+
+
+
+
+
+
+  <!-- <div class="curva-contacto">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path
+      d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+      class="shape-fill"></path>
+  </svg>
+</div>
+ -->
 
 
   <hr>
@@ -269,22 +294,31 @@
 
 
 
+<div class="curva-contacto">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+    <path
+      d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+      class="shape-fill"></path>
+  </svg>
+</div>
+
+
+
+
 <footer>
-
-
-
-
   <h3 id="titulo-contacto">Contacto</h3>
 
+  <span id="texto-contacto">
+    Si quieres contactarme o ver mis otros repositorios puedes usar algunos de <br>los links de aqui, o si simplemente
+    quieres saludar eres más que bienvenido! ^_^
+  </span>
 
-  Actualmente buscando trabajo, si quieres contactarme o ver mi trabajo puedes usar algunos de los links de aqui abajo,
-  o si simplemente quieres saludar eres bienvenido a hacerlo! ^_^
   <div id="links">
     <div class="columns is-mobile is-centered is-multiline">
 
       <div class="column is-narrow">
-        <a href="https://www.linkedin.com/in/alejandro-paff-983a65158/"><svg xmlns="http://www.w3.org/2000/svg"
-            width="32" height="32" title="Linkedin" viewBox="0 0 24 24" target="_blank" class="llenar-color">
+        <a href="https://www.linkedin.com/in/alejandro-paff-983a65158/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg"
+            width="32" height="32" title="Linkedin" viewBox="0 0 24 24" class="llenar-color">
             <path
               d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
             <title>LinkedIn</title>
@@ -308,13 +342,24 @@
     <!-- <a href="https://docs.google.com/file/d/1dv-JAm9GOebINzoFUO5mB28ix0IvoSfGO9-DqpBUaDc/view">C.V.</a><br> -->
   </div>
 
-  <!-- boton para volver al inicio -->
-  <a href="#inicio" class="button is-primary is-rounded" id="boton-inicio">Inicio</a>
-  
 
-  <br><br><br>Alejandro Paff ©2022
-  <div class="triangle"></div>
-  
+  <br><br>
+
+  <!-- icono volver al inicio -->
+  <a href="#inicio" class="button is-primary is-rounded">
+    <div style="width: 0.8em; margin: 0 auto;">
+      <svg xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 320 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->
+        <path
+          d="M177 255.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 351.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 425.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1zm-34-192L7 199.7c-9.4 9.4-9.4 24.6 0 33.9l22.6 22.6c9.4 9.4 24.6 9.4 33.9 0l96.4-96.4 96.4 96.4c9.4 9.4 24.6 9.4 33.9 0l22.6-22.6c9.4-9.4 9.4-24.6 0-33.9l-136-136c-9.2-9.4-24.4-9.4-33.8 0z" />
+      </svg>
+    </div>
+  </a>
+
+  <br><br>
+  Alejandro Paff ©2023
+
+
 </footer>
 
 </html>

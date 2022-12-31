@@ -1,11 +1,13 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-
+/* @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap');
 
 body{
   text-align: center;
-  background-image: linear-gradient(#ffffff, #e7e7e7);
-  box-shadow: inset 0 0 100px hsla(0,0%,0%,.3);
+  /* background-image: linear-gradient(#ffffff, #e7e7e7); */
+  background-image: linear-gradient(#ffffff, #d1d8ff);
+  box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.1);
   min-height: 100%;
 
 }
@@ -24,45 +26,27 @@ h3{
 
 
 footer{  
-	padding: 20px;
+	/* padding: 0 20em 0 20em; */
   color: #cfcfcf;
 	position: relative;
   bottom: 0;  
   background-color: #1b2932;
-  z-index: 1;
+  border-top: thin;
 }
-.triangle {
-  position: absolute;
-  /* para que esté centrado */
-  left: 0%;
-  bottom: 0;
-  /* triangulo ligeramente transparente (ultimos dos nros hexa) */
-  background-color: #ffffff0C;
-  width: 100%;
-  height: 3em;
-  clip-path: polygon(50% 0, 0% 100%, 100% 100%);
-  /* clip-path: polygon(0 0, 50% 100%, 100% 0, 100% 100%, 0 100%);    |\/| */
-  /* custom poligon https://bennettfeely.com/clippy/ */
-}
-
-
-
-
-
-
-
-
-#links > .columns .column{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 
 
 p{
   padding-left:  90px;
   padding-right: 90px;
   font-size: 18px;
+}
+
+
+#about-me{
+  /* font-family: 'Signika Negative', sans-serif; */
+  font-family: 'Signika Negative', sans-serif;
+
+  /* font-size: 28px; */
 }
 
 /* 
@@ -73,7 +57,16 @@ hr {
   width: 70%;
 } */
 
-/* items a cada uno de los proyectos */
+
+/* gap de 1 pixel entre cada div cuando se hace zoom, ni idea porque
+div{
+  margin: -1px;
+} */
+
+
+
+
+/* ==== items a cada uno de los proyectos ==== */
 .projects .item{
   /* background-color: #d67e7e; */
   background-color: #76c6da;
@@ -83,6 +76,12 @@ hr {
 .item:hover{
   background-color: #b9ff68;
 }
+
+.hovered{
+  background-color: #b9ff68;
+}
+
+
 
 .item > a{
   color: #1b2932;
@@ -100,7 +99,37 @@ hr {
 
 
 
+/* ==== contacto ==== */
+/* curva separadora de footer 
+obtenida de https://www.shapedivider.app/
+*/
+.curva-contacto {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
 
+.curva-contacto svg {
+  position: relative;
+  display: block;
+  width: calc(119% + 1.3px);
+  height: 41px;
+  transform: rotateY(180deg);
+}
+.curva-contacto .shape-fill {
+  fill: #1b2932;
+}
+
+
+/* iconos seccion contacto */
+#links > .columns .column{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 #titulo-contacto{
   text-align: center;
@@ -108,7 +137,9 @@ hr {
   /* subrayado con un skew de 10 grados */
 }
 
-/* texto centrado y que ocupe todo el ancho */
+
+
+/* ==== titulos ==== */
 .titulo {
   text-align: center;
   width:100%;
@@ -128,6 +159,8 @@ hr {
 }
 
 
+
+/* ==== iconos png/svg/etc ==== */
 .llenar-color{
   transition: all 0.025s linear;
   /* background-color: #6fbcd3; */
@@ -146,7 +179,7 @@ hr {
 
 
 
-
+/* ==== descripcion para cada item ==== */
 .bloque{
   /* background-color: #c9c9c9; */
   background-color: #ffffff;
@@ -166,24 +199,11 @@ hr {
   padding: 5px;
 
 }
-
 .bloque #imagenes{
   /* background-color: #1b2932; */
   display: flex;
   flex-direction: row;
   gap: 5px; 
-
-
-  /* align-items: stretch; */
-  /* justify-content: flex-start; */
-  /* box-sizing: border-box; */
-
-  /* margin-top: -10px; */
-  
-  /* border-radius: 10px 40px; */
-  /* margin-left: 0%; */
-  /* position: relative; */
-  /* text-align: left; */
 }
 .bloque p{
   padding: 10px;
@@ -207,7 +227,7 @@ hr {
   /* margin-left: 85%; */
 }
 
-/* solucionar: no debe ser con margin sino que tome de referencia el wraper img-titulo completo */
+/* TODO: no debe ser con margin sino que tome de referencia el wraper img-titulo completo */
 .bloque .wrapper-img-titulo h4{
   margin-right: 45%;
   font-size: 20px;
