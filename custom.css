@@ -6,7 +6,8 @@
 body{
   text-align: center;
   /* background-image: linear-gradient(#ffffff, #e7e7e7); */
-  background-image: linear-gradient(#ffffff, #d1d8ff);
+  /* background-image: linear-gradient(#ffffff, #d1d8ff); */
+  background-image: linear-gradient(#d8dbf3, #edfafb);
   box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.1);
   min-height: 100%;
   z-index: 0;
@@ -47,6 +48,7 @@ p{
   font-family: 'Signika Negative', sans-serif;
   position: relative;
   z-index: 2;
+  color: rgb(100, 100, 100);
   /* font-size: 28px; */
 }
 
