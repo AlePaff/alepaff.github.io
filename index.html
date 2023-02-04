@@ -39,6 +39,8 @@
       // var gitflow_alt = "icons/gitflow_alt.png";
       var gitflow = "icons/gitflow.png";
       var java = "icons/java.png";
+      var chakra = "icons/chakra.png";
+      var react = "icons/react.ico";
 
       var total = "<div id='imagenes'>";
 
@@ -63,10 +65,18 @@
           total += `<img src='${gitflow}' height='32' width='32' title='Uso destacable de Git'>`;
         } else if (array_lang[i] == "java") {
           total += `<img src='${java}' height='32' width='32' title='Java'>`;
+        } else if (array_lang[i] == "chakra") {
+          total += `<img src='${chakra}' height='32' width='32' title='Chakra UI'>`;
+        } else if (array_lang[i] == "react") {
+          total += `<img src='${react}' height='32' width='32' title='React'>`;
         }
       }
       total += "</div>";
       return total;
+    }
+
+    function fiubaSpan(){
+      return `<span title="Facultad de Ingeniería de la Universidad de Buenos Aires"><u>FIUBA</u></span>`;
     }
 
     //jquery para el hover sobre los items
@@ -78,12 +88,12 @@
       $("#bloque1").show();
       $("#bloque2").show();
       bloque1.innerHTML = "";
-      bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "boostrap"]) + "<h4>Sabelo Fiuba</h4> </div>";
-      bloque1.innerHTML += "<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA), intenta unificar todo aquello que está suelto y vale la pena saber que existe.</p>";
+      bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["react", "chakra", "css", "js"]) + "<h4>Sabelo Fiuba</h4> </div>";
+      bloque1.innerHTML += `<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la ` + fiubaSpan() + `. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y la de Google Analytics para saber la cantidad de visitas.</p>`;
       bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
       bloque2.innerHTML = "";
       bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["java", "gitflow"]) + "<h4>T.E.G</h4> </div>";
-      bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la FIUBA, con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
+      bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la " + fiubaSpan() + ", con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
       bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/nspiguelman/algo3_tp2", "Repo") + `</div>`;
 
       // $("#bloque1").hide();
@@ -95,8 +105,8 @@
         $("#bloque1").show();
         //lenguajes, descripcion, links
         bloque1.innerHTML = "";
-        bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "boostrap"]) + "<h4>Sabelo Fiuba</h4> </div>";
-        bloque1.innerHTML += "<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA), con el objetivo de facilitar al estudiante a conseguir estos recursos, unificando todo aquello que está suelto y vale la pena saber que existe.</p>";
+        bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["react", "chakra", "css", "js"]) + "<h4>Sabelo Fiuba</h4> </div>";
+        bloque1.innerHTML += `<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la ` + fiubaSpan() + `. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y la de Google Analytics para saber la cantidad de visitas.</p>`;
         bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
 
 
@@ -116,7 +126,7 @@
         $("#bloque1").show();
         bloque1.innerHTML = "";
         bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "js", "python"]) + "<h4>Fiuba Knowledge</h4> </div>";
-        bloque1.innerHTML += "<p>Pequeño proyecto para la recopilación de temas que se ven en cada materia de la Facultad de Ingeniería de la Universidad de Buenos Aires, aqui aprendí como hacer scraping de datos desde pdfs para luego procesarlos utilizando un módulo de Python y presentarlos en la web</p>";
+        bloque1.innerHTML += "<p>Pequeño proyecto para la recopilación de temas que se ven en cada materia de la " + fiubaSpan() + ", aqui aprendí como hacer scraping de datos desde pdfs para luego procesarlos utilizando un módulo de Python y presentarlos en la web</p>";
         bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/FIUBA-knowledge/", "Demo") + crear_boton_link("https://github.com/AlePaff/FIUBA-knowledge", "Repo") + `</div>`;
       });
 
@@ -135,7 +145,7 @@
         $("#bloque2").show();
         bloque2.innerHTML = "";
         bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["java", "gitflow"]) + "<h4>T.E.G</h4> </div>";
-        bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la FIUBA, con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
+        bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la " + fiubaSpan() + ", con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
         bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/nspiguelman/algo3_tp2", "Repo") + `</div>`;
       });
 
@@ -143,7 +153,7 @@
         $("#bloque2").show();
         bloque2.innerHTML = "";
         bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c"]) + "<h4>Shell</h4> </div>";
-        bloque2.innerHTML += "<p>Implementación en C de un interprete de comandos <a href='https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica)'>Shell</a> con las funcionalidades minimas para Unix similar a bash, zsh y fish para la materia Sistemas Operativos de la FIUBA.</p>";
+        bloque2.innerHTML += "<p>Implementación en C de un interprete de comandos <a href='https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica)'>Shell</a> con las funcionalidades minimas para Unix similar a bash, zsh y fish para la materia Sistemas Operativos de la " + fiubaSpan() + ".</p>";
         bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-shell", "Repo") + `</div>`;
       });
 
@@ -151,7 +161,7 @@
         $("#bloque2").show();
         bloque2.innerHTML = "";
         bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>Malloc</h4> </div>";
-        bloque2.innerHTML += "<p>Implementación del manejo del heap de las funciones malloc(), calloc(), realloc(), free() de la librería estandar de C para la administración de memoria para la materia Sistemas Operativos de la FIUBA.</p>";
+        bloque2.innerHTML += "<p>Implementación del manejo del heap de las funciones malloc(), calloc(), realloc(), free() de la librería estandar de C para la administración de memoria para la materia Sistemas Operativos de la " + fiubaSpan() + ".</p>";
         bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-malloc", "Repo") + `</div>`;
       });
 
@@ -159,7 +169,7 @@
         $("#bloque2").show();
         bloque2.innerHTML = "";
         bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>Scheduller</h4> </div>";
-        bloque2.innerHTML += "<p>Solución al <a href='https://pdos.csail.mit.edu/6.828/2017/index.html'>exokernel JOS del MIT</a> de licencia libre para la implementación del cambio de contexto para procesos y scheduler/planificador sobre un sistema operativo preexistente, utilizando una modificación del algoritmo MLFQ para la materia Sistemas Operativos de la FIUBA.</p>";
+        bloque2.innerHTML += "<p>Solución al <a href='https://pdos.csail.mit.edu/6.828/2017/index.html'>exokernel JOS del MIT</a> de licencia libre para la implementación del cambio de contexto para procesos y scheduler/planificador sobre un sistema operativo preexistente, utilizando una modificación del algoritmo MLFQ para la materia Sistemas Operativos de la " + fiubaSpan() + ".</p>";
         bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-sched", "Repo") + `</div>`;
       });
 
@@ -168,7 +178,7 @@
         $("#bloque2").show();
         bloque2.innerHTML = "";
         bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>File System</h4> </div>";
-        bloque2.innerHTML += "<p>Implementación de un sistema de archivo para Linux, utilizando el mecanismo <a href='https://en.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> provisto por el kernel para la materia Sistemas Operativos de la FIUBA.</p>";
+        bloque2.innerHTML += "<p>Implementación de un sistema de archivo para Linux, utilizando el mecanismo <a href='https://en.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> provisto por el kernel para la materia Sistemas Operativos de la " + fiubaSpan() + ".</p>";
         bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-filesystem", "Repo") + `</div>`;
       });
 
