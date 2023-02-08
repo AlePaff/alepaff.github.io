@@ -51,6 +51,7 @@ p{
   position: relative;
   z-index: 2;
   color: white;
+  text-align: left;
   /* font-size: 28px; */
 }
 
