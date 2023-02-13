@@ -16,6 +16,7 @@ body{
   box-shadow: inset 0 0 0 1000px rgba(255,255,255,0.1);
   min-height: 100%;
   z-index: 0;
+  color: #242424;
 }
 
 h3{
@@ -29,6 +30,8 @@ h3{
   color: #1b2932;
   font-size: 15px;
   font-weight: bold;
+  padding: 5px;
+  z-index: 2;
 }
 
 
@@ -39,25 +42,25 @@ footer{
   bottom: 0;  
   background-color: #1b2932;
   height: 100%;
+  z-index: 2;
 }
 
 
-p{
-  padding-left:  90px;
-  padding-right: 90px;
-  font-size: 18px;
-}
 
 
 #about-me{
-  /* font-family: 'Signika Negative', sans-serif; */
-  font-family: 'Nunito';
   position: relative;
   z-index: 2;
-  color: white;
-  text-align: left;
+}
+#about-me > p{
+  /* font-family: 'Signika Negative', sans-serif; */
+  font-family: 'Nunito';
   background-color: #9ec0c5;
-  /* font-size: 28px; */
+  margin: 20px 90px 50px 90px;
+  padding: 25px;
+  border-radius: 15px;
+  font-size: 18px;
+  text-align: center;
 }
 
 
@@ -111,10 +114,10 @@ hr {
 }
 
 
-/* gap de 1 pixel entre cada div cuando se hace zoom, ni idea porque
-div{
+/* gap de 1 pixel entre cada div cuando se hace zoom, ni idea porque */
+footer{
   margin: -1px;
-} */
+} 
 
 
 
@@ -166,6 +169,7 @@ obtenida de https://www.shapedivider.app/
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+  z-index: 2;
 }
 
 .curva-contacto svg {
@@ -184,7 +188,6 @@ obtenida de https://www.shapedivider.app/
 #links-footer > .columns .column{
   margin-top: 10px;
   margin-bottom: 10px;
-  
 }
 .columns,.is-mobile,.is-centered,.is-multiline{
   width: 100%;
@@ -201,7 +204,7 @@ obtenida de https://www.shapedivider.app/
 .titulo {
   text-align: center;
   width:100%;
-  padding: 20px 0px 30px 0px;
+  padding: 20px 0px 10px 0px;
   /* height: 100%; */
 }
 
@@ -273,8 +276,8 @@ obtenida de https://www.shapedivider.app/
 #links{
   display: flex; 
   justify-content: right;
+  gap: 5px;
 }
-
 
 .bloque .wrapper-img-titulo{
   display: flex;
