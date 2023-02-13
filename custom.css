@@ -98,13 +98,13 @@ p{
 }
 
 
-/* 
+
 hr {
   display: inline-block;
   border-style: inset;
   border-width: 2px;
   width: 70%;
-} */
+}
 
 
 /* gap de 1 pixel entre cada div cuando se hace zoom, ni idea porque
