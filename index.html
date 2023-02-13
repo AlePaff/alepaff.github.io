@@ -79,6 +79,8 @@
           total += `<img src='${chakra}' height='32' width='32' title='Chakra UI'>`;
         } else if (array_lang[i] == "react") {
           total += `<img src='${react}' height='32' width='32' title='React'>`;
+        } else if (array_lang[i] == "sass") {
+          total += `<img src='icons/sass.png' height='32' width='32' title='Sass'>`;
         }
       }
       total += "</div>";
@@ -146,6 +148,14 @@
         bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "jquery", "isotope", "boostrap"]) + "<h4>LOK Treasure Items</h4> </div>";
         bloque1.innerHTML += "<p>Web para ordenar y filtrar items de League of Kingdoms (LOK) de acuerdo a sus habilidades, power-ups, grados, etc. Se utilizó una librería de js para crear el grid y la logica. Los datos se obtuvieron del juego oficial.</p>";
         bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/LOK-Treasure-items/", "Demo") + crear_boton_link("https://github.com/AlePaff/LOK-Treasure-items", "Repo") + `</div>`;
+      });
+
+      $("#donut-knowledge").hover(function () {
+        $("#bloque1").show();
+        bloque1.innerHTML = "";
+        bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["sass", "js", "jquery"]) + "<h4>Donut Knowledge</h4> </div>";
+        bloque1.innerHTML += "<p>Mapa interactivo de infografías para visualizar ramas complejas de la ciencia y el conocimiento en general. Utilizando la librería <a href='http://www.outsharked.com/imagemapster/' target='_blank'>ImageMapster</a>, y <a href='https://sass-lang.com/' target='_blank'>Sass</a> para el diseño.</p>";
+        bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/the-donut-of-knowledge-map/", "Demo") + crear_boton_link("https://github.com/AlePaff/the-donut-of-knowledge-map", "Repo") + `</div>`;
       });
 
 
@@ -221,32 +231,46 @@
         d="M52.8,-65.4C64.4,-53.3,66.8,-32.7,67.8,-13.9C68.7,4.9,68.2,22,60.9,35.8C53.6,49.6,39.7,60.1,23.7,66.6C7.7,73.1,-10.4,75.6,-23.9,69.1C-37.4,62.7,-46.4,47.3,-55.3,31.9C-64.2,16.5,-72.9,1,-73.1,-15.5C-73.3,-32,-64.8,-49.5,-51.2,-61.3C-37.5,-73.2,-18.8,-79.2,0.9,-80.3C20.6,-81.4,41.3,-77.6,52.8,-65.4Z"
         transform="translate(100 100)" />
     </svg>
+  </div>
 
+  <div id="blob-3">
+    <svg viewBox="0 0 100 100" width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+      <path fill="none"
+        d="M22.5,-28.6C27.6,-22.5,29.2,-14,30.7,-5.5C32.1,3,33.3,11.5,30.1,17.9C27,24.3,19.5,28.6,11.8,30.6C4.1,32.6,-3.7,32.3,-10.1,29.3C-16.5,26.3,-21.5,20.8,-25.8,14.4C-30.2,7.9,-34,0.6,-33,-6C-32.1,-12.6,-26.3,-18.6,-20,-24.6C-13.7,-30.5,-6.9,-36.5,0.9,-37.6C8.7,-38.7,17.3,-34.8,22.5,-28.6Z"
+        transform="translate(50 50)">
+      </path>
+    </svg>
   </div>
 
 
-  <p id="about-me">
-    Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las
-    palabras
-    hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que
-    hay una técnica para escribir más
-    rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro,
-    aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme,
-    ver porque me siento mal y cambiarlo, siempre practicando la introspección.
-    <br>
-    <br>
 
-    <!-- En mi caso mi camino hacia la programación fué cuando de niño-adolescente tardaba mucho en abrir ciertas carpetas donde guardaba mis cosas así que me pregunté si había alguna especie de atajo, ahí es cuando descubrí AutoHotKey, donde al escribir “juegos” me abría mi carpeta de juegos. Cuando el primer script funcionó ya no habia vuelta atras podia hacer mis propios atajos, combinaciones de teclas, automatizar tareas, basicamente tenía el poder de crear! <br>-->
+    <p id="about-me">
+      Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las
+      palabras
+      hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver
+      que
+      hay una técnica para escribir más
+      rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro,
+      aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme,
+      estresarme,
+      ver porque me siento mal y cambiarlo, siempre practicando la introspección.
+      <br>
+      <br>
 
-    Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un profesional
-    en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es
-    construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio.
-    <br><br>
-    Ahora mismo estoy
-    buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé que
-    el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.
+      <!-- En mi caso mi camino hacia la programación fué cuando de niño-adolescente tardaba mucho en abrir ciertas carpetas donde guardaba mis cosas así que me pregunté si había alguna especie de atajo, ahí es cuando descubrí AutoHotKey, donde al escribir “juegos” me abría mi carpeta de juegos. Cuando el primer script funcionó ya no habia vuelta atras podia hacer mis propios atajos, combinaciones de teclas, automatizar tareas, basicamente tenía el poder de crear! <br>-->
+
+      Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un
+      profesional
+      en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es
+      construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio.
+      <br><br>
+      Ahora mismo estoy
+      buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé
+      que
+      el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.
+
+   
   </p>
-
 
 
 
@@ -265,8 +289,8 @@
   <hr>
   <h3 class="titulo"><span> My projects</span></h3>
 
-
   <div class="projects">
+
     <div class="columns is-mobile is-centered is-multiline items">
       <div class="column is-narrow item" id="sabelo-fiuba">
         <a href="https://alepaff.github.io/sabelo-fiuba/" target="_blank"><span>Sabelo Fiuba</span></a>
@@ -284,47 +308,49 @@
         <!-- Fourth column -->
         <a href="https://alepaff.github.io/LOK-Treasure-items/" target="_blank"><span>Lok treasure items</span></a>
       </div>
+      <div class="column is-narrow item" id="donut-knowledge">
+        <!-- Fifth column -->
+        <a href="https://alepaff.github.io/the-donut-of-knowledge-map/" target="_blank"><span>Donut knowledge</span></a>
+      </div>
+
+      <div id="bloque1" class="bloque">
+        <!-- ==== bloque proyectos personales ==== -->
+      </div>
+
+
+
+
+
+      <hr>
+      <h3 class="titulo"><span>Académico</span></h3>
+
+
+      <div class="columns is-mobile is-centered is-multiline items">
+        <div class="column is-narrow item" id="algo3-teg">
+          <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">T.E.G</a>
+        </div>
+        <div class="column is-narrow item" id="shell">
+          <a href="https://github.com/AlePaff/TPS-sisop" target="_blank">Solucion MIT Shell en C</a>
+        </div>
+        <div class="column is-narrow item" id="malloc">
+          <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Malloc</a>
+        </div>
+        <div class="column is-narrow item" id="sched">
+          <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Scheduller</a>
+        </div>
+        <div class="column is-narrow item" id="filesystem">
+          <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">File System</a>
+        </div>
+      </div>
+
+
+      <div id="bloque2" class="bloque">
+        <!-- ==== bloque proyectos de la facu ==== -->
+      </div>
+
     </div>
 
-
-    <div id="bloque1" class="bloque">
-      <!-- ==== bloque proyectos personales ==== -->
-    </div>
-
-
-
-
-
-    <hr>
-    <h3 class="titulo"><span>Académico</span></h3>
-
-
-    <div class="columns is-mobile is-centered is-multiline items">
-      <div class="column is-narrow item" id="algo3-teg">
-        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">T.E.G</a>
-      </div>
-      <div class="column is-narrow item" id="shell">
-        <a href="https://github.com/AlePaff/TPS-sisop" target="_blank">Solucion MIT Shell en C</a>
-      </div>
-      <div class="column is-narrow item" id="malloc">
-        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Malloc</a>
-      </div>
-      <div class="column is-narrow item" id="sched">
-        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Scheduller</a>
-      </div>
-      <div class="column is-narrow item" id="filesystem">
-        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">File System</a>
-      </div>
-    </div>
-
-
-    <div id="bloque2" class="bloque">
-      <!-- ==== bloque proyectos de la facu ==== -->
-    </div>
-
-  </div>
-
-  <br>
+    <br>
 
 </body>
 

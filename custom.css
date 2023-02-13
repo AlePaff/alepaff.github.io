@@ -56,7 +56,7 @@ p{
 }
 
 
-/* ==== blobs y formas ==== https://www.blobmaker.app/*/
+/* ==== blobs y formas ==== https://www.blobmaker.app/ */
 #blob-1{
   position: absolute;
   top: 0;
@@ -83,6 +83,20 @@ p{
   fill: rgb(140 171 175);
 }
 
+#blob-3{
+  position: absolute;
+  top: 43em;
+  right: -12em;
+  z-index: 1;
+}
+#blob-3 svg path{
+  /* fill: #8cabaf; */
+  stroke-dasharray: 2 3;
+  stroke-width: 0.5;
+  /* stroke: black; */
+  stroke: #8cabaf;
+}
+
 
 /* 
 hr {
@@ -102,7 +116,9 @@ div{
 
 
 /* ==== items a cada uno de los proyectos ==== */
+
 .projects .item{
+  z-index: 2;
   /* background-color: #d67e7e; */
   background-color: #76c6da;
   border-radius: 15px;
@@ -217,6 +233,7 @@ obtenida de https://www.shapedivider.app/
 
 /* ==== descripcion para cada item ==== */
 .bloque{
+  z-index: 2;
   /* background-color: #c9c9c9; */
   /* background-color: #ffffff; */
   background-color: #9ec0c5;
