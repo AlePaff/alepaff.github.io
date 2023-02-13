@@ -3,6 +3,10 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Nunito');
 
+html{
+  background-color: #1b2932;
+}
+
 body{
   text-align: center;
   /* background-image: linear-gradient(#ffffff, #e7e7e7); */
@@ -34,7 +38,7 @@ footer{
 	position: relative;
   bottom: 0;  
   background-color: #1b2932;
-  border-top: thin;
+  height: 100%;
 }
 
 
@@ -52,20 +56,23 @@ p{
   z-index: 2;
   color: white;
   text-align: left;
+  background-color: #9ec0c5;
   /* font-size: 28px; */
 }
 
 
 /* ==== blobs y formas ==== https://www.blobmaker.app/ */
-#blob-1{
+.blob{
   position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+
+#blob-1{
   top: 0;
   right: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 1;
   /* para que funciona z-index se deben cumplir https://dev.to/ibn_abubakre/why-your-z-index-isn-t-working-i6j */
-  /* opacity: 0.5; */
+  /* corta cuando salga del contenedor */
 }
 #blob-1 svg path{
   /* fill: rgb(241, 252, 253); */
@@ -73,7 +80,6 @@ p{
 }
 
 #blob-2{
-  position: absolute;
   top: 15em;
   left: -11em;
   /* opacity: 0.5; */
@@ -84,10 +90,8 @@ p{
 }
 
 #blob-3{
-  position: absolute;
-  top: 43em;
-  right: -12em;
-  z-index: 1;
+  top: 59em;
+  right: 0;
 }
 #blob-3 svg path{
   /* fill: #8cabaf; */
@@ -177,9 +181,13 @@ obtenida de https://www.shapedivider.app/
 
 
 /* iconos seccion contacto */
-#links > .columns .column{
+#links-footer > .columns .column{
   margin-top: 10px;
   margin-bottom: 10px;
+  
+}
+.columns,.is-mobile,.is-centered,.is-multiline{
+  width: 100%;
 }
 
 #titulo-contacto{
@@ -189,12 +197,11 @@ obtenida de https://www.shapedivider.app/
 }
 
 
-
 /* ==== titulos ==== */
 .titulo {
   text-align: center;
   width:100%;
-  padding: 20px 0px 20px 0px;
+  padding: 20px 0px 30px 0px;
   /* height: 100%; */
 }
 
@@ -263,15 +270,11 @@ obtenida de https://www.shapedivider.app/
   padding: 10px;
 }
 
-.bloque #links{
-  
+#links{
   display: flex; 
-  flex-direction: row;
-  /* align-items: flex-end; */
-  justify-content: flex-end;
-  /* margin-left: 85%; */
-  gap: 10px; 
+  justify-content: right;
 }
+
 
 .bloque .wrapper-img-titulo{
   display: flex;
@@ -287,6 +290,3 @@ obtenida de https://www.shapedivider.app/
   font-size: 20px;
   font-weight: bold;
 }
-
-
-
