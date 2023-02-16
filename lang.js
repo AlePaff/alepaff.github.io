@@ -1,33 +1,26 @@
 let lang_select = ["en", "es"]
 
+// En mi caso mi camino hacia la programación fué cuando de niño-adolescente tardaba mucho en abrir ciertas carpetas donde guardaba mis cosas así que me pregunté si había alguna especie de atajo, ahí es cuando descubrí AutoHotKey, donde al escribir “juegos” me abría mi carpeta de juegos. Cuando el primer script funcionó ya no habia vuelta atras podia hacer mis propios atajos, combinaciones de teclas, automatizar tareas, basicamente tenía el poder de crear! <br>
+
+
 let LANG_TRANSLATION = {
     "boton-idioma": { "en": "Spanish", "es": "Ingles" },
     "about-me-title": { "en": "About me", "es": "About me" },
     "about-me": {
-        "es": `Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las
-        palabras
-        hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver
-        que
-        hay una técnica para escribir más
-        rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro,
-        aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme,
-        estresarme,
-        ver porque me siento mal y cambiarlo, siempre practicando la introspección.
-        <br>
-        <br>
-  
-        <!-- En mi caso mi camino hacia la programación fué cuando de niño-adolescente tardaba mucho en abrir ciertas carpetas donde guardaba mis cosas así que me pregunté si había alguna especie de atajo, ahí es cuando descubrí AutoHotKey, donde al escribir “juegos” me abría mi carpeta de juegos. Cuando el primer script funcionó ya no habia vuelta atras podia hacer mis propios atajos, combinaciones de teclas, automatizar tareas, basicamente tenía el poder de crear! <br>-->
-  
-        Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un
-        profesional
-        en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es
-        construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio.
+        "es": `Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección.
+        <br><br>  
+        Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio.
         <br><br>
-        Ahora mismo estoy
-        buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé
-        que
-        el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.`,
-        "en": `Hi, I'm Alejandro, and I'm a <i>passionate</i> about basically any topic: from knowing the etymologies of the words`
+        Ahora mismo estoy buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé que el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.`,
+       
+        "en":
+        `
+        Hi, I'm Alejandro, and I'm a <i>passionate</i> for basically any subject: from knowing the etymologies of words to building things out of iron and wood... exercising, playing the piano, knowing the why of things, seeing that there is a technique to write faster so going all out to learn it, how I can communicate with the other, learning many languages, helping, teaching, being with friends and cousins, always laughing a lot, getting depressed, stressed, seeing why I feel bad and changing it, always practicing introspection.
+        <br><br>
+        Beyond the above mentioned I have to focus, and I want to develop myself in my area (computer science) and be a professional in this discipline. I have a special interest in web development, I discovered how fun and exciting it is to build useful sites available to everyone like the ones you will see in this portfolio.
+        <br><br>
+        Right now I am looking for a junior developer position to start my career and work among professionals, I know the road is long but I want to know and learn the technologies of this area, in particular, front end.
+        `
     },
     "projects-title": { "en": "Projects", "es": "Proyectos" },
     "academic-title": { "en": "Academic", "es": "Academico" },
@@ -97,12 +90,12 @@ let PROJECTS = {
         "link_web": "https://alepaff.github.io/the-donut-of-knowledge-map/",
         "link_repo": "https://github.com/AlePaff/the-donut-of-knowledge-map"
     },
-    
+
 
 
 
     //academicos
-    "algo3-teg":{
+    "algo3-teg": {
         "type": "academic",
         "name": "T.E.G",
         "prog_langs": ["java", "gitflow"],
@@ -113,7 +106,7 @@ let PROJECTS = {
         "link_web": "",
         "link_repo": "https://github.com/nspiguelman/algo3_tp2"
     },
-    "shell":{
+    "shell": {
         "type": "academic",
         "name": "Shell",
         "prog_langs": ["c"],
@@ -124,7 +117,7 @@ let PROJECTS = {
         "link_web": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-shell"
     },
-    "malloc":{
+    "malloc": {
         "type": "academic",
         "name": "Malloc",
         "prog_langs": ["c", "gitflow"],
@@ -135,7 +128,7 @@ let PROJECTS = {
         "link_web": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-malloc"
     },
-    "sched":{
+    "sched": {
         "type": "academic",
         "name": "Scheduller",
         "prog_langs": ["c", "gitflow"],
@@ -146,7 +139,7 @@ let PROJECTS = {
         "link_web": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-sched"
     },
-    "filesystem":{
+    "filesystem": {
         "type": "academic",
         "name": "File System",
         "prog_langs": ["c", "gitflow"],
@@ -159,3 +152,12 @@ let PROJECTS = {
     }
 }
 
+
+let LINKS = {
+    "cv": {
+        "es": "https://docs.google.com/file/d/1dv-JAm9GOebINzoFUO5mB28ix0IvoSfGO9-DqpBUaDc/view",
+        "en": "https://docs.google.com/document/d/1jylLBqreWfapL869we9bD8n83WwKzNEDmMU5yIB6DrI/view"
+    },
+    "linkedin": "https://www.linkedin.com/in/alejandro-paffetti-0b0b3b1a3/",
+    "github": "https://github.com/AlePaff/"
+}

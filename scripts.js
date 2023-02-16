@@ -6,8 +6,8 @@ function crear_boton_link(link, desc) {
 
 function fiubaSpan(lang) {
   let acronimos = {
-    "es": {"FIUBA": "Facultad de Ingeniería de la Universidad de Buenos Aires"},
-    "en": {"FIUBA": "Faculty of Engineering of the University of Buenos Aires"}
+    "es": { "FIUBA": "Facultad de Ingeniería de la Universidad de Buenos Aires" },
+    "en": { "FIUBA": "Faculty of Engineering of the University of Buenos Aires" }
   }
   // return `<span title="Facultad de Ingeniería de la Universidad de Buenos Aires"><u>FIUBA</u></span>`;
   return `<span title="${acronimos[lang]["FIUBA"]}"><u>FIUBA</u></span>`;
@@ -52,7 +52,7 @@ function lenguajes(array_lang) {
     } else if (array_lang[i] == "c") {
       total += `<img src='${c}' height='32' width='32' title='C'>`;
     } else if (array_lang[i] == "gitflow") {
-      total += `<img src='${gitflow}' height='32' width='32' title='Uso destacable de Git'>`;
+      total += `<img src='${gitflow}' height='32' width='32' title='Git'>`;
     } else if (array_lang[i] == "java") {
       total += `<img src='${java}' height='32' width='32' title='Java'>`;
     } else if (array_lang[i] == "chakra") {
@@ -78,9 +78,8 @@ function cargarIdioma(lang) {
 
 
 function cargarBloque(bloque, id, lang) {
-  //evita cargar el bloque de nuevo
+  //evita cargar el bloque de nuevo - TODO: solucion temporal
   if (bloque.innerHTML.includes(PROJECTS[id].name) && bloque.innerHTML.includes(PROJECTS[id].desc[lang])) {
-    // TODO: solucion temporal
     return;
   }
 
@@ -91,8 +90,17 @@ function cargarBloque(bloque, id, lang) {
   bloque.innerHTML += `<div class='links'>` + crear_boton_link(PROJECTS[id].link_web, "Demo") + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
 
   //agregar la clase active al item seleccionado
-  // $(`#${id}`).addClass("active");
-  console.log("AAAAA")
+  // $(`#${id}`).addClass("active");  
+}
+
+
+function cargarInfo(current_lang, bloque1, bloque2) {
+  cargarIdioma(current_lang);
+
+  cargarBloque(bloque1, "sabelo-fiuba", current_lang);
+  cargarBloque(bloque2, "algo3-teg", current_lang);
+
+  $("#link-cv").attr("href", current_lang == "en" ? LINKS["cv"][current_lang] : LINKS["cv"][current_lang]);
 }
 
 $(document).ready(function () {
@@ -107,13 +115,14 @@ $(document).ready(function () {
   //items por default
   $("#bloque1").show();
   $("#bloque2").show();
-  cargarBloque(bloque1, "sabelo-fiuba", current_lang);
-  cargarBloque(bloque2, "algo3-teg", current_lang);
+
+  cargarInfo(current_lang, bloque1, bloque2);
 
 
   // proyectos propios
   $("#sabelo-fiuba").on("mouseenter", function () {
     cargarBloque(bloque1, "sabelo-fiuba", current_lang)
+    // $("#sabelo-fiuba").addClass("active");
   });
   $("#lok-events").hover(function () {
     cargarBloque(bloque1, "lok-events", current_lang)
@@ -148,15 +157,11 @@ $(document).ready(function () {
   });
 
 
-  
+
   //cambiar de idioma
   $("#boton-idioma").on("click", function () {
     current_lang = $("#boton-idioma").data("lang");
     $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
-    console.log(current_lang);
-    cargarIdioma(current_lang);
-
-    cargarBloque(bloque1, "sabelo-fiuba", current_lang);
-    cargarBloque(bloque2, "algo3-teg", current_lang);
+    cargarInfo(current_lang, bloque1, bloque2);
   });
 });
