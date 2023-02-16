@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="es-AR">
+<!-- para que se adapte a cualquier dispositivo - aún no pensé una versión mobile -->
+<!-- <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<meta charset="utf-8" name="viewport">
 
 <head>
   <!-- Google tag (gtag.js) -->
@@ -17,19 +20,23 @@
   <title>AlePaff</title>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="lang.js"></script>
   <script src="scripts.js"></script>
 
   <!-- Boostrap para css -->
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
-  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="styles.css">
 
 </head>
 
 
-<body id="inicio">
 
-  <h3 class="titulo"><span>About me</span></h3>
+<body id="top">
+  <!-- al hacer click me redirije al sitio en ingles/español -->
+  <a id="boton-idioma" data-lang="es" class="button is-primary">Spanish</a>
+
+  <h3 class="titulo"><span id="about-me-title">About me</span></h3>
 
   <div id="blob-1" class="blob">
     <svg viewBox="0 0 50 50" width="300" height="300" xmlns="http://www.w3.org/2000/svg"
@@ -61,104 +68,71 @@
   </div>
 
 
-<div id="about-me">
+  <div class="about-me">
+    <p id="about-me"></p>
+  </div>
+  <br>
 
 
-    <p >
-      Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las
-      palabras
-      hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver
-      que
-      hay una técnica para escribir más
-      rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro,
-      aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme,
-      estresarme,
-      ver porque me siento mal y cambiarlo, siempre practicando la introspección.
-      <br>
-      <br>
-
-      <!-- En mi caso mi camino hacia la programación fué cuando de niño-adolescente tardaba mucho en abrir ciertas carpetas donde guardaba mis cosas así que me pregunté si había alguna especie de atajo, ahí es cuando descubrí AutoHotKey, donde al escribir “juegos” me abría mi carpeta de juegos. Cuando el primer script funcionó ya no habia vuelta atras podia hacer mis propios atajos, combinaciones de teclas, automatizar tareas, basicamente tenía el poder de crear! <br>-->
-
-      Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un
-      profesional
-      en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es
-      construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio.
-      <br><br>
-      Ahora mismo estoy
-      buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé
-      que
-      el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.
-
-   
-  </p>
-</div>
-
-
-
-
-
-  <h3 class="titulo"><span>Proyectos</span></h3>
 
   <div class="projects">
+
+    <h3 class="titulo"><span id="projects-title">Proyectos</span></h3>
 
     <div class="columns is-mobile is-centered is-multiline items">
       <div class="column is-narrow item" id="sabelo-fiuba">
         <a href="https://alepaff.github.io/sabelo-fiuba/" target="_blank"><span>Sabelo Fiuba</span></a>
-        <!-- First column -->
       </div>
       <div class="column is-narrow item" id="lok-events">
-        <!-- Second column -->
         <a href="https://alepaff.github.io/lok-events" target="_blank"><span>Lok events</span></a>
       </div>
       <div class="column is-narrow item" id="fiuba-knowledge">
-        <!-- Third column -->
         <a href="https://alepaff.github.io/FIUBA-knowledge/" target="_blank"><span>Fiuba Knowledge</span></a>
       </div>
       <div class="column is-narrow item" id="lok-treasure-items">
-        <!-- Fourth column -->
         <a href="https://alepaff.github.io/LOK-Treasure-items/" target="_blank"><span>Lok treasure items</span></a>
       </div>
       <div class="column is-narrow item" id="donut-knowledge">
-        <!-- Fifth column -->
         <a href="https://alepaff.github.io/the-donut-of-knowledge-map/" target="_blank"><span>Donut knowledge</span></a>
       </div>
+    </div>
 
-      <div id="bloque1" class="bloque">
-        <!-- ==== bloque proyectos personales ==== -->
+    <div id="bloque1" class="bloque">
+      <!-- ==== bloque proyectos personales (JS) ==== -->
+    </div>
+  </div>
+
+  <br>
+
+  <div class="projects">
+    <h3 class="titulo"><span id="academic-title">Académico</span></h3>
+
+    <div class="columns is-mobile is-centered is-multiline items">
+      <div class="column is-narrow item" id="algo3-teg">
+        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">T.E.G</a>
       </div>
-
+      <div class="column is-narrow item" id="shell">
+        <a href="https://github.com/AlePaff/TPS-sisop" target="_blank">Shell</a>
+      </div>
+      <div class="column is-narrow item" id="malloc">
+        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Malloc</a>
+      </div>
+      <div class="column is-narrow item" id="sched">
+        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Scheduller</a>
+      </div>
+      <div class="column is-narrow item" id="filesystem">
+        <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">File System</a>
+      </div>
     </div>
 
 
-    <div class="projects">
-      <h3 class="titulo"><span>Académico</span></h3>
-
-      <div class="columns is-mobile is-centered is-multiline items">
-        <div class="column is-narrow item" id="algo3-teg">
-          <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">T.E.G</a>
-        </div>
-        <div class="column is-narrow item" id="shell">
-          <a href="https://github.com/AlePaff/TPS-sisop" target="_blank">Solucion MIT Shell en C</a>
-        </div>
-        <div class="column is-narrow item" id="malloc">
-          <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Malloc</a>
-        </div>
-        <div class="column is-narrow item" id="sched">
-          <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">Scheduller</a>
-        </div>
-        <div class="column is-narrow item" id="filesystem">
-          <a href="https://github.com/nspiguelman/algo3_tp2" target="_blank">File System</a>
-        </div>
-      </div>
-
-
-      <div id="bloque2" class="bloque">
-        <!-- ==== bloque proyectos de la facu ==== -->
-      </div>
-
+    <div id="bloque2" class="bloque">
+      <!-- ==== bloque proyectos de la facu ==== -->
     </div>
 
-    <br>
+  </div>
+
+  <br><br>
 
 </body>
 
@@ -178,9 +152,9 @@
 
 
 <footer>
-  <h3 id="titulo-contacto">Contacto</h3>
+  <h3 class="contacto-title" id="contacto-title">Contacto</h3>
 
-  <span id="texto-contacto">
+  <span id="contacto-texto">
     Si quieres contactarme o ver mis otros repositorios puedes usar algunos de <br>los links de aqui, o si simplemente
     quieres saludar eres más que bienvenido! ^_^
   </span>
@@ -219,7 +193,7 @@
   <br><br>
 
   <!-- icono volver al inicio -->
-  <a href="#inicio" class="button is-primary is-rounded">
+  <a href="#top" class="button is-primary is-rounded">
     <div style="width: 0.8em; margin: 0 auto;">
       <svg xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 320 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) -->

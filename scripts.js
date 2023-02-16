@@ -4,6 +4,15 @@ function crear_boton_link(link, desc) {
     `
 }
 
+function fiubaSpan(lang) {
+  let acronimos = {
+    "es": {"FIUBA": "Facultad de Ingeniería de la Universidad de Buenos Aires"},
+    "en": {"FIUBA": "Faculty of Engineering of the University of Buenos Aires"}
+  }
+  // return `<span title="Facultad de Ingeniería de la Universidad de Buenos Aires"><u>FIUBA</u></span>`;
+  return `<span title="${acronimos[lang]["FIUBA"]}"><u>FIUBA</u></span>`;
+}
+
 //devuelve un html de una array de lenguajes (ej. ["html", "css", "js"] devuelve un html con los iconos de los lenguajes)
 function lenguajes(array_lang) {
   // var html = "https://cdn-icons-png.flaticon.com/512/1216/1216733.png";
@@ -58,151 +67,96 @@ function lenguajes(array_lang) {
   return total;
 }
 
-function fiubaSpan() {
-  return `<span title="Facultad de Ingeniería de la Universidad de Buenos Aires"><u>FIUBA</u></span>`;
-}
 
-function cargarIdioma(default_lang){
+function cargarIdioma(lang) {
   let lang_ids = Object.keys(LANG_TRANSLATION);
   lang_ids.forEach(id => {
-    // console.log(LANG_TRANSLATION[id][default_lang])
-    $(`#${id}`).html(LANG_TRANSLATION[id][default_lang])
+    // console.log(LANG_TRANSLATION[id][lang])
+    $(`#${id}`).html(LANG_TRANSLATION[id][lang])
   });
 }
 
 
+function cargarBloque(bloque, id, lang) {
+  //evita cargar el bloque de nuevo
+  if (bloque.innerHTML.includes(PROJECTS[id].name) && bloque.innerHTML.includes(PROJECTS[id].desc[lang])) {
+    // TODO: solucion temporal
+    return;
+  }
+
+  bloque.innerHTML = "";
+  bloque.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(PROJECTS[id].prog_langs) + "<h4>" + PROJECTS[id].name + "</h4> </div>"
+  PROJECTS[id].desc[lang] = PROJECTS[id].desc[lang].replace("FIUBA", fiubaSpan(lang));
+  bloque.innerHTML += `<p>${PROJECTS[id].desc[lang]}</p>`;
+  bloque.innerHTML += `<div class='links'>` + crear_boton_link(PROJECTS[id].link_web, "Demo") + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
+
+  //agregar la clase active al item seleccionado
+  // $(`#${id}`).addClass("active");
+  console.log("AAAAA")
+}
+
 $(document).ready(function () {
-  let default_lang = "en";
-  cargarIdioma(default_lang);
-  
-  $("#boton-idioma").on("click", function (){    
-    let current_lang = $("#boton-idioma").data("lang");
-    $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
-    cargarIdioma(current_lang);
-  });
-  
+  let current_lang = "en";
+
+  cargarIdioma(current_lang);
 
   //jquery para el hover sobre los items
   var bloque1 = document.getElementById("bloque1");
   var bloque2 = document.getElementById("bloque2");
 
-  //por default se muestra el primer item
+  //items por default
   $("#bloque1").show();
   $("#bloque2").show();
+  cargarBloque(bloque1, "sabelo-fiuba", current_lang);
+  cargarBloque(bloque2, "algo3-teg", current_lang);
 
-
-function cargarBloque(bloque, id){
-  $("#bloque1").show();
-  bloque.innerHTML = "";
-  bloque.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(PROJECTS[id].langs) + "<h4>"+ PROJECTS[id].name + "</h4> </div>"
-  PROJECTS[id].desc = PROJECTS[id].desc.replace("primero", fiubaSpan());
-  bloque.innerHTML += `<p>${PROJECTS[id].desc}</p>`;
-  bloque.innerHTML += `<div id='links'>` + crear_boton_link(PROJECTS[id].link_web, "Demo") + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
-}
-
-  bloque1.innerHTML = "";
-  bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["react", "chakra", "css", "js"]) + "<h4>Sabelo Fiuba</h4> </div>";
-  bloque1.innerHTML += `<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la ` + fiubaSpan() + `. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y la de Google Analytics para saber la cantidad de visitas.</p>`;
-  bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
-  bloque2.innerHTML = "";
-  bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["java", "gitflow"]) + "<h4>T.E.G</h4> </div>";
-  bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la " + fiubaSpan() + ", con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
-  bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/nspiguelman/algo3_tp2", "Repo") + `</div>`;
-
-  // $("#bloque1").hide();
-  // $("#bloque2").hide();
 
   // proyectos propios
   $("#sabelo-fiuba").on("mouseenter", function () {
-    console.log("asd")
-    
-    cargarBloque(bloque1, "sabelo-fiuba")
-    // $("#bloque1").show();
-    // //lenguajes, descripcion, links
-    // bloque1.innerHTML = "";
-    // bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["react", "chakra", "css", "js"]) + "<h4>Sabelo Fiuba</h4> </div>";
-    // bloque1.innerHTML += `<p>Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la ` + fiubaSpan() + `. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y la de Google Analytics para saber la cantidad de visitas.</p>`;
-    // bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/sabelo-fiuba/", "Demo") + crear_boton_link("https://github.com/AlePaff/sabelo-fiuba", "Repo") + `</div>`;
-
-
+    cargarBloque(bloque1, "sabelo-fiuba", current_lang)
   });
-
-
   $("#lok-events").hover(function () {
-
-    $("#bloque1").show();
-    bloque1.innerHTML = "";
-    bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js"]) + "<h4>LOK Events</h4> </div>";
-    bloque1.innerHTML += "<p>Proyecto para probar como crear tablas dinamicas en Javascript, actualizandose según eventos periódicos del juego League of Kingdoms</p>";
-    bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/lok-events", "Demo") + crear_boton_link("https://github.com/AlePaff/lok-events", "Repo") + `</div>`;
+    cargarBloque(bloque1, "lok-events", current_lang)
   });
-
   $("#fiuba-knowledge").hover(function () {
-    $("#bloque1").show();
-    bloque1.innerHTML = "";
-    bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "js", "python"]) + "<h4>Fiuba Knowledge</h4> </div>";
-    bloque1.innerHTML += "<p>Pequeño proyecto para la recopilación de temas que se ven en cada materia de la " + fiubaSpan() + ", aqui aprendí como hacer scraping de datos desde pdfs para luego procesarlos utilizando un módulo de Python y presentarlos en la web</p>";
-    bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/FIUBA-knowledge/", "Demo") + crear_boton_link("https://github.com/AlePaff/FIUBA-knowledge", "Repo") + `</div>`;
+    cargarBloque(bloque1, "fiuba-knowledge", current_lang)
   });
-
   $("#lok-treasure-items").hover(function () {
-    $("#bloque1").show();
-    bloque1.innerHTML = "";
-    bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["html", "css", "js", "jquery", "isotope", "boostrap"]) + "<h4>LOK Treasure Items</h4> </div>";
-    bloque1.innerHTML += "<p>Web para ordenar y filtrar items de League of Kingdoms (LOK) de acuerdo a sus habilidades, power-ups, grados, etc. Se utilizó una librería de js para crear el grid y la logica. Los datos se obtuvieron del juego oficial.</p>";
-    bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/LOK-Treasure-items/", "Demo") + crear_boton_link("https://github.com/AlePaff/LOK-Treasure-items", "Repo") + `</div>`;
+    cargarBloque(bloque1, "lok-treasure-items", current_lang)
   });
-
   $("#donut-knowledge").hover(function () {
-    $("#bloque1").show();
-    bloque1.innerHTML = "";
-    bloque1.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["sass", "js", "jquery"]) + "<h4>Donut Knowledge</h4> </div>";
-    bloque1.innerHTML += "<p>Mapa interactivo de infografías para visualizar ramas complejas de la ciencia y el conocimiento en general. Utilizando la librería <a href='http://www.outsharked.com/imagemapster/' target='_blank'>ImageMapster</a>, y <a href='https://sass-lang.com/' target='_blank'>Sass</a> para el diseño.</p>";
-    bloque1.innerHTML += `<div id='links'>` + crear_boton_link("https://alepaff.github.io/the-donut-of-knowledge-map/", "Demo") + crear_boton_link("https://github.com/AlePaff/the-donut-of-knowledge-map", "Repo") + `</div>`;
+    cargarBloque(bloque1, "donut-knowledge", current_lang)
   });
 
 
 
   // academico
   $("#algo3-teg").hover(function () {
-    $("#bloque2").show();
-    bloque2.innerHTML = "";
-    bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["java", "gitflow"]) + "<h4>T.E.G</h4> </div>";
-    bloque2.innerHTML += "<p>Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la " + fiubaSpan() + ", con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).</p>";
-    bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/nspiguelman/algo3_tp2", "Repo") + `</div>`;
+    cargarBloque(bloque2, "algo3-teg", current_lang)
   });
-
   $("#shell").hover(function () {
-    $("#bloque2").show();
-    bloque2.innerHTML = "";
-    bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c"]) + "<h4>Shell</h4> </div>";
-    bloque2.innerHTML += "<p>Implementación en C de un interprete de comandos <a href='https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica)'>Shell</a> con las funcionalidades minimas para Unix similar a bash, zsh y fish para la materia Sistemas Operativos de la " + fiubaSpan() + ".</p>";
-    bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-shell", "Repo") + `</div>`;
+    cargarBloque(bloque2, "shell", current_lang)
   });
-
   $("#malloc").hover(function () {
-    $("#bloque2").show();
-    bloque2.innerHTML = "";
-    bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>Malloc</h4> </div>";
-    bloque2.innerHTML += "<p>Implementación del manejo del heap de las funciones malloc(), calloc(), realloc(), free() de la librería estandar de C para la administración de memoria para la materia Sistemas Operativos de la " + fiubaSpan() + ".</p>";
-    bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-malloc", "Repo") + `</div>`;
+    cargarBloque(bloque2, "malloc", current_lang)
   });
-
   $("#sched").hover(function () {
-    $("#bloque2").show();
-    bloque2.innerHTML = "";
-    bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>Scheduller</h4> </div>";
-    bloque2.innerHTML += "<p>Solución al <a href='https://pdos.csail.mit.edu/6.828/2017/index.html'>exokernel JOS del MIT</a> de licencia libre para la implementación del cambio de contexto para procesos y scheduler/planificador sobre un sistema operativo preexistente, utilizando una modificación del algoritmo MLFQ para la materia Sistemas Operativos de la " + fiubaSpan() + ".</p>";
-    bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-sched", "Repo") + `</div>`;
+    cargarBloque(bloque2, "sched", current_lang)
   });
-
-
   $("#filesystem").hover(function () {
-    $("#bloque2").show();
-    bloque2.innerHTML = "";
-    bloque2.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(["c", "gitflow"]) + "<h4>File System</h4> </div>";
-    bloque2.innerHTML += "<p>Implementación de un sistema de archivo para Linux, utilizando el mecanismo <a href='https://en.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> provisto por el kernel para la materia Sistemas Operativos de la " + fiubaSpan() + ".</p>";
-    bloque2.innerHTML += `<div id='links'>` + crear_boton_link("https://github.com/AlePaff/TPS-sisop/tree/entrega-filesystem", "Repo") + `</div>`;
+    cargarBloque(bloque2, "filesystem", current_lang)
   });
 
+
+  
+  //cambiar de idioma
+  $("#boton-idioma").on("click", function () {
+    current_lang = $("#boton-idioma").data("lang");
+    $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
+    console.log(current_lang);
+    cargarIdioma(current_lang);
+
+    cargarBloque(bloque1, "sabelo-fiuba", current_lang);
+    cargarBloque(bloque2, "algo3-teg", current_lang);
+  });
 });

@@ -254,7 +254,7 @@ obtenida de https://www.shapedivider.app/
   font-weight: bold;
 }
 
-#links {
+.links {
   display: flex;
   justify-content: right;
   gap: 5px;
