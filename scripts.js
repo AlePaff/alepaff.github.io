@@ -92,8 +92,9 @@ function cargarBloque(bloque, id, lang) {
     return;
   }
 
-  $(".projects .item").removeClass("active");
-  $(`#${id}`).addClass("active");
+  // $(".projects .item").removeClass("active");
+  // $(`#${id}`).addClass("active");
+
   // $(".projects .item").css("background-color", "white");
 
   bloque.innerHTML = "";
@@ -131,6 +132,7 @@ $(document).ready(function () {
   // proyectos propios
   $("#sabelo-fiuba").on("mouseenter", function () {
     cargarBloque(bloque1, "sabelo-fiuba", current_lang)
+    // $(this).toggleClass("active-item");
   });
 
   $("#lok-events").hover(function () {
@@ -169,6 +171,8 @@ $(document).ready(function () {
 
   //cambiar de idioma
   $("#boton-idioma").on("click", function () {
+    $(this).toggleClass("active-lang");   //cambiar el tamaño del boton
+
     current_lang = $("#boton-idioma").data("lang");
     $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
     cargarInfo(current_lang, bloque1, bloque2);

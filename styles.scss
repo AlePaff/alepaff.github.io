@@ -2,9 +2,19 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Nunito');
 
+
 $bg-color: #1b2932;
 $bg-color-about: #9ec0c5;
 $font-color: #1b2932;
+
+@mixin animacion-bg-hover($color) {    
+    transition: background-color 0.15s;
+    &:hover {
+        background-color: $color;
+    }
+
+}
+
 
 * {
     z-index: 2;
@@ -37,6 +47,8 @@ h3 {
     font-size: 15px;
     font-weight: bold;
     padding: 5px;
+
+    @include animacion-bg-hover(#d8d8d8);
 }
 
 
@@ -125,21 +137,18 @@ hr {
 
 
 
-
-.active {
-    // background-color: #b9ff68;
-}
-
 /* ==== items a cada uno de los proyectos ==== */
 .projects .item {
     /* background-color: #d67e7e; */
     background-color: #76c6da;
     border-radius: 15px;
 
-    
-    &:hover {
-        background-color: #b9ff68;
-    }
+    @include animacion-bg-hover(#b9ff68);
+    //es equivalente a hacer aca mismo:
+        // transition: background-color 0.15s;
+        // &:hover {
+        //     background-color: #b9ff68;
+        // }
 }
 
 
@@ -157,10 +166,18 @@ hr {
 }
 
 
+$tamanio-boton-idioma: 90px;
 #boton-idioma {
     position: absolute;
     top: 3px;
     right: 3px;
+
+    transition: width 0.2s;
+    width: $tamanio-boton-idioma;
+}
+
+#boton-idioma.active-lang{
+    width: $tamanio-boton-idioma - 15;
 }
 
 
@@ -195,13 +212,6 @@ obtenida de https://www.shapedivider.app/
 #links-footer>.columns .column {
     margin-top: 10px;
     margin-bottom: 10px;
-}
-
-.columns,
-.is-mobile,
-.is-centered,
-.is-multiline {
-    width: 100%;
 }
 
 .contacto-title {
@@ -246,7 +256,7 @@ obtenida de https://www.shapedivider.app/
         /* computar filtros: por la increible herramienta de Barrett Sonntag
         https://codepen.io/sosuke/pen/Pjoqqp */
         /* agrandar ligeramente el tamaño con una animacion  */
-        transform: scale(1.1);
+        transform: scale(1.15);
         transition: all 0.1s linear;
     }
 }
@@ -308,6 +318,23 @@ obtenida de https://www.shapedivider.app/
     gap: 5px;
 }
 
-// .active{
-//     background-color: #b9ff68;
-// }
+
+#back-to-top{
+    border-radius: 50%;
+    padding: 4px 12px 0px 12px;
+    transition: padding 0.2s;
+
+    //little bounce when hover
+    &:hover{
+        padding: 0px 12px 4px 12px;
+
+        //make transparent color
+        border-color: $bg-color;
+        border-width: 3px;
+    
+        outline-color: #1db3b3;
+        outline-style: solid;
+        outline-width: 2px;
+    }
+
+}

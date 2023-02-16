@@ -33,6 +33,10 @@ h3 {
   font-size: 15px;
   font-weight: bold;
   padding: 5px;
+  transition: background-color 0.15s;
+}
+.button:hover {
+  background-color: #d8d8d8;
 }
 
 footer {
@@ -111,6 +115,7 @@ hr {
   /* background-color: #d67e7e; */
   background-color: #76c6da;
   border-radius: 15px;
+  transition: background-color 0.15s;
 }
 .projects .item:hover {
   background-color: #b9ff68;
@@ -131,6 +136,12 @@ hr {
   position: absolute;
   top: 3px;
   right: 3px;
+  transition: width 0.2s;
+  width: 90px;
+}
+
+#boton-idioma.active-lang {
+  width: 75px;
 }
 
 /* ==== contacto ==== */
@@ -161,13 +172,6 @@ obtenida de https://www.shapedivider.app/
 #links-footer > .columns .column {
   margin-top: 10px;
   margin-bottom: 10px;
-}
-
-.columns,
-.is-mobile,
-.is-centered,
-.is-multiline {
-  width: 100%;
 }
 
 .contacto-title {
@@ -208,7 +212,7 @@ obtenida de https://www.shapedivider.app/
   /* computar filtros: por la increible herramienta de Barrett Sonntag
   https://codepen.io/sosuke/pen/Pjoqqp */
   /* agrandar ligeramente el tamaño con una animacion  */
-  transform: scale(1.1);
+  transform: scale(1.15);
   transition: all 0.1s linear;
 }
 
@@ -257,4 +261,18 @@ obtenida de https://www.shapedivider.app/
   display: flex;
   justify-content: right;
   gap: 5px;
+}
+
+#back-to-top {
+  border-radius: 50%;
+  padding: 4px 12px 0px 12px;
+  transition: padding 0.2s;
+}
+#back-to-top:hover {
+  padding: 0px 12px 4px 12px;
+  border-color: #1b2932;
+  border-width: 3px;
+  outline-color: #1db3b3;
+  outline-style: solid;
+  outline-width: 2px;
 }/*# sourceMappingURL=styles.css.map */
