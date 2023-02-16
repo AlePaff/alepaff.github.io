@@ -156,7 +156,7 @@ let PROJECTS = {
 let LINKS = {
     "cv": {
         "es": "https://docs.google.com/file/d/1dv-JAm9GOebINzoFUO5mB28ix0IvoSfGO9-DqpBUaDc/view",
-        "en": "https://docs.google.com/document/d/1jylLBqreWfapL869we9bD8n83WwKzNEDmMU5yIB6DrI/view"
+        "en": "https://docs.google.com/file/d/1jylLBqreWfapL869we9bD8n83WwKzNEDmMU5yIB6DrI/view"
     },
     "linkedin": "https://www.linkedin.com/in/alejandro-paffetti-0b0b3b1a3/",
     "github": "https://github.com/AlePaff/"
