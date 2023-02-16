@@ -41,7 +41,7 @@ let PROJECTS = {
         "prog_langs": ["react", "chakra", "css", "js"],
         "desc": {
             "es": `Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la FIUBA. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y la de Google Analytics para saber la cantidad de visitas.`,
-            "en": `It is a collection of material of notes, summaries, news, groups and new projects related to FIUBA. First built in only Html, JS and Css and then updated to React, using ChakraUI as a style framework. It uses the Github api to know the last update of the project and Google Analytics to know the number of visits.`,
+            "en": `It is a collection of material from notes, summaries, news, groups and new projects related to FIUBA. First built in just Html, JS and Css and then updated to React, using ChakraUI as styling framework. It uses the Github api to know the last update of the project and Google Analytics to know the number of visits.`,
         },
         "link_web": "https://alepaff.github.io/sabelo-fiuba/",
         "link_repo": "https://github.com/AlePaff/sabelo-fiuba"
@@ -63,7 +63,7 @@ let PROJECTS = {
         "prog_langs": ["html", "js", "python"],
         "desc": {
             "es": `Pequeño proyecto para la recopilación de temas que se ven en cada materia de la FIUBA, aqui aprendí como hacer scraping de datos desde pdfs para luego procesarlos utilizando un módulo de Python y presentarlos en la web`,
-            "en": `Small project for the collection of topics that are seen in each subject of FIUBA, here I learned how to scrape data from pdfs to then process them using a Python module and present them on the web`
+            "en": `Small project for a collection of topics that are seen in each subject of FIUBA, here I learned how to scrape data from pdfs to then process them using a Python module and present them on the web`
         },
         "link_web": "https://alepaff.github.io/FIUBA-knowledge/",
         "link_repo": "https://github.com/AlePaff/FIUBA-knowledge"
@@ -112,7 +112,7 @@ let PROJECTS = {
         "prog_langs": ["c"],
         "desc": {
             "es": `Implementación del problema del MIT en C, de un interprete de comandos <a href='https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica)'>Shell</a> con las funcionalidades minimas para Unix similar a bash, zsh y fish para la materia Sistemas Operativos de la FIUBA.`,
-            "en": `C implementation of a <a href='https://en.wikipedia.org/wiki/Shell_(computing)'>Shell</a> command interpreter with the minimum functionalities for Unix similar to bash, zsh and fish for the Operating Systems subject of the FIUBA.`
+            "en": `C implementation of the MIT problem in C, a <a href='https://en.wikipedia.org/wiki/Shell_(computing)'>Shell</a> command interpreter with the minimum functionalities for Unix similar to bash, zsh and fish for the Operating Systems subject of the FIUBA.`
         },
         "link_web": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-shell"
@@ -145,7 +145,7 @@ let PROJECTS = {
         "prog_langs": ["c", "gitflow"],
         "desc": {
             "es": `Implementación de un sistema de archivo para Linux, utilizando el mecanismo <a href='https://es.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> provisto por el kernel para la materia Sistemas Operativos de la FIUBA.`,
-            "en": `Implementation of a file system for Linux, using the <a href='https://en.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> mechanism provided by the kernel for the Operating Systems subject of the FIUBA.`
+            "en": `Implementation of a file system for Linux, using the <a href='https://en.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> mechanism provided by the kernel for the Operating Systems subject, of FIUBA.`
         },
         "link_web": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-filesystem"

@@ -234,7 +234,6 @@ obtenida de https://www.shapedivider.app/
   /* TODO: no debe ser con margin sino que tome de referencia el wraper img-titulo completo */
 }
 .bloque #imagenes {
-  /* background-color: #1b2932; */
   display: flex;
   flex-direction: row;
   gap: 5px;

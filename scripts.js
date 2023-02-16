@@ -67,6 +67,15 @@ function lenguajes(array_lang) {
   return total;
 }
 
+function cargarInfo(current_lang, bloque1, bloque2) {
+  cargarIdioma(current_lang);
+
+  cargarBloque(bloque1, "sabelo-fiuba", current_lang);
+  cargarBloque(bloque2, "algo3-teg", current_lang);
+
+  $("#link-cv").attr("href", current_lang == "en" ? LINKS["cv"][current_lang] : LINKS["cv"][current_lang]);
+}
+
 
 function cargarIdioma(lang) {
   let lang_ids = Object.keys(LANG_TRANSLATION);
@@ -83,25 +92,26 @@ function cargarBloque(bloque, id, lang) {
     return;
   }
 
+  $(".projects .item").removeClass("active");
+  $(`#${id}`).addClass("active");
+  // $(".projects .item").css("background-color", "white");
+
   bloque.innerHTML = "";
   bloque.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(PROJECTS[id].prog_langs) + "<h4>" + PROJECTS[id].name + "</h4> </div>"
   PROJECTS[id].desc[lang] = PROJECTS[id].desc[lang].replace("FIUBA", fiubaSpan(lang));
   bloque.innerHTML += `<p>${PROJECTS[id].desc[lang]}</p>`;
   bloque.innerHTML += `<div class='links'>` + crear_boton_link(PROJECTS[id].link_web, "Demo") + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
 
-  //agregar la clase active al item seleccionado
-  // $(`#${id}`).addClass("active");  
+  //cambiar color background-color: #b9ff68; a los botones
+  // $(`#${id}`).css("background-color", "#b9ff68");
 }
 
 
-function cargarInfo(current_lang, bloque1, bloque2) {
-  cargarIdioma(current_lang);
+// $(".projects .item").on("mouseenter", function () {
+//   $(".projects .item").removeClass("active");
+//   $(this).addClass("active");
+// });
 
-  cargarBloque(bloque1, "sabelo-fiuba", current_lang);
-  cargarBloque(bloque2, "algo3-teg", current_lang);
-
-  $("#link-cv").attr("href", current_lang == "en" ? LINKS["cv"][current_lang] : LINKS["cv"][current_lang]);
-}
 
 $(document).ready(function () {
   let current_lang = "en";
@@ -118,12 +128,11 @@ $(document).ready(function () {
 
   cargarInfo(current_lang, bloque1, bloque2);
 
-
   // proyectos propios
   $("#sabelo-fiuba").on("mouseenter", function () {
     cargarBloque(bloque1, "sabelo-fiuba", current_lang)
-    // $("#sabelo-fiuba").addClass("active");
   });
+
   $("#lok-events").hover(function () {
     cargarBloque(bloque1, "lok-events", current_lang)
   });

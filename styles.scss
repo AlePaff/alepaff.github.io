@@ -4,6 +4,7 @@
 
 $bg-color: #1b2932;
 $bg-color-about: #9ec0c5;
+$font-color: #1b2932;
 
 * {
     z-index: 2;
@@ -32,7 +33,7 @@ h3 {
     /* background-color: #f5f5f5; */
     background-color: #ebebeb;
     border-radius: 30px;
-    color: #1b2932;
+    color: $font-color;
     font-size: 15px;
     font-weight: bold;
     padding: 5px;
@@ -125,19 +126,22 @@ hr {
 
 
 
-
-
+.active {
+    // background-color: #b9ff68;
+}
 
 /* ==== items a cada uno de los proyectos ==== */
 .projects .item {
     /* background-color: #d67e7e; */
     background-color: #76c6da;
     border-radius: 15px;
+
     
     &:hover {
         background-color: #b9ff68;
     }
 }
+
 
 
 .items {
@@ -146,7 +150,7 @@ hr {
     width: 100%;
 
     a {
-        color: #1b2932;
+        color: $font-color;
         font-size: 20px;
         font-weight: bold;
     }
@@ -182,7 +186,7 @@ obtenida de https://www.shapedivider.app/
     }
 
     .shape-fill {
-        fill: #1b2932;
+        fill: $font-color;
     }
 }
 
@@ -272,7 +276,6 @@ obtenida de https://www.shapedivider.app/
     padding: 5px;
 
     #imagenes {
-        /* background-color: #1b2932; */
         display: flex;
         flex-direction: row;
         gap: 5px;
