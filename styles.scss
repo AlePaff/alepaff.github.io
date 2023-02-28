@@ -7,6 +7,8 @@ $bg-color: #1b2932;
 $bg-color-about: #9ec0c5;
 $font-color: #1b2932;
 
+$mobile-size: 768px;
+
 
 
 
@@ -343,24 +345,27 @@ obtenida de https://www.shapedivider.app/
 }
 
 
-@media screen and (max-width: 768px) {    
+@media screen and (max-width: $mobile-size) {    
     
     #about-me {
         margin: 20px 10px 0px 10px;
         padding: 15px;
         font-size: 15px;
     }
-    .bloque, #contacto-texto{
-        margin-left: 2%;
-        margin-right: 2%;
+    #contacto-texto{
+        margin: 0% 2% 0% 2%;
+    }
+    .bloque{
+        margin: 0% -2% 0% -2%;
+    }
+
+    .bloque .wrapper-img-titulo h4 {
+        margin-right: 0;
     }
 
     .wrapper-img-titulo {   
         flex-direction: column;
         align-items: center; 
-    }
-    .bloque .wrapper-img-titulo h4 {
-        margin-right: 0;
     }
     .projects{
         margin: 0px 20px 0px 20px;

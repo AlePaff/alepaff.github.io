@@ -118,13 +118,28 @@ function cargarBloque(bloque, id, lang) {
 //   $(this).addClass("active");
 // });
 
+var screen_size = 768;
+
+//devuelve verdadero o falso dependiendo del tamaño de la pantalla ()
+function isMobileDevice() {
+  return $(window).width() <= screen_size;
+}
+
+
 // se encarga de añadir al dom los items e ids para identificar luego
 function crearItemsId() {
 
   Object.keys(PROJECTS).forEach(id => {
-    let item = document.createElement("a");
-    item.setAttribute("href", PROJECTS[id].link_web);
-    item.setAttribute("target", "_blank");
+    //si es un dispositivo movil no se crean los items con links
+    let item;
+    if (isMobileDevice()) {
+      item = document.createElement("div");
+    } else {
+      item = document.createElement("a");
+      item.setAttribute("href", PROJECTS[id].link_web);
+      item.setAttribute("target", "_blank");
+    }
+
     item.setAttribute("id", id);
     item.setAttribute("class", "column is-narrow item");
     item.innerHTML = `<span>${PROJECTS[id].name}</span>`;
@@ -146,6 +161,7 @@ $(document).ready(function () {
   crearItemsId();
   cargarIdioma(current_lang);
 
+  console.log(isMobileDevice())
   //jquery para el hover sobre los items
   var bloque1 = document.getElementById("bloque1");
   var bloque2 = document.getElementById("bloque2");

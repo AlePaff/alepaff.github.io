@@ -278,16 +278,18 @@ obtenida de https://www.shapedivider.app/
     padding: 15px;
     font-size: 15px;
   }
-  .bloque, #contacto-texto {
-    margin-left: 2%;
-    margin-right: 2%;
+  #contacto-texto {
+    margin: 0% 2% 0% 2%;
+  }
+  .bloque {
+    margin: 0% -2% 0% -2%;
+  }
+  .bloque .wrapper-img-titulo h4 {
+    margin-right: 0;
   }
   .wrapper-img-titulo {
     flex-direction: column;
     align-items: center;
-  }
-  .bloque .wrapper-img-titulo h4 {
-    margin-right: 0;
   }
   .projects {
     margin: 0px 20px 0px 20px;
