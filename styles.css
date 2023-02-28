@@ -12,6 +12,10 @@ html {
   max-width: 1600px;
 }
 
+#top {
+  position: relative;
+}
+
 body {
   text-align: center;
   /* background-image: linear-gradient(#ffffff, #e7e7e7); */
@@ -68,7 +72,7 @@ footer {
 /* ==== blobs y formas ==== https://www.blobmaker.app/ */
 .blob {
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   overflow: hidden;
 }
 
@@ -220,13 +224,8 @@ obtenida de https://www.shapedivider.app/
   /* background-color: #ffffff; */
   background-color: #9ec0c5;
   border-radius: 10px 40px;
-  /* padding: 0.5%; */
-  /* height: 130px; */
-  /* width: 100%; */
   margin-left: 10%;
   margin-right: 10%;
-  /* border: 1px solid #dddddd; */
-  /* color: white; */
   flex-direction: column;
   display: inline-flex;
   /* align-items: center; */
@@ -244,9 +243,8 @@ obtenida de https://www.shapedivider.app/
 }
 .bloque .wrapper-img-titulo {
   display: flex;
-  flex-direction: row;
+  white-space: nowrap;
   justify-content: space-between;
-  /* margin-left: 85%; */
 }
 .bloque .wrapper-img-titulo h4 {
   margin-right: 45%;
@@ -272,4 +270,26 @@ obtenida de https://www.shapedivider.app/
   outline-color: #1db3b3;
   outline-style: solid;
   outline-width: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  #about-me {
+    margin: 20px 10px 0px 10px;
+    padding: 15px;
+    font-size: 15px;
+  }
+  .bloque, #contacto-texto {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .wrapper-img-titulo {
+    flex-direction: column;
+    align-items: center;
+  }
+  .bloque .wrapper-img-titulo h4 {
+    margin-right: 0;
+  }
+  .projects {
+    margin: 0px 20px 0px 20px;
+  }
 }/*# sourceMappingURL=styles.css.map */

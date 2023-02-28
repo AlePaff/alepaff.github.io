@@ -79,6 +79,8 @@ function cargarInfo(current_lang, bloque1, bloque2) {
 }
 
 
+//toma cada id del DOM y llena la información correspondiente de acuerdo al
+//idioma pasado por parámetro, desde el objeto LANG_TRANSLATION
 function cargarIdioma(lang) {
   let lang_ids = Object.keys(LANG_TRANSLATION);
   lang_ids.forEach(id => {
@@ -88,6 +90,7 @@ function cargarIdioma(lang) {
 }
 
 
+//cargar en el dom el bloque (descripcion, links, etc) de un proyecto
 function cargarBloque(bloque, id, lang) {
   //evita cargar el bloque de nuevo - TODO: solucion temporal
   if (bloque.innerHTML.includes(PROJECTS[id].name) && bloque.innerHTML.includes(PROJECTS[id].desc[lang])) {
@@ -115,10 +118,32 @@ function cargarBloque(bloque, id, lang) {
 //   $(this).addClass("active");
 // });
 
+// se encarga de añadir al dom los items e ids para identificar luego
+function crearItemsId() {
+
+  Object.keys(PROJECTS).forEach(id => {
+    let item = document.createElement("a");
+    item.setAttribute("href", PROJECTS[id].link_web);
+    item.setAttribute("target", "_blank");
+    item.setAttribute("id", id);
+    item.setAttribute("class", "column is-narrow item");
+    item.innerHTML = `<span>${PROJECTS[id].name}</span>`;
+
+    if (PROJECTS[id].type == "project") {
+      $("#mis-proyectos-items").append(item);
+    }
+    else if (PROJECTS[id].type == "academic") {
+      $("#mis-academicos-items").append(item);
+    }
+
+  });
+}
+
 
 $(document).ready(function () {
   let current_lang = "en";
 
+  crearItemsId();
   cargarIdioma(current_lang);
 
   //jquery para el hover sobre los items

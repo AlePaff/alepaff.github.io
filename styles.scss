@@ -10,12 +10,11 @@ $font-color: #1b2932;
 
 
 
-@mixin animacion-bg-hover($color) {    
+@mixin animacion-bg-hover($color) {
     transition: background-color 0.15s;
     &:hover {
         background-color: $color;
     }
-
 }
 
 
@@ -27,6 +26,10 @@ html {
     margin: 0 auto;
     background-color: $bg-color;
     max-width: 1600px;
+}
+
+#top {
+    position: relative;
 }
 
 body {
@@ -91,7 +94,7 @@ footer {
 /* ==== blobs y formas ==== https://www.blobmaker.app/ */
 .blob {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     overflow: hidden;
 }
 
@@ -150,10 +153,10 @@ hr {
 
     @include animacion-bg-hover(#b9ff68);
     //es equivalente a hacer aca mismo:
-        // transition: background-color 0.15s;
-        // &:hover {
-        //     background-color: #b9ff68;
-        // }
+    // transition: background-color 0.15s;
+    // &:hover {
+    //     background-color: #b9ff68;
+    // }
 }
 
 
@@ -172,6 +175,7 @@ hr {
 
 
 $tamanio-boton-idioma: 90px;
+
 #boton-idioma {
     position: absolute;
     top: 3px;
@@ -181,7 +185,7 @@ $tamanio-boton-idioma: 90px;
     width: $tamanio-boton-idioma;
 }
 
-#boton-idioma.active-lang{
+#boton-idioma.active-lang {
     width: $tamanio-boton-idioma - 15;
 }
 
@@ -276,17 +280,13 @@ obtenida de https://www.shapedivider.app/
     /* background-color: #ffffff; */
     background-color: #9ec0c5;
     border-radius: 10px 40px;
-    /* padding: 0.5%; */
-    /* height: 130px; */
-    /* width: 100%; */
     margin-left: 10%;
     margin-right: 10%;
-    /* border: 1px solid #dddddd; */
-    /* color: white; */
     flex-direction: column;
     display: inline-flex;
 
     /* align-items: center; */
+
     /* padding interno */
     padding: 5px;
 
@@ -303,10 +303,8 @@ obtenida de https://www.shapedivider.app/
 
     .wrapper-img-titulo {
         display: flex;
-        flex-direction: row;
-
-        justify-content: space-between;
-        /* margin-left: 85%; */
+        white-space: nowrap;        //para que no se rompa la linea
+        justify-content: space-between;        
     }
 
     /* TODO: no debe ser con margin sino que tome de referencia el wraper img-titulo completo */
@@ -324,19 +322,19 @@ obtenida de https://www.shapedivider.app/
 }
 
 
-#back-to-top{
+#back-to-top {
     border-radius: 50%;
     padding: 4px 12px 0px 12px;
     transition: padding 0.2s;
 
     //little bounce when hover
-    &:hover{
+    &:hover {
         padding: 0px 12px 4px 12px;
 
         //make transparent color
         border-color: $bg-color;
         border-width: 3px;
-    
+
         outline-color: #1db3b3;
         outline-style: solid;
         outline-width: 2px;
@@ -345,9 +343,26 @@ obtenida de https://www.shapedivider.app/
 }
 
 
-@media screen and (max-width: 768px) {
-    .titulo{
-        // background-color: blue;
-        // color: blue;
+@media screen and (max-width: 768px) {    
+    
+    #about-me {
+        margin: 20px 10px 0px 10px;
+        padding: 15px;
+        font-size: 15px;
+    }
+    .bloque, #contacto-texto{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+
+    .wrapper-img-titulo {   
+        flex-direction: column;
+        align-items: center; 
+    }
+    .bloque .wrapper-img-titulo h4 {
+        margin-right: 0;
+    }
+    .projects{
+        margin: 0px 20px 0px 20px;
     }
 }

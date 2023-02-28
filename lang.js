@@ -46,6 +46,17 @@ let PROJECTS = {
         "link_web": "https://alepaff.github.io/sabelo-fiuba/",
         "link_repo": "https://github.com/AlePaff/sabelo-fiuba"
     },
+    "lok-treasure-items": {
+        "type": "project",
+        "name": "LOK Treasure Items",
+        "prog_langs": ["html", "css", "js", "jquery", "isotope", "boostrap"],
+        "desc": {
+            "es": `Web para ordenar y filtrar items de League of Kingdoms (LOK) de acuerdo a sus habilidades, power-ups, grados, etc. Se utilizó una librería de js para crear el grid y la logica. Los datos se obtuvieron del juego oficial.`,
+            "en": `Web to sort and filter items from League of Kingdoms (LOK) according to their skills, power-ups, degrees, etc. A js library was used to create the grid and logic. The data was obtained from the official game.`
+        },
+        "link_web": "https://alepaff.github.io/LOK-Treasure-items/",
+        "link_repo": "https://github.com/AlePaff/LOK-Treasure-items"
+    },
     "lok-events": {
         "type": "project",
         "name": "LOK Events",
@@ -67,17 +78,6 @@ let PROJECTS = {
         },
         "link_web": "https://alepaff.github.io/FIUBA-knowledge/",
         "link_repo": "https://github.com/AlePaff/FIUBA-knowledge"
-    },
-    "lok-treasure-items": {
-        "type": "project",
-        "name": "LOK Treasure Items",
-        "prog_langs": ["html", "css", "js", "jquery", "isotope", "boostrap"],
-        "desc": {
-            "es": `Web para ordenar y filtrar items de League of Kingdoms (LOK) de acuerdo a sus habilidades, power-ups, grados, etc. Se utilizó una librería de js para crear el grid y la logica. Los datos se obtuvieron del juego oficial.`,
-            "en": `Web to sort and filter items from League of Kingdoms (LOK) according to their skills, power-ups, degrees, etc. A js library was used to create the grid and logic. The data was obtained from the official game.`
-        },
-        "link_web": "https://alepaff.github.io/LOK-Treasure-items/",
-        "link_repo": "https://github.com/AlePaff/LOK-Treasure-items"
     },
     "donut-knowledge": {
         "type": "project",
