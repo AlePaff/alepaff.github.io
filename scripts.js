@@ -31,6 +31,8 @@ function lenguajes(array_lang) {
   var java = "icons/java.png";
   var chakra = "icons/chakra.png";
   var react = "icons/react.ico";
+  // var react = "icons/react.svg";
+  var vite = "icons/vite.svg";
 
   var total = "<div id='imagenes'>";
 

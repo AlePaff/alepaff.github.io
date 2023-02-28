@@ -5,7 +5,7 @@ let lang_select = ["en", "es"]
 
 let LANG_TRANSLATION = {
     "boton-idioma": { "en": "Spanish", "es": "Ingles" },
-    "about-me-title": { "en": "About me", "es": "About me" },
+    "about-me-title": { "en": "About me", "es": "Sobre mí" },
     "about-me": {
         "es": `Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección.
         <br><br>  
