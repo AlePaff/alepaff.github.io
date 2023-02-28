@@ -115,6 +115,10 @@ hr {
   width: 70%;
 }
 
+.projects {
+  margin: 0 90px 0 90px;
+}
+
 /* ==== items a cada uno de los proyectos ==== */
 .projects .item {
   /* background-color: #d67e7e; */

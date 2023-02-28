@@ -8,7 +8,7 @@ $bg-color-about: #9ec0c5;
 $font-color: #1b2932;
 
 $mobile-size: 768px;
-
+$margin-general: 90px;
 
 
 
@@ -84,7 +84,7 @@ footer {
         /* font-family: 'Signika Negative', sans-serif; */
         font-family: 'Nunito';
         background-color: $bg-color-about;
-        margin: 20px 90px 0px 90px;
+        margin: 20px $margin-general 0px $margin-general;
         padding: 25px;
         border-radius: 15px;
         font-size: 18px;
@@ -146,6 +146,9 @@ hr {
 }
 
 
+.projects{
+    margin: 0 $margin-general 0 $margin-general;
+}
 
 /* ==== items a cada uno de los proyectos ==== */
 .projects .item {
