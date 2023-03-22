@@ -9,65 +9,9 @@ function fiubaSpan(lang) {
     "es": { "FIUBA": "Facultad de Ingeniería de la Universidad de Buenos Aires" },
     "en": { "FIUBA": "Faculty of Engineering of the University of Buenos Aires" }
   }
-  // return `<span title="Facultad de Ingeniería de la Universidad de Buenos Aires"><u>FIUBA</u></span>`;
   return `<span title="${acronimos[lang]["FIUBA"]}"><u>FIUBA</u></span>`;
 }
 
-//devuelve un html de una array de lenguajes (ej. ["html", "css", "js"] devuelve un html con los iconos de los lenguajes)
-function lenguajes(array_lang) {
-  // var html = "https://cdn-icons-png.flaticon.com/512/1216/1216733.png";
-  var html = "icons/html5.png";
-  var css = "icons/css.png";
-  var js = "icons/js.png";
-  // var js = "./icons/js_alt.png";
-  var boostrap = "icons/boostrap.png";
-  // var boostrap_alt = ".icons/boostrap_alt.png";
-  var isotope = "icons/isotope.ico";
-  var python = "icons/python.png";
-  var jquery = "icons/jquery.png";
-  var c = "icons/c.svg";
-  // var gitflow_alt = "icons/gitflow_alt.png";
-  var gitflow = "icons/gitflow.png";
-  var java = "icons/java.png";
-  var chakra = "icons/chakra.png";
-  var react = "icons/react.ico";
-  // var react = "icons/react.svg";
-  var vite = "icons/vite.svg";
-
-  var total = "<div id='imagenes'>";
-
-  for (let i = 0; i < array_lang.length; i++) {
-    if (array_lang[i] == "html") {
-      total += `<img src='${html}' height='32' width='32' title='HTML'>`;
-    } else if (array_lang[i] == "css") {
-      total += `<img src='${css}' height='32' width='32' title='CSS'>`;
-    } else if (array_lang[i] == "js") {
-      total += `<img src='${js}' height='32' width='32' title='JS'>`;
-    } else if (array_lang[i] == "boostrap") {
-      total += `<img src='${boostrap}' height='32' width='32' title='Boostrap (JS)'>`;
-    } else if (array_lang[i] == "isotope") {
-      total += `<img src='${isotope}' height='32' width='32' title='Isotope (JS)'>`;
-    } else if (array_lang[i] == "python") {
-      total += `<img src='${python}' height='32' width='32' title='Python'>`;
-    } else if (array_lang[i] == "jquery") {
-      total += `<img src='${jquery}' height='32' width='32' title='Jquery (JS)'>`;
-    } else if (array_lang[i] == "c") {
-      total += `<img src='${c}' height='32' width='32' title='C'>`;
-    } else if (array_lang[i] == "gitflow") {
-      total += `<img src='${gitflow}' height='32' width='32' title='Git'>`;
-    } else if (array_lang[i] == "java") {
-      total += `<img src='${java}' height='32' width='32' title='Java'>`;
-    } else if (array_lang[i] == "chakra") {
-      total += `<img src='${chakra}' height='32' width='32' title='Chakra UI'>`;
-    } else if (array_lang[i] == "react") {
-      total += `<img src='${react}' height='32' width='32' title='React'>`;
-    } else if (array_lang[i] == "sass") {
-      total += `<img src='icons/sass.png' height='32' width='32' title='Sass'>`;
-    }
-  }
-  total += "</div>";
-  return total;
-}
 
 function cargarInfo(current_lang, bloque1, bloque2) {
   cargarIdioma(current_lang);
@@ -76,6 +20,7 @@ function cargarInfo(current_lang, bloque1, bloque2) {
   cargarBloque(bloque2, "algo3-teg", current_lang);
 
   $("#link-cv").attr("href", current_lang == "en" ? LINKS["cv"][current_lang] : LINKS["cv"][current_lang]);
+  $("#link-linkedin").attr("href", current_lang == "en" ? LINKS["linkedin"][current_lang] : LINKS["linkedin"][current_lang]);
 }
 
 
@@ -84,7 +29,6 @@ function cargarInfo(current_lang, bloque1, bloque2) {
 function cargarIdioma(lang) {
   let lang_ids = Object.keys(LANG_TRANSLATION);
   lang_ids.forEach(id => {
-    // console.log(LANG_TRANSLATION[id][lang])
     $(`#${id}`).html(LANG_TRANSLATION[id][lang])
   });
 }
@@ -97,11 +41,6 @@ function cargarBloque(bloque, id, lang) {
     return;
   }
 
-  // $(".projects .item").removeClass("active");
-  // $(`#${id}`).addClass("active");
-
-  // $(".projects .item").css("background-color", "white");
-
   bloque.innerHTML = "";
   bloque.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(PROJECTS[id].prog_langs) + "<h4>" + PROJECTS[id].name + "</h4> </div>"
   PROJECTS[id].desc[lang] = PROJECTS[id].desc[lang].replace("FIUBA", fiubaSpan(lang));
@@ -112,11 +51,6 @@ function cargarBloque(bloque, id, lang) {
   // $(`#${id}`).css("background-color", "#b9ff68");
 }
 
-
-// $(".projects .item").on("mouseenter", function () {
-//   $(".projects .item").removeClass("active");
-//   $(this).addClass("active");
-// });
 
 var screen_size = 768;
 
@@ -161,7 +95,6 @@ $(document).ready(function () {
   crearItemsId();
   cargarIdioma(current_lang);
 
-  console.log(isMobileDevice())
   //jquery para el hover sobre los items
   var bloque1 = document.getElementById("bloque1");
   var bloque2 = document.getElementById("bloque2");
@@ -190,6 +123,9 @@ $(document).ready(function () {
   $("#donut-knowledge").hover(function () {
     cargarBloque(bloque1, "donut-knowledge", current_lang)
   });
+  $("#numbers").hover(function () {
+    cargarBloque(bloque1, "numbers", current_lang)
+  });
 
 
 
@@ -208,6 +144,9 @@ $(document).ready(function () {
   });
   $("#filesystem").hover(function () {
     cargarBloque(bloque2, "filesystem", current_lang)
+  });
+  $("#irc").hover(function () {
+    cargarBloque(bloque2, "irc", current_lang)
   });
 
 

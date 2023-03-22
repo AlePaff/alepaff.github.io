@@ -38,7 +38,7 @@ let PROJECTS = {
     "sabelo-fiuba": {
         "type": "project",
         "name": "Sabelo Fiuba",
-        "prog_langs": ["react", "chakra", "css", "js"],
+        "prog_langs": ["react", "js", "chakra", "css"],
         "desc": {
             "es": `Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la FIUBA. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y la de Google Analytics para saber la cantidad de visitas.`,
             "en": `It is a collection of material from notes, summaries, news, groups and new projects related to FIUBA. First built in just Html, JS and Css and then updated to React, using ChakraUI as styling framework. It uses the Github api to know the last update of the project and Google Analytics to know the number of visits.`,
@@ -49,7 +49,7 @@ let PROJECTS = {
     "lok-treasure-items": {
         "type": "project",
         "name": "LOK Treasure Items",
-        "prog_langs": ["html", "css", "js", "jquery", "isotope", "boostrap"],
+        "prog_langs": ["html", "js", "jquery", "isotope", "boostrap", "css"],
         "desc": {
             "es": `Web para ordenar y filtrar items de League of Kingdoms (LOK) de acuerdo a sus habilidades, power-ups, grados, etc. Se utilizó una librería de js para crear el grid y la logica. Los datos se obtuvieron del juego oficial.`,
             "en": `Web to sort and filter items from League of Kingdoms (LOK) according to their skills, power-ups, degrees, etc. A js library was used to create the grid and logic. The data was obtained from the official game.`
@@ -60,7 +60,7 @@ let PROJECTS = {
     "lok-events": {
         "type": "project",
         "name": "LOK Events",
-        "prog_langs": ["html", "css", "js"],
+        "prog_langs": ["html", "js", "css"],
         "desc": {
             "es": `Proyecto sencillo para probar como crear tablas dinamicas en Javascript, actualizandose según eventos periódicos del juego League of Kingdoms`,
             "en": `Simple project to test how to create dynamic tables in Javascript, updating according to periodic events of the game League of Kingdoms`
@@ -82,13 +82,24 @@ let PROJECTS = {
     "donut-knowledge": {
         "type": "project",
         "name": "Donut Knowledge",
-        "prog_langs": ["sass", "js", "jquery"],
+        "prog_langs": ["js", "jquery", "scss"],
         "desc": {
             "es": `Mapa interactivo de infografías para visualizar ramas complejas de la ciencia y el conocimiento en general. Utilizando la librería <a href='http://www.outsharked.com/imagemapster/' target='_blank'>ImageMapster</a>, y <a href='https://sass-lang.com/' target='_blank'>Sass</a> para el diseño.`,
             "en": `Interactive infographic map to visualize complex branches of science and general knowledge. Using the <a href='http://www.outsharked.com/imagemapster/' target='_blank'>ImageMapster</a> library, and <a href='https://sass-lang.com/' target='_blank'>Sass</a> for the design.`
         },
         "link_web": "https://alepaff.github.io/the-donut-of-knowledge-map/",
         "link_repo": "https://github.com/AlePaff/the-donut-of-knowledge-map"
+    },
+    "numbers": {
+        "type": "project",
+        "name": "Numbers",
+        "prog_langs": ["react", "typescript", "vitest", "tailwind"],
+        "desc": {
+            "es": `Simple app para encontrar propiedades de un número ingresado por pantalla. Utiliza <a href='https://products.wolframalpha.com/api/' target='_blank'>la API</a> de Wolframe Alpha para calcular los resultados y mostrarlos en pantalla, con el Hook externo de React <a href='https://tanstack.com/query/latest/docs/react/overview' target='_blank'>useQuery</a> para manejar facilmente querys. Contruido en Vite y utiliza Vitest para tests unitarios y Tailwind para el diseño.`,
+            "en": `Simple app to find properties of a number entered on screen. It uses <a href='https://products.wolframalpha.com/api/' target='_blank'>the Wolframe Alpha API</a> to calculate the results and display them on screen, with the React external Hook <a href='https://tanstack.com/query/latest/docs/react/overview' target='_blank'>useQuery</a> to easily handle queries. Built in Vite and uses Vitest for unit tests and Tailwind for the design.`
+        },
+        "link_web": "https://alepaff.github.io/numbers/",
+        "link_repo": "https://github.com/AlePaff/numbers"
     },
 
 
@@ -149,6 +160,17 @@ let PROJECTS = {
         },
         "link_web": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-filesystem"
+    },
+    "irc": {
+        "type": "academic",
+        "name": "Internet Relay Chat",
+        "prog_langs": ["rust", "gitflow"],
+        "desc": {
+            "es": `Desarrollo de un servidor y un cliente de chat siguiendo los lineamientos del <a href='https://es.wikipedia.org/wiki/Internet_Relay_Chat'>Protocolo IRC</a> según el <a href='https://www.rfc-editor.org/rfc/rfc1459' target='_blank'>RFC 1459</a> con interfaz gráfica de la librería <a href='https://www.gtk.org/' target='_blank'>GTK</a> soportando multiples servidores que funcionan basados en la topología de spanning tree, para la materia Taller de Programación I de la FIUBA.`,
+            "en": `Development of a chat server and client following the guidelines of the <a href='https://en.wikipedia.org/wiki/Internet_Relay_Chat'>IRC Protocol</a> according to the <a href='https://www.rfc-editor.org/rfc/rfc1459' target='_blank'>RFC 1459</a> with graphical interface of the <a href='https://www.gtk.org/' target='_blank'>GTK</a> library supporting multiple servers that work based on the spanning tree topology, for Programming Workshop I of the FIUBA.`
+        },
+        "link_web": "",
+        "link_repo": "https://github.com/AlePaff/final-taller-1-irc-rust"
     }
 }
 
@@ -158,6 +180,9 @@ let LINKS = {
         "es": "https://docs.google.com/file/d/1dv-JAm9GOebINzoFUO5mB28ix0IvoSfGO9-DqpBUaDc/view",
         "en": "https://docs.google.com/file/d/1jylLBqreWfapL869we9bD8n83WwKzNEDmMU5yIB6DrI/view"
     },
-    "linkedin": "https://www.linkedin.com/in/alejandro-paffetti-0b0b3b1a3/",
+    "linkedin": {
+        "es": "https://www.linkedin.com/in/alejandro-paff/",
+        "en": "https://www.linkedin.com/in/alejandro-paff/?locale=en_US"
+    },
     "github": "https://github.com/AlePaff/"
 }
