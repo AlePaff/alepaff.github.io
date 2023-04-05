@@ -93,7 +93,7 @@ let PROJECTS = {
     "numbers": {
         "type": "project",
         "name": "Numbers",
-        "prog_langs": ["react", "typescript", "vitest", "tailwind"],
+        "prog_langs": ["react", "js", "vitest", "tailwind"],
         "desc": {
             "es": `Simple app para encontrar propiedades de un número ingresado por pantalla. Utiliza <a href='https://products.wolframalpha.com/api/' target='_blank'>la API</a> de Wolframe Alpha para calcular los resultados y mostrarlos en pantalla, con el Hook externo de React <a href='https://tanstack.com/query/latest/docs/react/overview' target='_blank'>useQuery</a> para manejar facilmente querys. Contruido en Vite y utiliza Vitest para tests unitarios y Tailwind para el diseño.`,
             "en": `Simple app to find properties of a number entered on screen. It uses <a href='https://products.wolframalpha.com/api/' target='_blank'>the Wolframe Alpha API</a> to calculate the results and display them on screen, with the React external Hook <a href='https://tanstack.com/query/latest/docs/react/overview' target='_blank'>useQuery</a> to easily handle queries. Built in Vite and uses Vitest for unit tests and Tailwind for the design.`
