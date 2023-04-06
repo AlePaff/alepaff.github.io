@@ -1,4 +1,5 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+@import "https://cdn.jsdelivr.net/npm/@creativebulma/bulma-tooltip@1.2.0/dist/bulma-tooltip.min.css";
 /* @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Nunito');
 
@@ -6,6 +7,7 @@
 $bg-color: #1b2932;
 $bg-color-about: #9ec0c5;
 $font-color: #1b2932;
+$button-color: #76c6da;
 
 $mobile-size: 768px;
 $margin-general: 90px;
@@ -153,7 +155,7 @@ hr {
 /* ==== items a cada uno de los proyectos ==== */
 .projects .item {
     /* background-color: #d67e7e; */
-    background-color: #76c6da;
+    background-color: $button-color;
     border-radius: 15px;
 
     @include animacion-bg-hover(#b9ff68);

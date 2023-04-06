@@ -9,7 +9,7 @@ function fiubaSpan(lang) {
     "es": { "FIUBA": "Facultad de Ingeniería de la Universidad de Buenos Aires" },
     "en": { "FIUBA": "Faculty of Engineering of the University of Buenos Aires" }
   }
-  return `<span title="${acronimos[lang]["FIUBA"]}"><u>FIUBA</u></span>`;
+  return `<span data-tooltip='${acronimos[lang]["FIUBA"]}' class="has-tooltip-arrow has-tooltip-bottom"><u>FIUBA</u></span>`;
 }
 
 
