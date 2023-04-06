@@ -8,24 +8,11 @@ let LANG_TRANSLATION = {
     "about-me-title": { "en": "About me", "es": "Sobre mí" },
     "about-me": {
         "es": `
-        Hola 👋, soy Alejandro, y soy un <i>apasionado</i> 🔥
-        por básicamente cualquier tema: desde saber las etimologías de
-        las palabras hasta construir cosas de hierro y madera...⛏
-        hacer ejercicio, tocar el piano 🎹, conocer el porqué de
-        las cosas 🤔, ver que hay una técnica para escribir más rápido ⌨ así que ir de lleno a aprenderla, como puedo
-        comunicarme con el otro 💬, aprender muchos idiomas 🗣, ayudar, dar clases, estar con amigos y primos, reir siempre
-        mucho 😁, deprimirme 😣, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección 👀.
+        Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección.
+        <br><br>  
+        Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en <a href="#projects-title">este portfolio</a>
         <br><br>
-        Mas allá de lo mencionado debo concentrarme 🧭, y quiero desarrollarme en mi área (la informatica ) y ser un
-        profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante
-        que es construir sitios útiles disponibles para todo el mundo como los que se verán en
-        <a href="#projects-title">
-          este portfolio.
-        </a>
-        <br><br>
-        Ahora mismo estoy buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre
-        profesionales, sé que el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en
-        particular el front end.`,
+        Ahora mismo estoy buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé que el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.`,
        
         "en":
         `
@@ -52,10 +39,10 @@ let PROJECTS = {
     "sabelo-fiuba": {
         "type": "project",
         "name": "Sabelo Fiuba",
-        "prog_langs": ["react", "js", "chakra", "css"],
+        "prog_langs": ["react", "js", "firebase", "chakra", "css"],
         "desc": {
-            "es": `Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la FIUBA. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y la de Google Analytics para saber la cantidad de visitas.`,
-            "en": `It is a collection of material from notes, summaries, news, groups and new projects related to FIUBA. First built in just Html, JS and Css and then updated to React, using ChakraUI as styling framework. It uses the Github api to know the last update of the project and Google Analytics to know the number of visits.`,
+            "es": `Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la FIUBA. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y Google Analytics para saber la cantidad de visitas. Recientemente añadí un sistema de likes en Firebase para que los usuarios puedan darle like a los proyectos que mas les gusten.`,
+            "en": `It is a collection of material from notes, summaries, news, groups and new projects related to FIUBA. First built in just Html, JS and Css and then updated to React, using ChakraUI as styling framework. It uses the Github api to know the last update of the project and Google Analytics to know the number of visits. Recently I added a like system in Firebase so that users can like the projects they like the most.`
         },
         "link_web": "https://alepaff.github.io/sabelo-fiuba/",
         "link_repo": "https://github.com/AlePaff/sabelo-fiuba"

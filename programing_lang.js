@@ -25,6 +25,7 @@ function lenguajes(array_lang) {
         tailwind: ICON_PATH + "tailwind.ico",
         typescript: ICON_PATH + "typescript.png",
         scss: ICON_PATH + "scss.png",
+        firebase: ICON_PATH + "firebase.png",
     };
     
     let total = "<div id='imagenes'>";
