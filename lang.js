@@ -7,11 +7,25 @@ let LANG_TRANSLATION = {
     "boton-idioma": { "en": "Spanish", "es": "Ingles" },
     "about-me-title": { "en": "About me", "es": "Sobre mí" },
     "about-me": {
-        "es": `Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección.
-        <br><br>  
-        Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en este portfolio.
+        "es": `
+        Hola 👋, soy Alejandro, y soy un <i>apasionado</i> 🔥
+        por básicamente cualquier tema: desde saber las etimologías de
+        las palabras hasta construir cosas de hierro y madera...⛏
+        hacer ejercicio, tocar el piano 🎹, conocer el porqué de
+        las cosas 🤔, ver que hay una técnica para escribir más rápido ⌨ así que ir de lleno a aprenderla, como puedo
+        comunicarme con el otro 💬, aprender muchos idiomas 🗣, ayudar, dar clases, estar con amigos y primos, reir siempre
+        mucho 😁, deprimirme 😣, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección 👀.
         <br><br>
-        Ahora mismo estoy buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé que el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.`,
+        Mas allá de lo mencionado debo concentrarme 🧭, y quiero desarrollarme en mi área (la informatica ) y ser un
+        profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante
+        que es construir sitios útiles disponibles para todo el mundo como los que se verán en
+        <a href="#projects-title">
+          este portfolio.
+        </a>
+        <br><br>
+        Ahora mismo estoy buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre
+        profesionales, sé que el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en
+        particular el front end.`,
        
         "en":
         `
