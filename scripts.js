@@ -9,7 +9,7 @@ function fiubaSpan(lang) {
     "es": { "FIUBA": "Facultad de Ingeniería de la Universidad de Buenos Aires" },
     "en": { "FIUBA": "Faculty of Engineering of the University of Buenos Aires" }
   }
-  return `<span data-tooltip='${acronimos[lang]["FIUBA"]}' class="has-tooltip-arrow has-tooltip-bottom"><u>FIUBA</u></span>`;
+  return `<span data-tooltip='${acronimos[lang]["FIUBA"]}' class="has-tooltip-arrow"><u>FIUBA</u></span>`;
 }
 
 
@@ -45,7 +45,8 @@ function cargarBloque(bloque, id, lang) {
   bloque.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(PROJECTS[id].prog_langs) + "<h4>" + PROJECTS[id].name + "</h4> </div>"
   PROJECTS[id].desc[lang] = PROJECTS[id].desc[lang].replace("FIUBA", fiubaSpan(lang));
   bloque.innerHTML += `<p>${PROJECTS[id].desc[lang]}</p>`;
-  bloque.innerHTML += `<div class='links'>` + crear_boton_link(PROJECTS[id].link_web, "Demo") + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
+  bloque.innerHTML += `<div class='links'>` + (PROJECTS[id].link_web == "" ? "" : crear_boton_link(PROJECTS[id].link_web, "Demo"))
+   + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
 
   //cambiar color background-color: #b9ff68; a los botones
   // $(`#${id}`).css("background-color", "#b9ff68");
