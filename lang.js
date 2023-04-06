@@ -8,19 +8,19 @@ let LANG_TRANSLATION = {
     "about-me-title": { "en": "About me", "es": "Sobre mí" },
     "about-me": {
         "es": `
-        Hola, soy Alejandro, y soy un <i>apasionado</i> por básicamente cualquier tema: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera... hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección.
+        Hola 👋, soy Alejandro, un <strong>apasionado</strong> por básicamente <u>cualquier tema</u>: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera [...] hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección.
         <br><br>  
-        Mas allá de lo mencionado debo concentrarme, y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en <a href="#projects-title">este portfolio</a>
+        Mas allá de lo mencionado debo <strong>concentrarme</strong>, y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en <a href="#projects-title">este portfolio</a>
         <br><br>
         Ahora mismo estoy buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé que el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.`,
        
         "en":
         `
-        Hi, I'm Alejandro, and I'm a <i>passionate</i> for basically any subject: from knowing the etymologies of words to building things out of iron and wood... exercising, playing the piano, knowing the why of things, seeing that there is a technique to write faster so going all out to learn it, how I can communicate with the other, learning many languages, helping, teaching, being with friends and cousins, always laughing a lot, getting depressed, stressed, seeing why I feel bad and changing it, always practicing introspection.
+        Hello 👋, I'm Alejandro, a <strong>passionate</strong> about basically <u>any topic</u>: from knowing the etymologies of words to building things from iron and wood [...] exercising, playing the piano, knowing why things are the way their are, seeing that there is a technique to write faster so going full speed to learn it, how can I communicate with the other, learning many languages, helping, giving classes, being with friends and cousins, laughing a lot, getting depressed, getting stressed, seeing why I feel bad and changing it, always practicing introspection.
         <br><br>
-        Beyond the above mentioned I have to focus, and I want to develop myself in my area (computer science) and be a professional in this discipline. I have a special interest in web development, I discovered how fun and exciting it is to build useful sites available to everyone like the ones you will see in this portfolio.
+        Beyond what I mentioned above I must <strong>focus</strong>, and I want to develop myself in my area (computer science) and be a professional in this discipline. I have special interest in web development, I discovered how fun and passionate it is to build useful sites available to everyone like the ones you will see in <a href="#projects-title">this portfolio</a>
         <br><br>
-        Right now I am looking for a junior developer position to start my career and work among professionals, I know the road is long but I want to know and learn the technologies of this area, in particular, front end.
+        Right now I'm looking for a junior developer position to start my career and work among professionals, I know the way is long but I want to know and learn the technologies of this area, in particular the front end.
         `
     },
     "projects-title": { "en": "Projects", "es": "Proyectos" },
