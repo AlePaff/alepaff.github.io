@@ -205,6 +205,7 @@ $(document).ready(function () {
 
   handAnimation()
 
+
 });
 
 

@@ -14,8 +14,11 @@ $margin-general: 90px;
 
 
 
+
+
 @mixin animacion-bg-hover($color) {
     transition: background-color 0.15s;
+
     &:hover {
         background-color: $color;
     }
@@ -108,8 +111,8 @@ footer {
     right: 0;
 
     // svg path {
-        // fill: rgb(241, 252, 253);
-        // fill: rgb(140 171 175);
+    // fill: rgb(241, 252, 253);
+    // fill: rgb(140 171 175);
     // }
 
 }
@@ -117,6 +120,7 @@ footer {
 #blob-2 {
     top: 15em;
     left: -11em;
+
     /* opacity: 0.5; */
     svg path {
         /* fill: #e2fff0; */
@@ -147,7 +151,7 @@ hr {
 }
 
 
-.projects{
+.projects {
     margin: 0 10px 0 10px;
 }
 
@@ -237,7 +241,7 @@ obtenida de https://www.shapedivider.app/
 }
 
 
-#hand-emoji{
+#hand-emoji {
     display: inline-block
 }
 
@@ -314,8 +318,8 @@ obtenida de https://www.shapedivider.app/
 
     .wrapper-img-titulo {
         display: flex;
-        white-space: nowrap;        //para que no se rompa la linea
-        justify-content: space-between;        
+        white-space: nowrap; //para que no se rompa la linea
+        justify-content: space-between;
     }
 
     /* TODO: no debe ser con margin sino que tome de referencia el wraper img-titulo completo */
@@ -354,17 +358,48 @@ obtenida de https://www.shapedivider.app/
 }
 
 
-@media screen and (max-width: $mobile-size) {    
-    
+
+.bloque, #about-me {
+    a {
+        position: relative;
+    }
+
+    a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        border-radius: 4px;
+        background-color: slateblue;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+
+    a:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+}
+
+
+
+
+@media screen and (max-width: $mobile-size) {
+
     #about-me {
         margin: 20px 10px 0px 10px;
         padding: 15px;
         font-size: 15px;
     }
-    #contacto-texto{
+
+    #contacto-texto {
         margin: 0% 2% 0% 2%;
     }
-    .bloque{
+
+    .bloque {
         margin: 0% -2% 0% -2%;
     }
 
@@ -372,11 +407,12 @@ obtenida de https://www.shapedivider.app/
         margin-right: 0;
     }
 
-    .wrapper-img-titulo {   
+    .wrapper-img-titulo {
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
     }
-    .projects{
+
+    .projects {
         margin: 0px 20px 0px 20px;
     }
 }
