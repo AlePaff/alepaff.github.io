@@ -83,10 +83,6 @@ footer {
   right: 0;
 }
 
-.saludo {
-  font-size: 30px;
-}
-
 #blob-2 {
   top: 15em;
   left: -11em;
@@ -186,6 +182,10 @@ obtenida de https://www.shapedivider.app/
   text-align: center;
   transform: skew(-10deg);
   padding: 10px 0px 0px 0px;
+}
+
+#hand-emoji {
+  display: inline-block;
 }
 
 /* ==== titulos ==== */

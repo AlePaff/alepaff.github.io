@@ -152,17 +152,21 @@ $(document).ready(function () {
 
 
 
-  //cambiar de idioma
+  // ======= cambiar de idioma =======
   $("#boton-idioma").on("click", function () {
     $(this).toggleClass("active-lang");   //cambiar el tamaño del boton
 
     current_lang = $("#boton-idioma").data("lang");
     $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
     cargarInfo(current_lang, bloque1, bloque2);
+
+    //reload needed animations    
+    handAnimation()
   });
 
 
-  const animation1 = anime({
+  // ======= ANIMACIONES =========
+  const blob1_animation = anime({
     targets: '#blob-1 .blob-path',
     easing: 'easeInOutSine',
     duration: 15000,
@@ -178,7 +182,7 @@ $(document).ready(function () {
     loop: true,
   });
 
-  const animation2 = anime({
+  const blob2_animation = anime({
     targets: '#blob-2 .blob-path',
     easing: 'easeInOutSine',
     duration: 5000,
@@ -190,7 +194,7 @@ $(document).ready(function () {
   });
 
 
-  const animation3 = anime({
+  const blob3_animation = anime({
     targets: '#blob-3 .blob-path',
     easing: 'linear',
     strokeDashoffset: [anime.setDashoffset, 0],
@@ -199,5 +203,28 @@ $(document).ready(function () {
 
   });
 
+  handAnimation()
 
 });
+
+
+function handAnimation(){  
+  const hand_emoji_animation = anime({
+    targets: '#hand-emoji',
+    //hacer girar de un lado a otro
+    rotate: {
+      value: [0, 20, 0, -20, 0],
+      duration: 100,
+      easing: 'linear',
+    },
+    direction: 'alternate',
+    autoplay: false,    //default paused
+    loop: true
+  });
+  //on mouse hover play animation
+  $("#hand-emoji").hover(() => {
+    hand_emoji_animation.play();
+  }, () => {  //on mouse leave pause animation
+    hand_emoji_animation.pause();
+  });
+}
