@@ -185,10 +185,11 @@ $(document).ready(function () {
   const blob2_animation = anime({
     targets: '#blob-2 .blob-path',
     easing: 'easeInOutSine',
-    duration: 5000,
+    duration: 15000,
     direction: 'alternate',
     d: [    //property keyframe llamado d
-      { value: 'M63.1,-27.9C68.4,-4.2,50.1,19.8,27.4,35.8C4.7,51.9,-22.4,60,-40,48.7C-57.7,37.4,-65.9,6.6,-57.6,-21.1C-49.4,-48.9,-24.7,-73.8,2.1,-74.5C28.9,-75.2,57.8,-51.7,63.1,-27.9Z' },
+      { value: 'M51.1,-14.2C60.1,11,56.9,42.5,37.5,58.1C18.1,73.7,-17.5,73.5,-34,58.7C-50.5,43.9,-47.8,14.6,-38.9,-10.4C-30.1,-35.5,-15,-56.3,3,-57.3C21.1,-58.3,42.1,-39.4,51.1,-14.2Z' },
+      { value: 'M63.1,-27.9C68.4,-4.2,50.1,19.8,27.4,35.8C4.7,51.9,-22.4,60,-40,48.7C-57.7,37.4,-65.9,6.6,-57.6,-21.1C-49.4,-48.9,-24.7,-73.8,2.1,-74.5C28.9,-75.2,57.8,-51.7,63.1,-27.9Z' }
     ],
     loop: true,
   });
@@ -209,7 +210,7 @@ $(document).ready(function () {
 });
 
 
-function handAnimation(){  
+function handAnimation() {
   const hand_emoji_animation = anime({
     targets: '#hand-emoji',
     //hacer girar de un lado a otro
