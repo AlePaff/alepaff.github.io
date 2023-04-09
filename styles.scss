@@ -107,18 +107,21 @@ footer {
     top: 0;
     right: 0;
 
-    svg path {
-        /* fill: rgb(241, 252, 253); */
-        fill: rgb(140 171 175);
-    }
+    // svg path {
+        // fill: rgb(241, 252, 253);
+        // fill: rgb(140 171 175);
+    // }
 
+}
+
+.saludo{
+    font-size: 30px;
 }
 
 #blob-2 {
     top: 15em;
     left: -11em;
     /* opacity: 0.5; */
-
     svg path {
         /* fill: #e2fff0; */
         fill: rgb(140 171 175);

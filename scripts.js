@@ -46,7 +46,7 @@ function cargarBloque(bloque, id, lang) {
   PROJECTS[id].desc[lang] = PROJECTS[id].desc[lang].replace("FIUBA", fiubaSpan(lang));
   bloque.innerHTML += `<p>${PROJECTS[id].desc[lang]}</p>`;
   bloque.innerHTML += `<div class='links'>` + (PROJECTS[id].link_web == "" ? "" : crear_boton_link(PROJECTS[id].link_web, "Demo"))
-   + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
+    + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
 
   //cambiar color background-color: #b9ff68; a los botones
   // $(`#${id}`).css("background-color", "#b9ff68");
@@ -160,4 +160,44 @@ $(document).ready(function () {
     $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
     cargarInfo(current_lang, bloque1, bloque2);
   });
+
+
+  const animation1 = anime({
+    targets: '#blob-1 .blob-path',
+    easing: 'easeInOutSine',
+    duration: 15000,
+    direction: 'alternate',
+    d: [    //property keyframe llamado d
+      { value: 'M45.7,-19.6C51.8,4,44.2,27.2,26.8,40.7C9.4,54.3,-17.8,58.1,-36.2,45.7C-54.7,33.3,-64.4,4.6,-56.9,-20.9C-49.4,-46.3,-24.7,-68.6,-2.5,-67.8C19.8,-67,39.6,-43.1,45.7,-19.6Z' },
+    ],
+    fill: {
+      value: ["#8cabaf", "#8fb3b8"],
+      duration: 15000,
+      easing: 'easeInOutSine',
+    },
+    loop: true,
+  });
+
+  const animation2 = anime({
+    targets: '#blob-2 .blob-path',
+    easing: 'easeInOutSine',
+    duration: 5000,
+    direction: 'alternate',
+    d: [    //property keyframe llamado d
+      { value: 'M63.1,-27.9C68.4,-4.2,50.1,19.8,27.4,35.8C4.7,51.9,-22.4,60,-40,48.7C-57.7,37.4,-65.9,6.6,-57.6,-21.1C-49.4,-48.9,-24.7,-73.8,2.1,-74.5C28.9,-75.2,57.8,-51.7,63.1,-27.9Z' },
+    ],
+    loop: true,
+  });
+
+
+  const animation3 = anime({
+    targets: '#blob-3 .blob-path',
+    easing: 'linear',
+    strokeDashoffset: [anime.setDashoffset, 0],
+    duration: 100000,
+    loop: true
+
+  });
+
+
 });

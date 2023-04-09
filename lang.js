@@ -8,7 +8,7 @@ let LANG_TRANSLATION = {
     "about-me-title": { "en": "About me", "es": "Sobre mí" },
     "about-me": {
         "es": `
-        Hola 👋, soy Alejandro, un <strong>apasionado</strong> por básicamente <u>cualquier tema</u>: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera [...] hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección.
+        Hola <span class="saludo">👋</span>, soy Alejandro, un <strong>apasionado</strong> por básicamente <u>cualquier tema</u>: desde saber las etimologías de las palabras hasta construir cosas de hierro y madera [...] hacer ejercicio, tocar el piano, conocer el porqué de las cosas, ver que hay una técnica para escribir más rápido así que ir de lleno a aprenderla, como puedo comunicarme con el otro, aprender muchos idiomas, ayudar, dar clases, estar con amigos y primos, reir siempre mucho, deprimirme, estresarme, ver porque me siento mal y cambiarlo, siempre practicando la introspección.
         <br><br>  
         Mas allá de lo mencionado debo <strong>concentrarme</strong>, y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en <a href="#projects-title">este portfolio</a>
         <br><br>
