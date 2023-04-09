@@ -16,8 +16,10 @@ function fiubaSpan(lang) {
 function cargarInfo(current_lang, bloque1, bloque2) {
   cargarIdioma(current_lang);
 
-  cargarBloque(bloque1, "sabelo-fiuba", current_lang);
-  cargarBloque(bloque2, "algo3-teg", current_lang);
+  bloque1.innerHTML = cargarBloque("sabelo-fiuba", current_lang);
+  bloque2.innerHTML = cargarBloque("algo3-teg", current_lang);
+
+  addEventListeners(current_lang, bloque1, bloque2)
 
   $("#link-cv").attr("href", current_lang == "en" ? LINKS["cv"][current_lang] : LINKS["cv"][current_lang]);
   $("#link-linkedin").attr("href", current_lang == "en" ? LINKS["linkedin"][current_lang] : LINKS["linkedin"][current_lang]);
@@ -35,19 +37,19 @@ function cargarIdioma(lang) {
 
 
 //cargar en el dom el bloque (descripcion, links, etc) de un proyecto
-function cargarBloque(bloque, id, lang) {
+function cargarBloque(id, lang) {
   //evita cargar el bloque de nuevo - TODO: solucion temporal
-  if (bloque.innerHTML.includes(PROJECTS[id].name) && bloque.innerHTML.includes(PROJECTS[id].desc[lang])) {
-    return;
-  }
-
-  bloque.innerHTML = "";
-  bloque.innerHTML += "<div class=wrapper-img-titulo>" + lenguajes(PROJECTS[id].prog_langs) + "<h4>" + PROJECTS[id].name + "</h4> </div>"
+  // if (bloque.innerHTML.includes(PROJECTS[id].name) && bloque.innerHTML.includes(PROJECTS[id].desc[lang])) {
+  //   return;
+  // }
+  var block = "";
+  block += "<div class=wrapper-img-titulo>" + lenguajes(PROJECTS[id].prog_langs) + "<h4>" + PROJECTS[id].name + "</h4> </div>"
   PROJECTS[id].desc[lang] = PROJECTS[id].desc[lang].replace("FIUBA", fiubaSpan(lang));
-  bloque.innerHTML += `<p>${PROJECTS[id].desc[lang]}</p>`;
-  bloque.innerHTML += `<div class='links'>` + (PROJECTS[id].link_web == "" ? "" : crear_boton_link(PROJECTS[id].link_web, "Demo"))
+  block += `<p>${PROJECTS[id].desc[lang]}</p>`;
+  block += `<div class='links'>` + (PROJECTS[id].link_web == "" ? "" : crear_boton_link(PROJECTS[id].link_web, "Demo"))
     + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
 
+  return block;
   //cambiar color background-color: #b9ff68; a los botones
   // $(`#${id}`).css("background-color", "#b9ff68");
 }
@@ -90,6 +92,50 @@ function crearItemsId() {
 }
 
 
+function addEventListeners(current_lang, bloque1, bloque2) {
+
+  const proyectos = {
+    "sabelo-fiuba": "",
+    "lok-events": "",
+    "fiuba-knowledge": "",
+    "lok-treasure-items": "",
+    "donut-knowledge": "",
+    "numbers": "",
+  }
+  const academic = {
+    "algo3-teg": "",
+    "shell": "",
+    "malloc": "",
+    "sched": "",
+    "filesystem": "",
+    "irc": "",
+  }
+  for (let i in proyectos) {
+    proyectos[i] = cargarBloque(i, current_lang)
+  }
+  for (let i in academic) {
+    academic[i] = cargarBloque(i, current_lang)
+  }
+
+
+  // ===== EVENT LISTENERS =====
+  // // proyectos propios
+  for (let i in proyectos) {
+    $(`#${i}`).hover(function () {
+      //tambien se puede agregar .on("mouseenter", function () { 
+      // para luego un   // $(this).toggleClass("active-item");
+      bloque1.innerHTML = proyectos[i];
+    });
+  }
+  // academico
+  for (let i in academic) {
+    $(`#${i}`).hover(function () {
+      bloque2.innerHTML = academic[i];
+    });
+  }
+}
+
+
 $(document).ready(function () {
   let current_lang = "en";
 
@@ -99,57 +145,11 @@ $(document).ready(function () {
   //jquery para el hover sobre los items
   var bloque1 = document.getElementById("bloque1");
   var bloque2 = document.getElementById("bloque2");
-
   //items por default
   $("#bloque1").show();
   $("#bloque2").show();
 
   cargarInfo(current_lang, bloque1, bloque2);
-
-  // proyectos propios
-  $("#sabelo-fiuba").on("mouseenter", function () {
-    cargarBloque(bloque1, "sabelo-fiuba", current_lang)
-    // $(this).toggleClass("active-item");
-  });
-
-  $("#lok-events").hover(function () {
-    cargarBloque(bloque1, "lok-events", current_lang)
-  });
-  $("#fiuba-knowledge").hover(function () {
-    cargarBloque(bloque1, "fiuba-knowledge", current_lang)
-  });
-  $("#lok-treasure-items").hover(function () {
-    cargarBloque(bloque1, "lok-treasure-items", current_lang)
-  });
-  $("#donut-knowledge").hover(function () {
-    cargarBloque(bloque1, "donut-knowledge", current_lang)
-  });
-  $("#numbers").hover(function () {
-    cargarBloque(bloque1, "numbers", current_lang)
-  });
-
-
-
-  // academico
-  $("#algo3-teg").hover(function () {
-    cargarBloque(bloque2, "algo3-teg", current_lang)
-  });
-  $("#shell").hover(function () {
-    cargarBloque(bloque2, "shell", current_lang)
-  });
-  $("#malloc").hover(function () {
-    cargarBloque(bloque2, "malloc", current_lang)
-  });
-  $("#sched").hover(function () {
-    cargarBloque(bloque2, "sched", current_lang)
-  });
-  $("#filesystem").hover(function () {
-    cargarBloque(bloque2, "filesystem", current_lang)
-  });
-  $("#irc").hover(function () {
-    cargarBloque(bloque2, "irc", current_lang)
-  });
-
 
 
   // ======= cambiar de idioma =======
@@ -194,7 +194,6 @@ $(document).ready(function () {
     loop: true,
   });
 
-
   const blob3_animation = anime({
     targets: '#blob-3 .blob-path',
     easing: 'linear',
@@ -205,8 +204,6 @@ $(document).ready(function () {
   });
 
   handAnimation()
-
-
 });
 
 
