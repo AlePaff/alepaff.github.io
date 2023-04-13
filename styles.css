@@ -85,7 +85,7 @@ footer {
 
 #blob-2 {
   top: 15em;
-  left: -11em;
+  left: 0em;
   /* opacity: 0.5; */
 }
 #blob-2 svg path {
