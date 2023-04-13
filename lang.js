@@ -12,15 +12,15 @@ let LANG_TRANSLATION = {
         <br><br>  
         Mas allá de lo mencionado debo <strong>concentrarme</strong>, y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en <a href="#projects-title">este portfolio</a>
         <br><br>
-        Ahora mismo estoy buscando una posición de desarrollador junior para dar comienzo a mi carrera y trabajar entre profesionales, sé que el camino es largo pero quiero conocer y aprender las tecnologias de ésta área, en particular el front end.`,
+        Mi objetivo es aprender tanto como sea posible en el campo de la informática, incluyendo todas las tecnologías relacionadas. Si bien soy consciente de que es una tarea difícil, estoy comprometido a dedicar el tiempo y esfuerzo necesarios para lograrlo. Estoy en busca de una oportunidad para comenzar mi carrera y trabajar en un entorno profesional que me permita estar expuesto a diferentes tecnologías, aprender de expertos y aplicar ese conocimiento en proyectos desafiantes`,
        
         "en":
         `
-        <span id="saludo">Hello <span id="hand-emoji">👋</span>, I'm Alejandro</span>, a <strong>passionate</strong> about basically <u>any topic</u>: from knowing the etymologies of words to building things from iron and wood [...] exercising, playing the piano, knowing why things are the way their are, seeing that there is a technique to write faster so going full speed to learn it, how can I communicate with the other, learning many languages, helping, giving classes, being with friends and cousins, laughing a lot, getting depressed, getting stressed, seeing why I feel bad and changing it, always practicing introspection.
+        <span id="saludo">Hello <span id="hand-emoji">👋</span>, I'm Alejandro</span>, a <strong>passionate</strong> about basically <u>any topic</u>: from knowing the etymologies of words to building things from iron and wood [...] exercising, playing the piano, knowing why things are the way they are, seeing that there is a technique to write faster so going full speed to learn it, how can I communicate with the other, learning many languages, helping, giving classes, being with friends and cousins, laughing a lot, getting depressed, getting stressed, seeing why I feel bad and changing it, always practicing introspection.
         <br><br>
         Beyond what I mentioned above I must <strong>focus</strong>, and I want to develop myself in my area (computer science) and be a professional in this discipline. I have special interest in web development, I discovered how fun and passionate it is to build useful sites available to everyone like the ones you will see in <a href="#projects-title">this portfolio</a>
         <br><br>
-        Right now I'm looking for a junior developer position to start my career and work among professionals, I know the way is long but I want to know and learn the technologies of this area, in particular the front end.
+        My goal is to learn as much as possible in the field of computer science, including all related technologies. While I am aware that this is a difficult task, I am committed to dedicating the time and effort necessary to achieve it. I am looking for an opportunity to start my career and work in a professional environment that allows me to be exposed to different technologies, learn from experts and apply that knowledge to challenging projects
         `
     },
     "projects-title": { "en": "Projects", "es": "Proyectos" },
