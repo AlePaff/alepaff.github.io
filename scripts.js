@@ -221,9 +221,12 @@ function handAnimation() {
     loop: true
   });
   //on mouse hover play animation
-  $("#hand-emoji").hover(() => {
+  $("#saludo").hover(() => {
     hand_emoji_animation.play();
   }, () => {  //on mouse leave pause animation
-    hand_emoji_animation.pause();
+    //wait 1 seconds
+    setTimeout(() => {
+      hand_emoji_animation.pause();
+    }, 1000);
   });
 }
