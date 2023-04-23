@@ -278,10 +278,10 @@ obtenida de https://www.shapedivider.app/
   outline-width: 2px;
 }
 
-.bloque a, #about-me a {
+.bloque p a, #about-me a {
   position: relative;
 }
-.bloque a::before, #about-me a::before {
+.bloque p a::before, #about-me a::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -294,7 +294,7 @@ obtenida de https://www.shapedivider.app/
   transform: scaleX(0);
   transition: transform 0.3s ease-in-out;
 }
-.bloque a:hover::before, #about-me a:hover::before {
+.bloque p a:hover::before, #about-me a:hover::before {
   transform-origin: left;
   transform: scaleX(1);
 }

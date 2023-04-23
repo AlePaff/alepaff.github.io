@@ -353,12 +353,12 @@ obtenida de https://www.shapedivider.app/
 
 
 
-.bloque, #about-me {
-    a {
+.bloque p, #about-me{
+    a{
         position: relative;
     }
 
-    a::before {
+    a::before{
         content: '';
         position: absolute;
         width: 100%;
