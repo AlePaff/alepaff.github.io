@@ -14,6 +14,10 @@ $margin-general: 90px;
 
 
 
+//solucion temporal: overflow del footer
+#links-footer .columns{
+    width: 100%;
+}
 
 
 @mixin animacion-bg-hover($color) {
@@ -233,17 +237,17 @@ obtenida de https://www.shapedivider.app/
     }
 }
 
-
 /* iconos seccion contacto */
 #links-footer>.columns .column {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+
 .contacto-title {
     text-align: center;
     // width: 100%;
-    transform: skew(-10deg);
+    // transform: skew(-10deg);
     padding: 10px 0px 0px 0px;
 }
 
