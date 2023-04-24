@@ -1,3 +1,20 @@
+let active_items = {
+  bloque1: "sabelo-fiuba",
+  bloque2: "algo3-teg",
+}
+
+function cargarInfo(current_lang, bloque1, bloque2) {
+  cargarIdioma(current_lang);
+
+  bloque1.innerHTML = cargarBloque(active_items.bloque1, current_lang);
+  bloque2.innerHTML = cargarBloque(active_items.bloque2, current_lang);
+
+  addEventListeners(current_lang, bloque1, bloque2)
+
+  $("#link-cv").attr("href", current_lang == "en" ? LINKS["cv"][current_lang] : LINKS["cv"][current_lang]);
+  $("#link-linkedin").attr("href", current_lang == "en" ? LINKS["linkedin"][current_lang] : LINKS["linkedin"][current_lang]);
+}
+
 // crea el boton de link junto al enlace, nombre y el icono
 function crear_boton_link(link, desc) {
   return `<a class="button" href='${link}' target='_blank'><span>${desc}</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="width:1rem;height:1rem;fill:currentColor"><g data-name="Layer 2"><g data-name="external-link"><rect width="24" height="24" opacity="0"></rect><path d="M20 11a1 1 0 0 0-1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h6a1 1 0 0 0 0-2H6a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-6a1 1 0 0 0-1-1z"></path><path d="M16 5h1.58l-6.29 6.28a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0L19 6.42V8a1 1 0 0 0 1 1 1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-4a1 1 0 0 0 0 2z"></path></g></g></svg></a>
@@ -11,20 +28,6 @@ function fiubaSpan(lang) {
   }
   return `<span data-tooltip='${acronimos[lang]["FIUBA"]}' class="has-tooltip-arrow"><u>FIUBA</u></span>`;
 }
-
-
-function cargarInfo(current_lang, bloque1, bloque2) {
-  cargarIdioma(current_lang);
-
-  bloque1.innerHTML = cargarBloque("sabelo-fiuba", current_lang);
-  bloque2.innerHTML = cargarBloque("algo3-teg", current_lang);
-
-  addEventListeners(current_lang, bloque1, bloque2)
-
-  $("#link-cv").attr("href", current_lang == "en" ? LINKS["cv"][current_lang] : LINKS["cv"][current_lang]);
-  $("#link-linkedin").attr("href", current_lang == "en" ? LINKS["linkedin"][current_lang] : LINKS["linkedin"][current_lang]);
-}
-
 
 //toma cada id del DOM y llena la información correspondiente de acuerdo al
 //idioma pasado por parámetro, desde el objeto LANG_TRANSLATION
@@ -125,6 +128,7 @@ function addEventListeners(current_lang, bloque1, bloque2) {
       bloque1.innerHTML = proyectos[i];               // Cambiar contenido de bloque1
       $("#mis-proyectos-items .active-item").removeClass("active-item");       //Desactivar cualquier otro elemento activo
       $(`#${i}`).addClass("active-item");             //Activar el elemento actual
+      active_items.bloque1 = i;
     })
   }
   // academico
@@ -133,6 +137,7 @@ function addEventListeners(current_lang, bloque1, bloque2) {
       bloque2.innerHTML = academic[i];               // Cambiar contenido de bloque1
       $("#mis-academicos-items .active-item").removeClass("active-item");       //Desactivar cualquier otro elemento activo
       $(`#${i}`).addClass("active-item");             //Activar el elemento actual
+      active_items.bloque2 = i;
     })
   }
 }
@@ -165,8 +170,6 @@ $(document).ready(function () {
   // ======= cambiar de idioma =======
   $("#boton-idioma").on("click", function () {
     $(this).toggleClass("active-lang");   //cambiar el tamaño del boton
-    
-    $(".active-item").removeClass("active-item");
 
     current_lang = $("#boton-idioma").data("lang");
     $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
