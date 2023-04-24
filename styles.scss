@@ -103,6 +103,11 @@ footer {
     position: absolute;
     z-index: -1;
     overflow: hidden;
+
+    svg{
+        width: 300px;
+        height: 300px;
+    }
 }
 
 /* para que funciona z-index se deben cumplir https://dev.to/ibn_abubakre/why-your-z-index-isn-t-working-i6j */
@@ -111,10 +116,11 @@ footer {
     right: 0;
 }
 
+
 #blob-2 {
     top: 15em;
     left: 0em;
-
+    
     /* opacity: 0.5; */
     svg path {
         /* fill: #e2fff0; */
