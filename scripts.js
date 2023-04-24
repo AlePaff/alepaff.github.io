@@ -121,28 +121,27 @@ function addEventListeners(current_lang, bloque1, bloque2) {
   // ===== EVENT LISTENERS =====
   // // proyectos propios
   for (let i in proyectos) {
-    $(`#${i}`).hover(function () {
-      //tambien se puede agregar .on("mouseenter", function () { 
-      // para luego un   // $(this).toggleClass("active-item");
-      bloque1.innerHTML = proyectos[i];
-    });
+    $(`#${i}`).on("mouseenter", () => {
+      bloque1.innerHTML = proyectos[i];               // Cambiar contenido de bloque1
+      $("#mis-proyectos-items .active-item").removeClass("active-item");       //Desactivar cualquier otro elemento activo
+      $(`#${i}`).addClass("active-item");             //Activar el elemento actual
+    })
   }
   // academico
   for (let i in academic) {
-    $(`#${i}`).hover(function () {
-      bloque2.innerHTML = academic[i];
-    });
+    $(`#${i}`).on("mouseenter", () => {
+      bloque2.innerHTML = academic[i];               // Cambiar contenido de bloque1
+      $("#mis-academicos-items .active-item").removeClass("active-item");       //Desactivar cualquier otro elemento activo
+      $(`#${i}`).addClass("active-item");             //Activar el elemento actual
+    })
   }
 }
 
 //precarga las imagenes para que sean guardadas en chaché
 function cargarImagenes() {
-
-  for (let i in ICONS) {    
-    ICONS[i].imageObj.src = ICONS[i].path;    
+  for (let i in ICONS) {
+    ICONS[i].imageObj.src = ICONS[i].path;
   }
-
-
 }
 
 // ======== MAIN ==========
@@ -151,7 +150,6 @@ $(document).ready(function () {
 
   cargarImagenes()
   crearItemsId();
-  // cargarIdioma(current_lang);
 
   //jQuery para el hover sobre los items
   var bloque1 = document.getElementById("bloque1");

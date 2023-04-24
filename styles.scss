@@ -149,13 +149,15 @@ hr {
     margin: 0 10px 0 10px;
 }
 
+
 /* ==== items a cada uno de los proyectos ==== */
 .projects .item {
     /* background-color: #d67e7e; */
     background-color: $button-color;
     border-radius: 15px;
-
-    @include animacion-bg-hover(#b9ff68);
+    
+    
+    // @include animacion-bg-hover(#b9ff68);
     //es equivalente a hacer aca mismo:
     // transition: background-color 0.15s;
     // &:hover {
@@ -174,6 +176,10 @@ hr {
         color: $font-color;
         font-size: 20px;
         font-weight: bold;
+    }
+    
+    .active-item{
+        background-color: #b9ff68;
     }
 }
 

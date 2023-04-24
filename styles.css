@@ -121,10 +121,6 @@ hr {
   /* background-color: #d67e7e; */
   background-color: #76c6da;
   border-radius: 15px;
-  transition: background-color 0.15s;
-}
-.projects .item:hover {
-  background-color: #b9ff68;
 }
 
 .items {
@@ -135,6 +131,9 @@ hr {
   color: #1b2932;
   font-size: 20px;
   font-weight: bold;
+}
+.items .active-item {
+  background-color: #b9ff68;
 }
 
 #boton-idioma {
