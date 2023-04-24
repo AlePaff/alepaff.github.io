@@ -126,7 +126,7 @@ function addEventListeners(current_lang, bloque1, bloque2) {
   for (let i in proyectos) {
     $(`#${i}`).on("mouseenter", () => {
       bloque1.innerHTML = proyectos[i];               // Cambiar contenido de bloque1
-      $("#mis-proyectos-items .active-item").removeClass("active-item");       //Desactivar cualquier otro elemento activo
+      $("#mis-proyectos-items .active-item").removeClass("active-item");        //Desactivar cualquier otro elemento activo
       $(`#${i}`).addClass("active-item");             //Activar el elemento actual
       active_items.bloque1 = i;
     })
@@ -134,12 +134,16 @@ function addEventListeners(current_lang, bloque1, bloque2) {
   // academico
   for (let i in academic) {
     $(`#${i}`).on("mouseenter", () => {
-      bloque2.innerHTML = academic[i];               // Cambiar contenido de bloque1
-      $("#mis-academicos-items .active-item").removeClass("active-item");       //Desactivar cualquier otro elemento activo
-      $(`#${i}`).addClass("active-item");             //Activar el elemento actual
+      bloque2.innerHTML = academic[i];
+      $("#mis-academicos-items .active-item").removeClass("active-item");
+      $(`#${i}`).addClass("active-item");
       active_items.bloque2 = i;
     })
   }
+
+  //default active items
+  $(`#${active_items.bloque1}`).addClass("active-item"); 
+  $(`#${active_items.bloque2}`).addClass("active-item");
 }
 
 //precarga las imagenes para que sean guardadas en chaché
