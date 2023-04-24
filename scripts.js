@@ -135,14 +135,25 @@ function addEventListeners(current_lang, bloque1, bloque2) {
   }
 }
 
+//precarga las imagenes para que sean guardadas en chaché
+function cargarImagenes() {
 
+  for (let i in ICONS) {    
+    ICONS[i].imageObj.src = ICONS[i].path;    
+  }
+
+
+}
+
+// ======== MAIN ==========
 $(document).ready(function () {
   let current_lang = "en";
 
+  cargarImagenes()
   crearItemsId();
-  cargarIdioma(current_lang);
+  // cargarIdioma(current_lang);
 
-  //jquery para el hover sobre los items
+  //jQuery para el hover sobre los items
   var bloque1 = document.getElementById("bloque1");
   var bloque2 = document.getElementById("bloque2");
   //items por default
@@ -150,6 +161,7 @@ $(document).ready(function () {
   $("#bloque2").show();
 
   cargarInfo(current_lang, bloque1, bloque2);
+
 
 
   // ======= cambiar de idioma =======
