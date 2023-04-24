@@ -165,6 +165,8 @@ $(document).ready(function () {
   // ======= cambiar de idioma =======
   $("#boton-idioma").on("click", function () {
     $(this).toggleClass("active-lang");   //cambiar el tamaño del boton
+    
+    $(".active-item").removeClass("active-item");
 
     current_lang = $("#boton-idioma").data("lang");
     $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
