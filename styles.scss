@@ -3,7 +3,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Nunito');
 
-
 $bg-color: #1b2932;
 $bg-color-about: #9ec0c5;
 $font-color: #1b2932;
@@ -271,7 +270,11 @@ obtenida de https://www.shapedivider.app/
         width: 100px;
         /* background: #7b6cce; */
         /* background: #b9ff68; */
-        background: #57ffb9;
+        // background: #57ffb9;
+        // background: #57ffb9;
+        // background: linear-gradient(-45deg, aquamarine, mediumpurple);
+        // background: linear-gradient(-45deg, #57ffb9 0%, #6872ff 100%);
+        background: linear-gradient(-45deg, #80ffca 0%, #5ffff7 100%);
         font-weight: bold;
     }
 }
@@ -310,8 +313,6 @@ obtenida de https://www.shapedivider.app/
     flex-direction: column;
     display: inline-flex;
     font-family: 'Nunito';
-
-    /* align-items: center; */
 
     /* padding interno */
     padding: 5px;

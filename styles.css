@@ -209,7 +209,7 @@ obtenida de https://www.shapedivider.app/
   width: 100px;
   /* background: #7b6cce; */
   /* background: #b9ff68; */
-  background: #57ffb9;
+  background: linear-gradient(-45deg, #80ffca 0%, #5ffff7 100%);
   font-weight: bold;
 }
 
@@ -241,7 +241,6 @@ obtenida de https://www.shapedivider.app/
   flex-direction: column;
   display: inline-flex;
   font-family: "Nunito";
-  /* align-items: center; */
   /* padding interno */
   padding: 5px;
   /* TODO: no debe ser con margin sino que tome de referencia el wraper img-titulo completo */
