@@ -155,7 +155,7 @@ function cargarImagenes() {
 
 // ======== MAIN ==========
 $(document).ready(function () {
-  let current_lang = "en";
+  let current_lang = new URLSearchParams(window.location.search).get("lang") || "en";
 
   cargarImagenes()
   crearItemsId();
@@ -177,6 +177,8 @@ $(document).ready(function () {
 
     current_lang = $("#boton-idioma").data("lang");
     $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
+    // modiifcar url
+    window.history.pushState({}, "", `?lang=${current_lang}`);
     cargarInfo(current_lang, bloque1, bloque2);
 
     //reload needed animations    
