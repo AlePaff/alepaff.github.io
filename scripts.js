@@ -1,15 +1,21 @@
+var screen_size = 768;
+
 let active_items = {
+  bloque0: "systechsa",
   bloque1: "sabelo-fiuba",
   bloque2: "algo3-teg",
 }
 
-function cargarInfo(current_lang, bloque1, bloque2) {
+
+
+function cargarInfo(current_lang, bloque0, bloque1, bloque2) {
   cargarIdioma(current_lang);
 
+  bloque0.innerHTML = cargarBloque(active_items.bloque0, current_lang);
   bloque1.innerHTML = cargarBloque(active_items.bloque1, current_lang);
   bloque2.innerHTML = cargarBloque(active_items.bloque2, current_lang);
 
-  addEventListeners(current_lang, bloque1, bloque2)
+  addEventListeners(current_lang, bloque0, bloque1, bloque2)
 
   $("#link-cv").attr("href", current_lang == "en" ? LINKS["cv"][current_lang] : LINKS["cv"][current_lang]);
   $("#link-linkedin").attr("href", current_lang == "en" ? LINKS["linkedin"][current_lang] : LINKS["linkedin"][current_lang]);
@@ -49,8 +55,16 @@ function cargarBloque(id, lang) {
   block += "<div class=wrapper-img-titulo>" + lenguajes(PROJECTS[id].prog_langs) + "<h4>" + PROJECTS[id].name + "</h4> </div>"
   PROJECTS[id].desc[lang] = PROJECTS[id].desc[lang].replace("FIUBA", fiubaSpan(lang));
   block += `<p>${PROJECTS[id].desc[lang]}</p>`;
-  block += `<div class='links'>` + (PROJECTS[id].link_web == "" ? "" : crear_boton_link(PROJECTS[id].link_web, "Demo"))
-    + crear_boton_link(PROJECTS[id].link_repo, "Repo") + `</div>`;
+
+  has_demo = PROJECTS[id].link_demo && PROJECTS[id].link_demo !== "" ? crear_boton_link(PROJECTS[id].link_demo, "Demo") : "";
+  has_web = PROJECTS[id].link_web && PROJECTS[id].link_web !== "" ? crear_boton_link(PROJECTS[id].link_web, "Web") : "";
+  has_repo = PROJECTS[id].link_repo && PROJECTS[id].link_repo !== "" ? crear_boton_link(PROJECTS[id].link_repo, "Repo") : "";
+
+  block += `<div class='links'>`
+  + has_web
+  + has_demo
+  + has_repo
+  + `</div>`;
 
   return block;
   //cambiar color background-color: #b9ff68; a los botones
@@ -58,7 +72,6 @@ function cargarBloque(id, lang) {
 }
 
 
-var screen_size = 768;
 
 //devuelve verdadero o falso dependiendo del tamaño de la pantalla ()
 function isMobileDevice() {
@@ -70,16 +83,7 @@ function isMobileDevice() {
 function crearItemsId() {
 
   Object.keys(PROJECTS).forEach(id => {
-    //si es un dispositivo movil no se crean los items con links
-    let item;
-    if (isMobileDevice()) {
-      item = document.createElement("div");
-    } else {
-      item = document.createElement("a");
-      item.setAttribute("href", PROJECTS[id].link_web);
-      item.setAttribute("target", "_blank");
-    }
-
+    item = document.createElement("div");
     item.setAttribute("id", id);
     item.setAttribute("class", "column is-narrow item");
     item.innerHTML = `<span>${PROJECTS[id].name}</span>`;
@@ -95,8 +99,11 @@ function crearItemsId() {
 }
 
 
-function addEventListeners(current_lang, bloque1, bloque2) {
+function addEventListeners(current_lang, bloque0, bloque1, bloque2) {
 
+  const experiencia = {
+    "systechsa": "",
+  }
   const proyectos = {
     "sabelo-fiuba": "",
     "lok-events": "",
@@ -113,6 +120,9 @@ function addEventListeners(current_lang, bloque1, bloque2) {
     "filesystem": "",
     "irc": "",
   }
+  for (let i in experiencia) {
+    experiencia[i] = cargarBloque(i, current_lang)
+  }
   for (let i in proyectos) {
     proyectos[i] = cargarBloque(i, current_lang)
   }
@@ -122,6 +132,15 @@ function addEventListeners(current_lang, bloque1, bloque2) {
 
 
   // ===== EVENT LISTENERS =====
+  // experiencia laboral
+  for (let i in experiencia) {
+    $(`#${i}`).on("mouseenter", () => {
+      bloque0.innerHTML = experiencia[i];
+      $("#mis-experiencias-items .active-item").removeClass("active-item");
+      $(`#${i}`).addClass("active-item");
+      active_items.bloque0 = i;
+    })
+  }
   // // proyectos propios
   for (let i in proyectos) {
     $(`#${i}`).on("mouseenter", () => {
@@ -142,6 +161,7 @@ function addEventListeners(current_lang, bloque1, bloque2) {
   }
 
   //default active items
+  $(`#${active_items.bloque0}`).addClass("active-item");
   $(`#${active_items.bloque1}`).addClass("active-item"); 
   $(`#${active_items.bloque2}`).addClass("active-item");
 }
@@ -153,6 +173,11 @@ function cargarImagenes() {
   }
 }
 
+
+
+
+
+
 // ======== MAIN ==========
 $(document).ready(function () {
   let current_lang = new URLSearchParams(window.location.search).get("lang") || "en";
@@ -161,13 +186,15 @@ $(document).ready(function () {
   crearItemsId();
 
   //jQuery para el hover sobre los items
+  var bloque0 = document.getElementById("bloque0");
   var bloque1 = document.getElementById("bloque1");
   var bloque2 = document.getElementById("bloque2");
   //items por default
+  $("#bloque0").show();
   $("#bloque1").show();
   $("#bloque2").show();
 
-  cargarInfo(current_lang, bloque1, bloque2);
+  cargarInfo(current_lang, bloque0, bloque1, bloque2);
 
 
 
@@ -177,9 +204,9 @@ $(document).ready(function () {
 
     current_lang = $("#boton-idioma").data("lang");
     $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
-    // modiifcar url
+    // modificar url
     window.history.pushState({}, "", `?lang=${current_lang}`);
-    cargarInfo(current_lang, bloque1, bloque2);
+    cargarInfo(current_lang, bloque0, bloque1, bloque2);
 
     //reload needed animations    
     handAnimation()
@@ -190,7 +217,7 @@ $(document).ready(function () {
   const blob1_animation = anime({
     targets: '#blob-1 .blob-path',
     easing: 'easeInOutSine',
-    duration: 15000,
+    duration: 10000,
     direction: 'alternate',
     d: [    //property keyframe llamado d
       { value: 'M67.6,-36.8C79.2,-19,74.2,10.5,60.2,33.8C46.2,57.1,23.1,74.2,-1.6,75.1C-26.3,76.1,-52.6,60.8,-63.8,39.1C-75,17.4,-71.1,-10.7,-58,-29.3C-44.8,-48,-22.4,-57.2,2.8,-58.8C28,-60.5,56.1,-54.5,67.6,-36.8Z' },
@@ -198,7 +225,7 @@ $(document).ready(function () {
     ],
     fill: {
       value: ["#92b9be", "#8fb3b8"],
-      duration: 15000,
+      duration: 10000,
       easing: 'easeInOutSine',
     },
     loop: true,
@@ -207,7 +234,7 @@ $(document).ready(function () {
   const blob2_animation = anime({
     targets: '#blob-2 .blob-path',
     easing: 'easeInOutSine',
-    duration: 15000,
+    duration: 10000,
     direction: 'alternate',
     d: [    //property keyframe llamado d
       { value: 'M51.1,-14.2C60.1,11,56.9,42.5,37.5,58.1C18.1,73.7,-17.5,73.5,-34,58.7C-50.5,43.9,-47.8,14.6,-38.9,-10.4C-30.1,-35.5,-15,-56.3,3,-57.3C21.1,-58.3,42.1,-39.4,51.1,-14.2Z' },

@@ -99,6 +99,31 @@ const ICONS = {
         path: ICON_PATH + "firebase.png",
         imageObj: new Image(),
     },
+    sql: {
+        lang_name: 'SQL',
+        path: ICON_PATH + "sql.webp",
+        imageObj: new Image(),
+    },
+    php: {
+        lang_name: 'PHP',
+        path: ICON_PATH + "php.png",
+        imageObj: new Image(),
+    },
+    airflow: {
+        lang_name: 'Apache Airflow',
+        path: ICON_PATH + "airflow.webp",
+        imageObj: new Image(),
+    },
+    docker: {
+        lang_name: 'Docker',
+        path: ICON_PATH + "docker.webp",
+        imageObj: new Image(),
+    },
+    minio: {
+        lang_name: 'Minio / S3',
+        path: ICON_PATH + "minio.png",
+        imageObj: new Image(),
+    },
 };
 
 

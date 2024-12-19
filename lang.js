@@ -12,7 +12,8 @@ let LANG_TRANSLATION = {
         <br><br>  
         Mas allá de lo mencionado debo <strong>concentrarme</strong>, y quiero desarrollarme en mi área (la informatica) y ser un profesional en ésta disciplina. Tengo especial interes en el desarrollo web, descubrí lo divertido y apasionante que es construir sitios útiles disponibles para todo el mundo como los que se verán en <a href="#projects-title">este portfolio</a>
         <br><br>
-        Mi objetivo es aprender tanto como sea posible en el campo de la informática, incluyendo todas las tecnologías relacionadas. Si bien soy consciente de que es una tarea difícil, estoy comprometido a dedicar el tiempo y esfuerzo necesarios para lograrlo. Estoy en busca de una oportunidad para comenzar mi carrera y trabajar en un entorno profesional que me permita estar expuesto a diferentes tecnologías, aprender de expertos y aplicar ese conocimiento en proyectos desafiantes`,
+        Mi objetivo es aprender tanto como sea posible en el campo de la informática, incluyendo todas las tecnologías relacionadas. Si bien soy consciente de que es una tarea difícil, estoy comprometido a dedicar el tiempo y esfuerzo necesarios para lograrlo.
+        `,
        
         "en":
         `
@@ -20,9 +21,10 @@ let LANG_TRANSLATION = {
         <br><br>
         Beyond what I mentioned above I must <strong>focus</strong>, and I want to develop myself in my area (computer science) and be a professional in this discipline. I have special interest in web development, I discovered how fun and passionate it is to build useful sites available to everyone like the ones you will see in <a href="#projects-title">this portfolio</a>
         <br><br>
-        My goal is to learn as much as possible in the field of computer science, including all related technologies. While I am aware that this is a difficult task, I am committed to dedicating the time and effort necessary to achieve it. I am looking for an opportunity to start my career and work in a professional environment that allows me to be exposed to different technologies, learn from experts and apply that knowledge to challenging projects
+        My goal is to learn as much as possible in the field of computer science, including all related technologies. While I am aware that this is a difficult task, I am committed to dedicating the time and effort necessary to achieve it. 
         `
     },
+    "work-experience-title": { "en": "Experience", "es": "Experiencia" },
     "projects-title": { "en": "Projects", "es": "Proyectos" },
     "academic-title": { "en": "Academic", "es": "Academico" },
     "contacto-title": { "en": "Contact me", "es": "Contacto" },
@@ -33,8 +35,33 @@ let LANG_TRANSLATION = {
 
 }
 
-
 let PROJECTS = {
+    // experiencia laboral
+    "systechsa": {
+        "type": "work",
+        "name": "Systech S.A.",
+        "prog_langs": ["java", "sql", "php", "js", "python", "airflow", "docker", "gitflow", "css", "html", "minio"],
+        "desc": {
+            "es": `Empresa especialista en la prevención de fraude y lavado de dinero. Actualmente me desempeño como desarrollador en el mantenimiento, rediseño y mejora de plataformas empresariales clave. Algunas de mis tareas se basan en:
+            <ul>
+            <li>Mantenimiento y mejoras de Vigia, software principal usado por bancos y aseguradoras para la detección de actividades sospechosas como lavado de dinero y terrorismo</li>
+            <li>Mejoras y rediseño de la web principal y plataforma de manejo de tickets para la resolución y comunicación con clientes</li>
+            <li>Migración e implementación de un sistema escalable para la obtención de listas de terroristas y PEPs</li>
+            </ul>`,
+            "en": `Company specializing in fraud prevention and anti-money laundering. I currently work as a developer in the maintenance, redesign and improvement of key business platforms. Some of my tasks are based on:
+            <ul>
+            <li>Maintenance and improvements of Vigia, main software used by banks and insurers for the detection of suspicious activities such as money laundering
+            <li>Improvements and redesign of the main website and ticket management platform for resolution and communication with clients</li>
+            <li>Migration and implementation of a scalable system for obtaining lists
+            </ul>`
+        },
+        "link_web": "https://systechsa.com/",
+        "link_repo": ""
+    },
+
+
+
+
     //proyectos propios
     "sabelo-fiuba": {
         "type": "project",
@@ -44,7 +71,7 @@ let PROJECTS = {
             "es": `Se trata de una recolección de material de apuntes, resumenes, noticias, grupos y nuevos proyectos relacionados a la FIUBA. Primero construido en solo Html, JS y Css y luego actualizado a React, usando ChakraUI como framework de estilos. Utiliza la api de Github para saber la ultima actualización del proyecto y Google Analytics para saber la cantidad de visitas. Recientemente añadí un sistema de likes en Firebase para que los usuarios puedan darle like a los proyectos que mas les gusten.`,
             "en": `It is a collection of material from notes, summaries, news, groups and new projects related to FIUBA. First built in just Html, JS and Css and then updated to React, using ChakraUI as styling framework. It uses the Github api to know the last update of the project and Google Analytics to know the number of visits. Recently I added a like system in Firebase so that users can like the projects they like the most.`
         },
-        "link_web": "https://alepaff.github.io/sabelo-fiuba/",
+        "link_demo": "https://alepaff.github.io/sabelo-fiuba/",
         "link_repo": "https://github.com/AlePaff/sabelo-fiuba"
     },
     "lok-treasure-items": {
@@ -55,7 +82,7 @@ let PROJECTS = {
             "es": `Web para ordenar y filtrar items de League of Kingdoms (LOK) de acuerdo a sus habilidades, power-ups, grados, etc. Se utilizó una librería de js para crear el grid y la logica. Los datos se obtuvieron del juego oficial.`,
             "en": `Web to sort and filter items from League of Kingdoms (LOK) according to their skills, power-ups, degrees, etc. A js library was used to create the grid and logic. The data was obtained from the official game.`
         },
-        "link_web": "https://alepaff.github.io/LOK-Treasure-items/",
+        "link_demo": "https://alepaff.github.io/LOK-Treasure-items/",
         "link_repo": "https://github.com/AlePaff/LOK-Treasure-items"
     },
     "lok-events": {
@@ -66,7 +93,7 @@ let PROJECTS = {
             "es": `Proyecto sencillo para probar como crear tablas dinamicas en Javascript, actualizandose según eventos periódicos del juego League of Kingdoms`,
             "en": `Simple project to test how to create dynamic tables in Javascript, updating according to periodic events of the game League of Kingdoms`
         },
-        "link_web": "https://alepaff.github.io/lok-events",
+        "link_demo": "https://alepaff.github.io/lok-events",
         "link_repo": "https://github.com/AlePaff/lok-events"
     },
     "fiuba-knowledge": {
@@ -77,7 +104,7 @@ let PROJECTS = {
             "es": `Pequeño proyecto para la recopilación de temas que se ven en cada materia de la FIUBA, aqui aprendí como hacer scraping de datos desde pdfs para luego procesarlos utilizando un módulo de Python y presentarlos en la web`,
             "en": `Small project for a collection of topics that are seen in each subject of FIUBA, here I learned how to scrape data from pdfs to then process them using a Python module and present them on the web`
         },
-        "link_web": "https://alepaff.github.io/FIUBA-knowledge/",
+        "link_demo": "https://alepaff.github.io/FIUBA-knowledge/",
         "link_repo": "https://github.com/AlePaff/FIUBA-knowledge"
     },
     "donut-knowledge": {
@@ -88,7 +115,7 @@ let PROJECTS = {
             "es": `Mapa interactivo de infografías para visualizar ramas complejas de la ciencia y el conocimiento en general. Utilizando la librería <a href='http://www.outsharked.com/imagemapster/' target='_blank'>ImageMapster</a>, y <a href='https://sass-lang.com/' target='_blank'>Sass</a> para el diseño.`,
             "en": `Interactive infographic map to visualize complex branches of science and general knowledge. Using the <a href='http://www.outsharked.com/imagemapster/' target='_blank'>ImageMapster</a> library, and <a href='https://sass-lang.com/' target='_blank'>Sass</a> for the design.`
         },
-        "link_web": "https://alepaff.github.io/the-donut-of-knowledge-map/",
+        "link_demo": "https://alepaff.github.io/the-donut-of-knowledge-map/",
         "link_repo": "https://github.com/AlePaff/the-donut-of-knowledge-map"
     },
     "numbers": {
@@ -99,7 +126,7 @@ let PROJECTS = {
             "es": `Simple app para encontrar propiedades de un número ingresado por pantalla. Utiliza <a href='https://products.wolframalpha.com/api/' target='_blank'>la API</a> de Wolframe Alpha para calcular los resultados y mostrarlos en pantalla, con el Hook externo de React <a href='https://tanstack.com/query/latest/docs/react/overview' target='_blank'>useQuery</a> para manejar facilmente querys. Contruido en Vite y utiliza Vitest para tests unitarios y Tailwind para el diseño.`,
             "en": `Simple app to find properties of a number entered on screen. It uses <a href='https://products.wolframalpha.com/api/' target='_blank'>the Wolframe Alpha API</a> to calculate the results and display them on screen, with the React external Hook <a href='https://tanstack.com/query/latest/docs/react/overview' target='_blank'>useQuery</a> to easily handle queries. Built in Vite and uses Vitest for unit tests and Tailwind for the design.`
         },
-        "link_web": "https://alepaff.github.io/numbers/",
+        "link_demo": "https://alepaff.github.io/numbers/",
         "link_repo": "https://github.com/AlePaff/numbers"
     },
 
@@ -115,7 +142,7 @@ let PROJECTS = {
             "es": `Implementación en Java del popular juego <a href='https://es.wikipedia.org/wiki/TEG'>TEG</a> para la materia Algoritmos y Programación III de la FIUBA, con fuerte enfazis en un diseño de Programación Orientada a Objetos (POO).`,
             "en": `Java implementation of the popular game <a href='https://en.wikipedia.org/wiki/Risk_(game)'>Risk</a> for the Algorithms and Programming III subject of the FIUBA, with a strong focus on Object Oriented Programming (OOP).`
         },
-        "link_web": "",
+        "link_demo": "",
         "link_repo": "https://github.com/nspiguelman/algo3_tp2"
     },
     "shell": {
@@ -126,7 +153,7 @@ let PROJECTS = {
             "es": `Implementación del problema del MIT en C, de un interprete de comandos <a href='https://es.wikipedia.org/wiki/Shell_(inform%C3%A1tica)'>Shell</a> con las funcionalidades minimas para Unix similar a bash, zsh y fish para la materia Sistemas Operativos de la FIUBA.`,
             "en": `C implementation of the MIT problem in C, a <a href='https://en.wikipedia.org/wiki/Shell_(computing)'>Shell</a> command interpreter with the minimum functionalities for Unix similar to bash, zsh and fish for the Operating Systems subject of the FIUBA.`
         },
-        "link_web": "",
+        "link_demo": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-shell"
     },
     "malloc": {
@@ -137,7 +164,7 @@ let PROJECTS = {
             "es": `Implementación del manejo del heap de las funciones malloc(), calloc(), realloc(), free() de la librería estandar de C para la administración de memoria para la materia Sistemas Operativos de la FIUBA.`,
             "en": `Implementation of the heap management of the malloc(), calloc(), realloc(), free() functions of the standard C library for memory management for the Operating Systems subject of the FIUBA.`
         },
-        "link_web": "",
+        "link_demo": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-malloc"
     },
     "sched": {
@@ -148,7 +175,7 @@ let PROJECTS = {
             "es": `Solución al <a href='https://pdos.csail.mit.edu/6.828/2017/index.html'>exokernel JOS del MIT</a> de licencia libre para la implementación del cambio de contexto para procesos y scheduler/planificador sobre un sistema operativo preexistente, utilizando una modificación del algoritmo MLFQ para la materia Sistemas Operativos de la FIUBA.`,
             "en": `Solution to the <a href='https://pdos.csail.mit.edu/6.828/2017/index.html'>exokernel JOS of the MIT</a> of free license for the implementation of the context change for processes and scheduler / scheduler on an existing operating system, using a modification of the MLFQ algorithm for the Operating Systems subject of the FIUBA.`
         },
-        "link_web": "",
+        "link_demo": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-sched"
     },
     "filesystem": {
@@ -159,7 +186,7 @@ let PROJECTS = {
             "es": `Implementación de un sistema de archivo para Linux, utilizando el mecanismo <a href='https://es.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> provisto por el kernel para la materia Sistemas Operativos de la FIUBA.`,
             "en": `Implementation of a file system for Linux, using the <a href='https://en.wikipedia.org/wiki/Filesystem_in_Userspace'>FUSE</a> mechanism provided by the kernel for the Operating Systems subject, of FIUBA.`
         },
-        "link_web": "",
+        "link_demo": "",
         "link_repo": "https://github.com/AlePaff/TPS-sisop/tree/entrega-filesystem"
     },
     "irc": {
@@ -170,7 +197,7 @@ let PROJECTS = {
             "es": `Desarrollo de un servidor y un cliente de chat siguiendo los lineamientos del <a href='https://es.wikipedia.org/wiki/Internet_Relay_Chat'>Protocolo IRC</a> según el <a href='https://www.rfc-editor.org/rfc/rfc1459' target='_blank'>RFC 1459</a> con interfaz gráfica de la librería <a href='https://www.gtk.org/' target='_blank'>GTK</a> soportando multiples servidores que funcionan basados en la topología de spanning tree, para la materia Taller de Programación I de la FIUBA.`,
             "en": `Development of a chat server and client following the guidelines of the <a href='https://en.wikipedia.org/wiki/Internet_Relay_Chat'>IRC Protocol</a> according to the <a href='https://www.rfc-editor.org/rfc/rfc1459' target='_blank'>RFC 1459</a> with graphical interface of the <a href='https://www.gtk.org/' target='_blank'>GTK</a> library supporting multiple servers that work based on the spanning tree topology, for Programming Workshop I of the FIUBA.`
         },
-        "link_web": "",
+        "link_demo": "",
         "link_repo": "https://github.com/AlePaff/final-taller-1-irc-rust"
     }
 }

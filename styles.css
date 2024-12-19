@@ -134,6 +134,8 @@ hr {
 .items {
   gap: 15px;
   margin-top: 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 .items a {
   color: #1b2932;
@@ -241,6 +243,7 @@ obtenida de https://www.shapedivider.app/
   flex-direction: column;
   display: inline-flex;
   font-family: "Nunito";
+  font-size: 18px;
   /* padding interno */
   padding: 5px;
   /* TODO: no debe ser con margin sino que tome de referencia el wraper img-titulo completo */
