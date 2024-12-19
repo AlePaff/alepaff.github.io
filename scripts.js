@@ -200,10 +200,10 @@ $(document).ready(function () {
 
   // ======= cambiar de idioma =======
   $("#boton-idioma").on("click", function () {
-    $(this).toggleClass("active-lang");   //cambiar el tamaño del boton
+    current_lang = current_lang == "en" ? "es" : "en";
 
-    current_lang = $("#boton-idioma").data("lang");
-    $("#boton-idioma").data("lang", current_lang == "en" ? "es" : "en");
+    $(this).toggleClass("active-lang");   //cambiar el tamaño del boton
+    $("#boton-idioma").data("lang", current_lang);
     // modificar url
     window.history.pushState({}, "", `?lang=${current_lang}`);
     cargarInfo(current_lang, bloque0, bloque1, bloque2);
